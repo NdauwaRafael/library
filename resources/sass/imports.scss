@@ -2,3 +2,12 @@
  * Created by Raphael Karanja on 06/09/2018.
  */
 @import "main/main";
+@import "auth/auth";
+
+.lib_body {
+  padding-top: 65px;
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

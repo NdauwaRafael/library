@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('layouts.default');
 });
+
+Route::get('/login', function () {
+    return view('auth.login');
+});

@@ -10,7 +10,9 @@
 <body>
 @include('layouts.partials.topbar')
 
-{{--@yield('content)--}}
+<section class="lib_body">
+    @yield('content')
+</section>
 
 @include('layouts.partials.footer')
 
