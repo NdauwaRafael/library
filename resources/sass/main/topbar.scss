@@ -1,0 +1,49 @@
+/**
+ * Created by Raphael Karanja on 06/09/2018.
+ */
+.topbar {
+  width: 100vw;
+  padding: 15px;
+  position: fixed;
+  max-height: 55px;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  box-shadow: rgba(232, 237, 250, 0.6) 0px 0px 8px 0px, rgba(232, 237, 250, 0.5) 0px 2px 4px 0px;
+
+  &__title {
+    width: 230px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-end;
+    width: calc(100% - 230px);
+    align-items: center;
+
+    .menus {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      span {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 20px;
+        &:last-child {
+          margin-right: 5px;
+        }
+
+        a {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
