@@ -4,19 +4,22 @@ namespace App\Http\Controllers\Admin;
 
 use Admin\Departments\DepartmentRepository;
 use Admin\Roles\RoleRepository;
-use App\Admin\Departments\Department;
-use App\Admin\Roles\Role;
+use Admin\Users\UserRepository;
+use App\Mail\SendUserActivationLink;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public $departmentRepository, $roleRepository;
+    public $departmentRepository, $roleRepository, $userRepository;
 
-    public function __construct(DepartmentRepository $departmentRepository, RoleRepository $roleRepository)
+    public function __construct(DepartmentRepository $departmentRepository, RoleRepository $roleRepository,
+                                UserRepository $userRepository)
     {
         $this->departmentRepository = $departmentRepository;
         $this->roleRepository = $roleRepository;
+        $this->userRepository = $userRepository;
     }
 
     public function index()
@@ -40,6 +43,7 @@ class UserController extends Controller
             'departments' => $departments
         ]);
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -47,8 +51,10 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {dd($request->all());
-        //
+    {
+        $user = $this->userRepository->save($request->all());
+
+        Mail::to($user->email)->queue(new SendUserActivationLink($user));
     }
 
     /**
