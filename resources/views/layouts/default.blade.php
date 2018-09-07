@@ -9,6 +9,7 @@
 </head>
 <body>
 @include('layouts.partials.topbar')
+@include('layouts.partials.sidebar')
 
 <section class="lib_body">
     @yield('content')

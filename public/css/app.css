@@ -8335,6 +8335,14 @@ html.is-reveal-open body {
  * Created by Raphael Karanja on 07/09/2018.
  */
 
+.sidebar {
+  width: 230px;
+  top: 55px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 /**
  * Created by Raphael Karanja on 06/09/2018.
  */
@@ -8392,6 +8400,8 @@ html.is-reveal-open body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: calc(100% - 230px);
+  margin-left: 230px;
 }
 
 .lib_body .container {
@@ -8402,7 +8412,6 @@ html.is-reveal-open body {
 .lib_body .footer {
   height: 55px;
   bottom: 0;
-  margin-left: 230px;
   padding: 15px;
   background: #ffffff;
 }
