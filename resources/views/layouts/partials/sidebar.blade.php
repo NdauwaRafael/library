@@ -1,6 +1,6 @@
 <aside class="sidebar">
     @auth
-        <ul class="vertical menu" data-accordion-menu>
+        <ul class="vertical menu accordion-menu" data-accordion-menu>
             <li>
                 <a href="#">Dashboard</a>
             </li>
