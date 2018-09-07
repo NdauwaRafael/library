@@ -40,3 +40,10 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
 });
+
+Route::get('{vue_capture?}', function () {
+    if (!\Illuminate\Support\Facades\Auth::user()) {
+        return redirect('/login');
+    }
+    return view('dashboard.index');
+})->where('vue_capture', '[\/\w\.-]*');
