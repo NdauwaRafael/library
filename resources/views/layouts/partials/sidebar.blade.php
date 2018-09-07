@@ -10,6 +10,7 @@
                 <ul class="menu vertical nested">
                     <li><a href="#">Issue Book</a></li>
                     <li><a href="#">Issued Books</a></li>
+                    <li><a href="/listbooks">all Books</a></li>
                     <li><a href="/addbook">Add Book</a></li>
                 </ul>
             </li>
