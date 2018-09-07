@@ -12,9 +12,11 @@
 
 <section class="lib_body">
     @yield('content')
+
+    @include('layouts.partials.footer')
 </section>
 
-@include('layouts.partials.footer')
+
 
 
 <script src="js/app.js"></script>

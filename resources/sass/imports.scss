@@ -6,8 +6,21 @@
 
 .lib_body {
   padding-top: 65px;
+  background: #f4f7fb;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
   .container {
     width: 90%;
     margin: 0 auto;
+  }
+
+  .footer {
+    height: 55px;
+    bottom: 0;
+    margin-left: 230px;
+    padding: 15px;
+    background: #ffffff;
   }
 }

@@ -8339,9 +8339,15 @@ html.is-reveal-open body {
  * Created by Raphael Karanja on 06/09/2018.
  */
 
+.login {
+  padding-top: 150px;
+}
+
 .login__card {
   max-width: 500px;
   min-width: 300px;
+  background: #ffffff;
+  border-radius: 3px;
   -webkit-box-shadow: rgba(232, 237, 250, 0.6) 0px 0px 8px 0px, rgba(232, 237, 250, 0.5) 0px 2px 4px 0px;
           box-shadow: rgba(232, 237, 250, 0.6) 0px 0px 8px 0px, rgba(232, 237, 250, 0.5) 0px 2px 4px 0px;
   padding: 20px;
@@ -8363,10 +8369,30 @@ html.is-reveal-open body {
 
 .lib_body {
   padding-top: 65px;
+  background: #f4f7fb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .lib_body .container {
   width: 90%;
   margin: 0 auto;
+}
+
+.lib_body .footer {
+  height: 55px;
+  bottom: 0;
+  margin-left: 230px;
+  padding: 15px;
+  background: #ffffff;
 }
 

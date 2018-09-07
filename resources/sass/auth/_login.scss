@@ -5,10 +5,13 @@
   //display: flex;
   //justify-content: center;
   //align-items: center;
+  padding-top: 150px;
 
   &__card {
     max-width: 500px;
     min-width: 300px;
+    background: #ffffff;
+    border-radius: 3px;
     box-shadow: rgba(232, 237, 250, 0.6) 0px 0px 8px 0px, rgba(232, 237, 250, 0.5) 0px 2px 4px 0px;
     padding: 20px;
     margin: 0 auto;
