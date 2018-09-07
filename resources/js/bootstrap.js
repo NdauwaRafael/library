@@ -10,8 +10,9 @@ window.Popper = require('popper.js').default;
 
 try {
     window.$ = window.jQuery = require('jquery');
-
-    require('foundation-sites');
+    require('./../../../node_modules/foundation-sites/dist/js/foundation.min');
+    require('./../../../node_modules/foundation-sites/dist/js/foundation');
+    require('./../../../node_modules/foundation-sites/js/foundation.reveal');
 } catch (e) {}
 
 /**
