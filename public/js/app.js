@@ -26128,8 +26128,11 @@ module.exports = __webpack_require__(199);
 
 /***/ }),
 /* 76 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+throw new Error("Cannot find module \"router\"");
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -26153,7 +26156,8 @@ __webpack_require__(206);
 Vue.component('example-component', __webpack_require__(195));
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  route: __WEBPACK_IMPORTED_MODULE_0_router___default.a
 });
 
 /***/ }),
