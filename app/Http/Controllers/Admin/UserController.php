@@ -9,6 +9,7 @@ use App\Mail\SendUserActivationLink;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -55,6 +56,8 @@ class UserController extends Controller
         $user = $this->userRepository->save($request->all());
 
         Mail::to($user->email)->queue(new SendUserActivationLink($user));
+
+        return redirect()->back();
     }
 
     /**
