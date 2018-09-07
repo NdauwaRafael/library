@@ -8343,6 +8343,16 @@ html.is-reveal-open body {
   left: 0;
 }
 
+.sidebar .menu li a {
+  color: #4a4a4a;
+}
+
+.sidebar .menu li a:hover {
+  background: #9b9b9b;
+  border-left: 3px solid #206e6a;
+  padding-left: calc(1rem - 3px);
+}
+
 /**
  * Created by Raphael Karanja on 06/09/2018.
  */
