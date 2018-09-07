@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class SessionController extends Controller
 {
+    public function __contruct(){
+        $this->middleware('guest', ['except'=> 'destroy']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +37,12 @@ class SessionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (!auth()->attempt(['email'=>$request->email, 'password'=>$request->password])){
+            return back()->withErrors([
+                'message'=> 'The Email and password provided do not match'
+            ])->withInput();
+        }
+        return redirect()->home();
     }
 
     /**
@@ -79,6 +87,7 @@ class SessionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        auth()->logout();
+        return redirect()->home();
     }
 }
