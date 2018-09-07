@@ -7,7 +7,7 @@
     <title>Moder Library</title>
     <link href="css/app.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body id="app">
 @include('layouts.partials.topbar')
 @include('layouts.partials.sidebar')
 
