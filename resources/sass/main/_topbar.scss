@@ -5,14 +5,14 @@
   width: 100vw;
   padding: 15px;
   position: fixed;
-  max-height: 55px;
+  height: 65px;
   background: #ffffff;
 
   display: flex;
   align-items: center;
   z-index: 800;
 
-  box-shadow: rgba(232, 237, 250, 0.6) 0px 0px 8px 0px, rgba(232, 237, 250, 0.5) 0px 2px 4px 0px;
+  box-shadow: rgba(232, 237, 250, 0.6) 0px 0px 3px 0px, rgba(232, 237, 250, 0.5) 0px 2px 4px 0px;
 
   &__title {
     width: 230px;

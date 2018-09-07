@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
- <div>
+ <div class="users__add">
      {!! Form::open(['route' => ['create.user'],'files' => 'true']) !!}
      <div class="small-12 large-5 cell">
          {!! Form::hidden('created_by', auth()->id())!!}

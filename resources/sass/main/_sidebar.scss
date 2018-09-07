@@ -3,15 +3,17 @@
  */
 .sidebar {
   width: 230px;
-  top: 55px;
+  top: 65px;
   position: fixed;
+  background: #2d3846;
   bottom: 0;
   left: 0;
+  padding-top: 20px;
 
   .menu {
     li {
       a {
-        color: #4a4a4a;
+        color: #ffffff;
 
         &:hover {
           background: #9b9b9b;
