@@ -22,7 +22,7 @@
              </label>
              <label>Department
                  <select name="department_id" >
-                     <option value="" label="Select Department" disabled></option>
+                     <option value="" label="Select Department" disabled selected></option>
                      <option v-for="department in departments"
                              :label="department.label"
                              :value="department.value"></option>
@@ -30,7 +30,7 @@
              </label>
              <label>Role
                  <select name="role_id" >
-                     <option value="" label="Select A Role" disabled></option>
+                     <option value="" label="Select A Role" disabled selected></option>
                      <option v-for="role in roles"
                              :label="role.label"
                              :value="role.value"></option>
