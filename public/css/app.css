@@ -8367,6 +8367,13 @@ html.is-reveal-open body {
       align-content: center;
 }
 
+.login__error {
+  color: red;
+  font-size: 12px;
+  margin: 15px 0;
+  display: block;
+}
+
 .lib_body {
   padding-top: 65px;
   background: #f4f7fb;

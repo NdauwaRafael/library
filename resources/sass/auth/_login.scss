@@ -30,4 +30,11 @@
       }
     }
   }
+
+  &__error {
+    color: red;
+    font-size: 12px;
+    margin: 15px 0;
+    display: block;
+  }
 }
