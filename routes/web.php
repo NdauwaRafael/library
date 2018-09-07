@@ -11,26 +11,32 @@
 |
 */
 
-Route::get('/', 'HomeController@create')->name('home');
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/login', 'SessionsController@create')->name('login');
+    Route::post('/login', 'SessionsController@store');
+});
 
-Route::get('/login', 'SessionsController@create')->name('login');
-Route::post('/login', 'SessionsController@store');
-Route::get('/logout', 'SessionsController@destroy');
+Route::group(['middleware' => 'auth'], function () {
 
-Route::group(['namespace' => 'Admin'], function () {
+    Route::get('/', 'HomeController@create')->name('home');
 
-    Route::get('/users', [
-        'uses' => 'UserController@index'
-    ]);
+    Route::get('/logout', 'SessionsController@destroy');
 
-    Route::get('/users/create/{id?}', [
-        'as' => 'users.create',
-        'uses' => 'UserController@create'
-    ]);
+    Route::group(['namespace' => 'Admin'], function () {
 
-    Route::post('/create/user', [
-        'as' => 'create.user',
-        'uses' => 'UserController@store'
-    ]);
+        Route::get('/users', [
+            'uses' => 'UserController@index'
+        ]);
+
+        Route::get('/users/create/{id?}', [
+            'as' => 'users.create',
+            'uses' => 'UserController@create'
+        ]);
+
+        Route::post('/create/user', [
+            'as' => 'create.user',
+            'uses' => 'UserController@store'
+        ]);
+    });
 
 });
