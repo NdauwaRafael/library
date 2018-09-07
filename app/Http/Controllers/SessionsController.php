@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SessionController extends Controller
+class SessionsController extends Controller
 {
     public function __contruct(){
         $this->middleware('guest', ['except'=> 'destroy']);
