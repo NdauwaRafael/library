@@ -8387,7 +8387,7 @@ html.is-reveal-open body {
 }
 
 .lib_body {
-  padding-top: 65px;
+  padding: 65px 20px 20px 20px;
   background: #f4f7fb;
   display: -webkit-box;
   display: -ms-flexbox;

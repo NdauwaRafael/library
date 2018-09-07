@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Moder Library</title>
-    <link href="css/app.css" rel="stylesheet" type="text/css">
+    <link href="/css/app.css" rel="stylesheet" type="text/css">
 </head>
 <body >
 @include('layouts.partials.topbar')
@@ -20,7 +20,7 @@
 
 
 
-<script src="js/app.js"></script>
+<script src="/js/app.js"></script>
 <script>
     $(document).foundation();
 </script>
