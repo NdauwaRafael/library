@@ -1,6 +1,7 @@
 /**
  * Created by Raphael Karanja on 07/09/2018.
  */
+import Vue from 'vue';
 import Router from 'vue-router'
 Vue.use(Router);
 
