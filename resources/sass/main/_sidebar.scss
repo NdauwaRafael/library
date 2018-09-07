@@ -2,7 +2,7 @@
  * Created by Raphael Karanja on 07/09/2018.
  */
 .sidebar {
-  width: 230px;
+  width: 250px;
   top: 65px;
   position: fixed;
   background: #2d3846;
@@ -12,6 +12,7 @@
 
   .menu {
     li {
+      margin: 12px 0;
       a {
         color: #ffffff;
 
