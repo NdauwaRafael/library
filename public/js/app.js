@@ -57299,7 +57299,6 @@ function install(Vue) {
     Vue.component("vuetable-pagination-dropdown", VueTablePaginationDropDown);
     Vue.component("vuetable-pagination-info", VueTablePaginationInfo);
 }
-Vue.use(Vuetable);
 
 /***/ }),
 /* 49 */
