@@ -2,16 +2,19 @@
  * Created by Raphael Karanja on 07/09/2018.
  */
 .sidebar {
-  width: 230px;
-  top: 55px;
+  width: 250px;
+  top: 65px;
   position: fixed;
+  background: #2d3846;
   bottom: 0;
   left: 0;
+  padding-top: 20px;
 
   .menu {
     li {
+      margin: 12px 0;
       a {
-        color: #4a4a4a;
+        color: #ffffff;
 
         &:hover {
           background: #9b9b9b;

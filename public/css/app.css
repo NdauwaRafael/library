@@ -8260,7 +8260,7 @@ html.is-reveal-open body {
   width: 100vw;
   padding: 15px;
   position: fixed;
-  max-height: 55px;
+  height: 65px;
   background: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8269,8 +8269,8 @@ html.is-reveal-open body {
       -ms-flex-align: center;
           align-items: center;
   z-index: 800;
-  -webkit-box-shadow: rgba(232, 237, 250, 0.6) 0px 0px 8px 0px, rgba(232, 237, 250, 0.5) 0px 2px 4px 0px;
-          box-shadow: rgba(232, 237, 250, 0.6) 0px 0px 8px 0px, rgba(232, 237, 250, 0.5) 0px 2px 4px 0px;
+  -webkit-box-shadow: rgba(232, 237, 250, 0.6) 0px 0px 3px 0px, rgba(232, 237, 250, 0.5) 0px 2px 4px 0px;
+          box-shadow: rgba(232, 237, 250, 0.6) 0px 0px 3px 0px, rgba(232, 237, 250, 0.5) 0px 2px 4px 0px;
 }
 
 .topbar__title {
@@ -8337,15 +8337,21 @@ html.is-reveal-open body {
  */
 
 .sidebar {
-  width: 230px;
-  top: 55px;
+  width: 250px;
+  top: 65px;
   position: fixed;
+  background: #2d3846;
   bottom: 0;
   left: 0;
+  padding-top: 20px;
+}
+
+.sidebar .menu li {
+  margin: 12px 0;
 }
 
 .sidebar .menu li a {
-  color: #4a4a4a;
+  color: #ffffff;
 }
 
 .sidebar .menu li a:hover {
@@ -8397,9 +8403,23 @@ html.is-reveal-open body {
   display: block;
 }
 
+/**
+ * Created by Raphael Karanja on 07/09/2018.
+ */
+
+.users__add {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.users__add form {
+  width: 60%;
+}
+
 .lib_body {
-  padding: 65px 20px 20px 20px;
-  background: #f4f7fb;
+  padding: 75px 20px 20px 20px;
+  background: #eeeeee;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8411,8 +8431,8 @@ html.is-reveal-open body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: calc(100% - 230px);
-  margin-left: 230px;
+  width: calc(100% - 250px);
+  margin-left: 250px;
 }
 
 .lib_body .container {

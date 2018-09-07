@@ -3,17 +3,18 @@
  */
 @import "main/main";
 @import "auth/auth";
+@import "users/users";
 
 .lib_body {
-  padding: 65px 20px 20px 20px;
+  padding: 75px 20px 20px 20px;
 
-  background: #f4f7fb;
+  background: #eeeeee;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   justify-content: space-between;
-  width: calc(100% - 230px);
-  margin-left: 230px;
+  width: calc(100% - 250px);
+  margin-left: 250px;
   .container {
     width: 90%;
     margin: 0 auto;
