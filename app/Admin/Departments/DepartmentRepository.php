@@ -20,7 +20,7 @@ class DepartmentRepository
         return $departments->map(function ($department){
             return [
                 'value' => $department->id,
-                'name' => $department->name,
+                'label' => $department->name,
             ];
         });
     }

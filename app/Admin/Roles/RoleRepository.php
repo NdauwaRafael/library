@@ -20,7 +20,7 @@ class RoleRepository
         return $roles->map(function ($role){
            return [
                'value' => $role->id,
-               'name' => $role->name,
+               'label' => $role->name,
            ];
         });
     }

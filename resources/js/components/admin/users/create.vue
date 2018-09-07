@@ -4,7 +4,12 @@
 
 <script>
     export default {
-        name: "create"
+        name: "create",
+        props: ['roles', 'departments'],
+        data: ()=>({
+            department: '',
+            role: ''
+        })
     }
 </script>
 
