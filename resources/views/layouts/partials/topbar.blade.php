@@ -5,8 +5,13 @@
 
     <div class="topbar__content">
         <div class="menus">
-                <span><a href="/login">Sign In</a></span>
-                <span><a href="/register">Sign Up</a></span>
+            @auth
+                <span><a href="/logout">Logout</a></span>
+            @endauth
+            @guest
+                    <span><a href="/login">Sign In</a></span>
+                    <span><a href="/register">Sign Up</a></span>
+                @endguest
         </div>
     </div>
 

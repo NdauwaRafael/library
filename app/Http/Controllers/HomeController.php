@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        return View('Auth.login');
+        return View('dashboard.index');
     }
 
     /**
