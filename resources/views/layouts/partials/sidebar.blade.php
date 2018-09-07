@@ -26,7 +26,7 @@
                 <a href="#">Users</a>
 
                 <ul class="menu vertical nested">
-                    <li><a href="#">Add User</a></li>
+                    <li><a href="/users/create">Add User</a></li>
                     <li><a href="#">View Users</a></li>
                 </ul>
 
