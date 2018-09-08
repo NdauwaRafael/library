@@ -10,10 +10,12 @@ namespace Admin\Users;
 
 
 use App\Admin\Users\User;
+use App\Http\Controllers\TablePaginate;
 use Illuminate\Support\Facades\Hash;
 
 class UserRepository
 {
+    use TablePaginate;
     public function save($input)
     {
         return User::create([
@@ -26,5 +28,18 @@ class UserRepository
            'department_id' => $input['department_id'],
            'role_id' => $input['role_id'],
         ]);
+    }
+
+    public function listUsers()
+    {
+        return $this->tablePaginate(new User(), [], function ($user) {
+            return  [
+                'firstname' => $user->present()->fullName,
+                'email' => $user->email,
+                'phone' => $user->phone,
+                'role' =>  $user->role->name,
+                'id' => $user->id
+            ];
+        });
     }
 }

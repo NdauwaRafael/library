@@ -37,8 +37,7 @@
                 <a href="#">Roles & Permissions</a>
 
                 <ul class="menu vertical nested">
-                    <li><a href="#">Roles</a></li>
-                    <li><a href="#">Permissions</a></li>
+                    <li><a href="/roles">Roles</a></li>
                 </ul>
 
             </li>

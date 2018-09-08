@@ -9,7 +9,23 @@
 namespace Admin\permissions;
 
 
-class Permission
+use App\Admin\Roles\Role;
+use Illuminate\Database\Eloquent\Model;
+
+class Permission extends Model
 {
+    protected $table = 'permissions';
+
+    protected $guarded = ['id','created_at','updated_at'];
+
+    protected $fillable = [
+        'name',
+        'description'
+    ];
+
+    public function roles()
+    {
+        return $this->hasMany(Role::class);
+    }
 
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Admin\Departments\DepartmentRepository;
 use Admin\Roles\RoleRepository;
 use Admin\Users\UserRepository;
+use App\Admin\Users\User;
 use App\Mail\SendUserActivationLink;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -69,6 +70,11 @@ class UserController extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function getUsers()
+    {
+        return $this->userRepository->listUsers();
     }
 
     /**

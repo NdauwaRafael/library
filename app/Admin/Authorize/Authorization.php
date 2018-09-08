@@ -8,10 +8,9 @@
 
 namespace App\General\Authorize;
 
-use function Aws\constantly;
+use Admin\permissions\Permission;
+use Admin\permissions\RolePermission;
 use App\General\Authorize\Exceptions\AuthorizationFailedException;
-use App\General\Permissions\Permission;
-use App\General\Roles\RolePermission;
 use Illuminate\Support\Facades\Auth;
 
 trait Authorization
