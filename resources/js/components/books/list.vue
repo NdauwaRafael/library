@@ -29,7 +29,12 @@
                     name: 'status',
                     title: 'Status'
                 },
-
+                {
+                    name: '__slot:actions',
+                    title: 'View User',
+                    titleClass: 'text-center',
+                    dataClass: 'text-center'
+                },
 
             ]
 
@@ -42,12 +47,13 @@
         <div class="lib_table">
             <div class="lib_table__head">
                 <div class="action">
-                    <a  href="/books/create">Add Book</a>
+                    <a  href="/books/create">Add a Book</a>
                 </div>
                 <div class="filters">
                     <filter-bar></filter-bar>
                 </div>
             </div>
+
             <div class="lib_table__body">
                 <vuetable ref="vuetable"
                           api-url="/api/books"
@@ -58,9 +64,16 @@
                           :append-params="moreParams"
                           @vuetable:cell-clicked="onCellClicked"
                           @vuetable:pagination-data="onPaginationData"
-                ></vuetable>
+                >
+                    <template slot="actions"  slot-scope="props">
+                        <div class="custom-actions">
+                            <a :href="'/users/'+props.rowData.id" >
+                                <i class="material-icons">visibility</i>
+                            </a>
+                        </div>
+                    </template>
+                </vuetable>
             </div>
-
             <div class="lib_table__foot">
                 <div class="vuetable-pagination">
                     <vuetable-pagination-info ref="paginationInfo"
