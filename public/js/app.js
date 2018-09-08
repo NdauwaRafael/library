@@ -43712,7 +43712,7 @@ Vue.component('example-component', __webpack_require__(402));
 
 var app = new Vue({
   el: '#app',
-  route: __WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */]
+  router: __WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */]
 });
 
 /***/ }),
@@ -43729,12 +43729,15 @@ var app = new Vue({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_books_view_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_books_view_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_books_list_vue__ = __webpack_require__(222);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_books_list_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_books_list_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_admin_users_resetPassword_vue__ = __webpack_require__(410);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_admin_users_resetPassword_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_admin_users_resetPassword_vue__);
 /**
  * Created by Raphael Karanja on 07/09/2018.
  */
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
+
 
 
 
@@ -43753,6 +43756,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
         path: '/listbooks',
         name: 'list.book',
         component: __WEBPACK_IMPORTED_MODULE_4__components_books_list_vue___default.a
+    }, {
+        path: '/reset/password/:id',
+        name: 'reset.password',
+        component: __WEBPACK_IMPORTED_MODULE_5__components_admin_users_resetPassword_vue___default.a
     }],
     mode: 'history',
     hashbang: false,
@@ -112839,6 +112846,259 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-76eb7157", module.exports)
+  }
+}
+
+/***/ }),
+/* 410 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(411)
+}
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(413)
+/* template */
+var __vue_template__ = __webpack_require__(414)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-3acb0948"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/admin/users/resetPassword.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3acb0948", Component.options)
+  } else {
+    hotAPI.reload("data-v-3acb0948", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 411 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(412);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(23)("0c0a5400", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3acb0948\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resetPassword.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3acb0948\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resetPassword.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 412 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(18)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 413 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            loading: false,
+            formErrors: {},
+            item: {
+                id: null,
+                name: ''
+            }
+        };
+    },
+
+    mounted: function mounted() {
+        this.getUserDetails();
+    },
+    methods: {
+        getUserDetails: function getUserDetails() {
+            var _this = this;
+
+            var user_id = this.$route.params.id;
+            this.$http.get('/api/user/' + user_id).then(function (response) {
+                if (response.status == 200) {
+                    var data = response.data;
+                    if (data.fetched) {
+                        _this.$set(_this, 'item', response.data);
+                    }
+                }
+                _this.$set(_this, 'item', response.data);
+            }, function (response) {});
+        },
+        updateUserDetails: function updateUserDetails() {
+            var _this2 = this;
+
+            this.loading = true;
+            var input = {
+                name: this.item.name,
+                active: true
+            };
+
+            this.$http.put('/api/reset/password/' + this.item.id, this.item).then(function (response) {
+                _this2.loading = false;
+                if (response.status == 200) {
+                    var data = response.body;
+                    if (data.success) {} else {}
+                }
+            }, function (response) {
+                _this2.loading = false;
+                toastr.error('Oops! Something went wrong', 'Server Error', { timeOut: 5000 });
+                _this2.formErrors = response.data;
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 414 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "users__add" }, [
+    _c("div", { staticClass: "grid-x" }, [
+      _c("div", { staticClass: "large-8 column medium-10 small-12" }, [
+        _c(
+          "form",
+          {
+            attrs: { enctype: "multipart/form-data" },
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.updateUserDetails($event)
+              }
+            }
+          },
+          [
+            _c("label", [_vm._v("Email")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.item.email,
+                  expression: "item.email"
+                }
+              ],
+              attrs: {
+                type: "email",
+                placeholder: "email...",
+                multiple: "",
+                required: ""
+              },
+              domProps: { value: _vm.item.email },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.item, "email", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("label", [_vm._v("Email")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.item.password,
+                  expression: "item.password"
+                }
+              ],
+              attrs: {
+                type: "password",
+                placeholder: "password...",
+                multiple: "",
+                required: ""
+              },
+              domProps: { value: _vm.item.password },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.item, "password", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("button", { staticClass: "button", attrs: { type: "submit" } }, [
+              _vm._v("\n                    Reset\n                    "),
+              _vm.loading
+                ? _c("i", { staticClass: "fa fa-spinner fa-spin" })
+                : _vm._e()
+            ])
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3acb0948", module.exports)
   }
 }
 

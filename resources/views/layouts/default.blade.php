@@ -12,8 +12,10 @@
 @include('layouts.partials.sidebar')
 
 <section class="lib_body" id="app">
-
-    <div >
+<div v-if="$route.name">
+    <router-view></router-view>
+</div>
+    <div v-else>
         @yield('content')
     </div>
 
