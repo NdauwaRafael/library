@@ -20,7 +20,7 @@
             <div style="display: block;
                                 text-align: center">
                 {{--<img class="e-logo" style="--}}
-{{--                    width: 30%;max-width:150px;height:auto;" src="{{ $message->embed(public_path("cytonn_inv_logo.png")) }}">--}}
+{{--                    width: 30%;max-width:150px;height:auto;" src="">--}}
             </div>
 
         </div>
@@ -43,15 +43,15 @@
                     font-size: 12px;
                     color: #565656;
                     text-align: center">
-            <p style="text-align: center; margin: 0px; font-family: Helvetica, arial, sans-serif !important; font-size: 12px; color: #959697; letter-spacing: 0px;">Cytonn Investments, Liason House, StateHouse Avenue. 3rd Floor</p>
-            <p style="text-align: center; margin: 0px; font-family: Helvetica, arial, sans-serif !important; font-size: 12px; color: #959697; letter-spacing: 0px;"> The Chancery, Valley Road</p>
-            <p style="text-align: center; margin: 0px; font-family: Helvetica, arial, sans-serif !important; font-size: 12px; color: #959697; letter-spacing: 0px;">Nairobi, KE P.O. Box 20695 - 00200 Kenya</p>
+            <p style="text-align: center; margin: 0px; font-family: Helvetica, arial, sans-serif !important; font-size: 12px; color: #959697; letter-spacing: 0px;">Modern Library INC, The Lb Plaza, Moi Avenue, Nyahururu. 3rd Floor</p>
+            <p style="text-align: center; margin: 0px; font-family: Helvetica, arial, sans-serif !important; font-size: 12px; color: #959697; letter-spacing: 0px;"> The Lib Plaza, Nakuru</p>
+            <p style="text-align: center; margin: 0px; font-family: Helvetica, arial, sans-serif !important; font-size: 12px; color: #959697; letter-spacing: 0px;">Nairobi, KE P.O. Box 899899 - 00200 Kenya</p>
 
         </div>
     </div>
     <div class="email-footer" style="
                                         color: #000000;">
-        @include('emails.email_footer')
+        @include('emails.layout.email_footer')
     </div>
 </div>
 

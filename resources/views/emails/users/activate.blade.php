@@ -1,3 +1,4 @@
-@extends('layouts.default')
+@extends('emails.layout.default')
 @section('content')
-@endsection 
+
+@endsection
