@@ -49,7 +49,6 @@
                         }
                     }, (response) => {
                         this.loading = false;
-                        toastr.error('Oops! Something went wrong', 'Server Error', {timeOut: 5000});
                         this.formErrors = response.data;
                     });
             },
@@ -67,7 +66,7 @@
                     <label>Email</label>
                     <input type="email" placeholder="email..." v-model="item.email" multiple required>
 
-                    <label>Email</label>
+                    <label>New Password</label>
                     <input type="password" placeholder="password..." v-model="item.password" multiple required>
                     <button class="button" type="submit">
                         Reset

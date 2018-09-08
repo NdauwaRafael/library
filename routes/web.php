@@ -10,6 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['namespace' => 'Admin'], function () {
+    Route::put('api/reset/password/{id}', [
+        'uses' => 'UserController@resetPassword'
+    ]);
+    Route::get('api/user/{id}', [
+        'uses' => 'UserController@getUserById'
+    ]);
+});
 
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/login', 'SessionsController@create')->name('login');
@@ -46,13 +54,6 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'UserController@getUsers'
         ]);
 
-        Route::get('api/user/{id}', [
-            'uses' => 'UserController@getUserById'
-        ]);
-
-        Route::put('api/reset/password/{id}', [
-            'uses' => 'UserController@reset'
-        ]);
         //roles
         Route::get('/roles', [
             'as' => 'roles',
