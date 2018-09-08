@@ -1,9 +1,82 @@
 <script>
+    import VuetableMixin from '../vuetable/vuetable_mixin'
+
     export default {
-        data: () => ({}),
-        methods: {},
+        name: "books",
+        mixins: [VuetableMixin],
+        data: () => ({
+            fields: [
+                {
+                    name: 'title',
+                    title: 'Title'
+                },
+                {
+                    name: 'author',
+                    title: 'Author'
+                },
+                {
+                    name: 'subject',
+                    title: 'Subject'
+                },
+                {
+                    name: 'created_at',
+                    title: 'Added On',
+                    titleClass: 'text-center',
+                    dataClass: 'text-center',
+                    callback: 'formatDate|DD-MM-YYYY'
+                },
+                {
+                    name: 'status',
+                    title: 'Status'
+                },
+
+
+            ]
+
+        })
     }
 </script>
+
 <template>
-    <div class=""></div>
+    <div class="lib_page">
+        <div class="lib_table">
+            <div class="lib_table__head">
+                <div class="action">
+                    <a  href="/books/create">Add Book</a>
+                </div>
+                <div class="filters">
+                    <filter-bar></filter-bar>
+                </div>
+            </div>
+            <div class="lib_table__body">
+                <vuetable ref="vuetable"
+                          api-url="/api/books"
+                          :fields="fields"
+                          pagination-path=""
+                          :css="css.table"
+                          :multi-sort="true"
+                          :append-params="moreParams"
+                          @vuetable:cell-clicked="onCellClicked"
+                          @vuetable:pagination-data="onPaginationData"
+                ></vuetable>
+            </div>
+
+            <div class="lib_table__foot">
+                <div class="vuetable-pagination">
+                    <vuetable-pagination-info ref="paginationInfo"
+                                              info-class="pagination-info"
+                    ></vuetable-pagination-info>
+                    <vuetable-pagination ref="pagination"
+                                         :css="css.pagination"
+                                         @vuetable-pagination:change-page="onChangePage"
+                    ></vuetable-pagination>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
+
+
+<style scoped>
+
+</style>
