@@ -111502,7 +111502,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -111514,6 +111514,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuetable_vuetable_mixin__ = __webpack_require__(396);
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -112529,49 +112530,56 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("a", { attrs: { href: "/roles/create" } }, [_vm._v("Create Role")]),
-      _vm._v(" "),
-      _c("filter-bar"),
-      _vm._v(" "),
-      _c("vuetable", {
-        ref: "vuetable",
-        attrs: {
-          "api-url": "/api/roles",
-          fields: _vm.fields,
-          "pagination-path": "",
-          css: _vm.css.table,
-          "multi-sort": true,
-          "append-params": _vm.moreParams
-        },
-        on: {
-          "vuetable:cell-clicked": _vm.onCellClicked,
-          "vuetable:pagination-data": _vm.onPaginationData
-        }
-      }),
+  return _c("div", { staticClass: "lib_page" }, [
+    _c("a", { attrs: { href: "/roles/create" } }, [_vm._v("Create Role")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "lib_table" }, [
+      _c("div", { staticClass: "lib_table__head" }, [_c("filter-bar")], 1),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "vuetable-pagination" },
+        { staticClass: "lib_table__body" },
         [
-          _c("vuetable-pagination-info", {
-            ref: "paginationInfo",
-            attrs: { "info-class": "pagination-info" }
-          }),
-          _vm._v(" "),
-          _c("vuetable-pagination", {
-            ref: "pagination",
-            attrs: { css: _vm.css.pagination },
-            on: { "vuetable-pagination:change-page": _vm.onChangePage }
+          _c("vuetable", {
+            ref: "vuetable",
+            attrs: {
+              "api-url": "/api/roles",
+              fields: _vm.fields,
+              "pagination-path": "",
+              css: _vm.css.table,
+              "multi-sort": true,
+              "append-params": _vm.moreParams
+            },
+            on: {
+              "vuetable:cell-clicked": _vm.onCellClicked,
+              "vuetable:pagination-data": _vm.onPaginationData
+            }
           })
         ],
         1
-      )
-    ],
-    1
-  )
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "lib_table__foot" }, [
+        _c(
+          "div",
+          { staticClass: "vuetable-pagination" },
+          [
+            _c("vuetable-pagination-info", {
+              ref: "paginationInfo",
+              attrs: { "info-class": "pagination-info" }
+            }),
+            _vm._v(" "),
+            _c("vuetable-pagination", {
+              ref: "pagination",
+              attrs: { css: _vm.css.pagination },
+              on: { "vuetable-pagination:change-page": _vm.onChangePage }
+            })
+          ],
+          1
+        )
+      ])
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

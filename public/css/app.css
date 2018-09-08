@@ -8550,6 +8550,16 @@ html.is-reveal-open body {
   font-weight: 400;
 }
 
+.lib_table__body table tbody tr td .custom-actions a {
+  color: #a2d45e;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.lib_table__body table tbody tr td .custom-actions a:hover {
+  color: #006a5b;
+}
+
 .lib_table__foot {
   background-color: #ffffff;
   display: -webkit-box;

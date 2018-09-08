@@ -62,6 +62,16 @@
             color: #4a494a;
             font-size: 14px;
             font-weight: 400;
+
+            .custom-actions {
+              a {
+                color: #a2d45e;
+                transition: .2s;
+                &:hover {
+                  color: #006a5b;
+                }
+              }
+            }
           }
         }
       }
