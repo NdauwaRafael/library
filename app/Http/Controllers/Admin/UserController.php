@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
@@ -73,7 +74,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+       return view('admin.users.view');
     }
 
     public function getUsers()

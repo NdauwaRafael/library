@@ -107345,6 +107345,7 @@ module.exports = function (css) {
 __webpack_require__(342);
 Vue.component('create-user', __webpack_require__(382));
 Vue.component('users', __webpack_require__(387));
+Vue.component('view-user', __webpack_require__(407));
 Vue.component('roles', __webpack_require__(392));
 
 /***/ }),
@@ -112699,6 +112700,147 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 406 */,
+/* 407 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(408)
+/* template */
+var __vue_template__ = __webpack_require__(409)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/admin/users/view.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-76eb7157", Component.options)
+  } else {
+    hotAPI.reload("data-v-76eb7157", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 408 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {};
+    },
+    methods: {}
+});
+
+/***/ }),
+/* 409 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "lib_page" }, [
+    _c("div", { staticClass: "lib_table" }, [
+      _c("div", { staticClass: "lib_table__head" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "lib_table__body" }, [
+        _c("table", [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("tbody", [
+            _c("tr", [
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c(
+                "td",
+                [
+                  _c("el-button", {
+                    attrs: { type: "primary", icon: "el-icon-edit", circle: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("el-button", {
+                    attrs: {
+                      type: "danger",
+                      icon: "el-icon-delete",
+                      circle: ""
+                    }
+                  })
+                ],
+                1
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Email")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Phone")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Role")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Action")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-76eb7157", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
