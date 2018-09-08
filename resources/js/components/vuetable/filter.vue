@@ -5,13 +5,16 @@
                 <label>Search for:</label>
                 <input type="text" v-model="filterText" class="form-control" @keyup.enter="doFilter" placeholder="Search anything here...">
                 <el-button class="filter_button" type="primary" plain @click.prevent="doFilter">Go</el-button>
-                <el-button class="filter_button" type="info" plain @click.prevent="resetFilter" >Reset</el-button>
+                <el-button class="filter_button" type="info" plain @click.prevent="resetFilter">Reset</el-button>
             </div>
         </form>
     </div>
 </template>
 
 <script>
+    import VueEvents from 'vue-events'
+    import Vue from 'vue';
+    Vue.use(VueEvents);
     export default {
         data () {
             return {
@@ -23,7 +26,7 @@
                 this.$events.fire('filter-set', this.filterText)
             },
             resetFilter () {
-                this.filterText = '';
+                this.filterText = ''
                 this.$events.fire('filter-reset')
             }
         }
