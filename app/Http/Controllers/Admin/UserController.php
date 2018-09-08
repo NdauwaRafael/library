@@ -33,6 +33,11 @@ class UserController extends Controller
         ]);
     }
 
+    public function getUserById($id)
+    {
+        return response()->json($this->userRepository->getUserById($id));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

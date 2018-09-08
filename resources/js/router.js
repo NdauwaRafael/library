@@ -8,6 +8,7 @@ Vue.use(Router);
 import AddBook from './components/books/add.vue';
 import ViewBook from './components/books/view.vue';
 import ListBooks from './components/books/list.vue';
+import ResetPassword from './components/admin/users/resetPassword.vue';
 
 
 export default new Router({
@@ -26,7 +27,12 @@ export default new Router({
             path: '/listbooks',
             name: 'list.book',
             component: ListBooks
-        }
+        },
+        {
+            path: '/reset/password/:id',
+            name: 'reset.password',
+            component: ResetPassword
+        },
     ],
     mode: 'history',
     hashbang: false,
