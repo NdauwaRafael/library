@@ -35,10 +35,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/users', [
             'uses' => 'UserController@index'
         ]);
-        Route::get('/users/{$id}', [
-            'as' => 'users.view',
-            'uses' => 'UserController@show'
-        ]);
+
+        Route::get('/users/show/{$id}','UserController@show');
 
         Route::get('/users/create/{id?}', [
             'as' => 'users.create',

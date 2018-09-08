@@ -112688,7 +112688,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -112727,7 +112727,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }]
 
         };
-    }
+    },
+    methods: {}
 });
 
 /***/ }),
@@ -112763,27 +112764,7 @@ var render = function() {
             on: {
               "vuetable:cell-clicked": _vm.onCellClicked,
               "vuetable:pagination-data": _vm.onPaginationData
-            },
-            scopedSlots: _vm._u([
-              {
-                key: "actions",
-                fn: function(props) {
-                  return [
-                    _c("div", { staticClass: "custom-actions" }, [
-                      _c(
-                        "a",
-                        { attrs: { href: "/users/" + props.rowData.id } },
-                        [
-                          _c("i", { staticClass: "material-icons" }, [
-                            _vm._v("visibility")
-                          ])
-                        ]
-                      )
-                    ])
-                  ]
-                }
-              }
-            ])
+            }
           })
         ],
         1
