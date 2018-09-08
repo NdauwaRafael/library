@@ -111530,7 +111530,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -111541,11 +111541,31 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuetable_vuetable_mixin__ = __webpack_require__(396);
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: "users",
+    mixins: [__WEBPACK_IMPORTED_MODULE_0__vuetable_vuetable_mixin__["a" /* default */]],
+    data: function data() {
+        return {
+            fields: [{
+                name: 'name',
+                title: 'Name'
+            }, {
+                name: 'email',
+                title: 'Email'
+            }, {
+                name: 'phone',
+                title: 'Phone'
+            }, {
+                name: 'role',
+                title: 'Role'
+            }]
+
+        };
+    }
+});
 
 /***/ }),
 /* 396 */
@@ -111555,7 +111575,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c(
+    "div",
+    [
+      _c("a", { attrs: { href: "/roles/create" } }, [_vm._v("Create Role")]),
+      _vm._v(" "),
+      _c("filter-bar"),
+      _vm._v(" "),
+      _c("vuetable", {
+        ref: "vuetable",
+        attrs: {
+          "api-url": "/api/roles",
+          fields: _vm.fields,
+          "pagination-path": "",
+          css: _vm.css.table,
+          "multi-sort": true,
+          "append-params": _vm.moreParams
+        },
+        on: {
+          "vuetable:cell-clicked": _vm.onCellClicked,
+          "vuetable:pagination-data": _vm.onPaginationData
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "vuetable-pagination" },
+        [
+          _c("vuetable-pagination-info", {
+            ref: "paginationInfo",
+            attrs: { "info-class": "pagination-info" }
+          }),
+          _vm._v(" "),
+          _c("vuetable-pagination", {
+            ref: "pagination",
+            attrs: { css: _vm.css.pagination },
+            on: { "vuetable-pagination:change-page": _vm.onChangePage }
+          })
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -111676,7 +111738,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 name: 'name',
                 title: 'Name'
             }, {
-                name: 'create_at',
+                name: 'created_at',
                 title: 'Since',
                 titleClass: 'text-center',
                 dataClass: 'text-center',

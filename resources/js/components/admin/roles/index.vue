@@ -10,7 +10,7 @@
                     title: 'Name'
                 },
                 {
-                    name: 'create_at',
+                    name: 'created_at',
                     title: 'Since',
                     titleClass: 'text-center',
                     dataClass: 'text-center',
