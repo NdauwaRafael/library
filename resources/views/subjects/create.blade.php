@@ -6,7 +6,7 @@
         <add-subject inline-template>
             <div>
                 <label>Subject Name
-                    <el-input placeholder="username"  name="username" value="{{old('username')}}" required></el-input>
+                    <el-input placeholder="Subject Name"  name="name" value="{{old('name')}}" required></el-input>
                 </label>
             </div>
         </add-subject>
