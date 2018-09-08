@@ -8,6 +8,7 @@
 
 namespace App\General\Users;
 
+
 use Laracasts\Presenter\Presenter;
 
 class userPresenter extends Presenter

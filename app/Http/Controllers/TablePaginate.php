@@ -10,7 +10,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Collection;
 
 trait TablePaginate
 {

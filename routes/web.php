@@ -37,6 +37,34 @@ Route::group(['middleware' => 'auth'], function () {
             'as' => 'create.user',
             'uses' => 'UserController@store'
         ]);
+        Route::get('api/users', [
+            'uses' => 'UserController@getUsers'
+        ]);
+
+        //roles
+        Route::get('/roles', [
+            'as' => 'roles',
+            'uses' => 'RoleController@index'
+        ]);
+
+        Route::get('/roles/create/{id?}', [
+            'as' => 'roles.create',
+            'uses' => 'RoleController@create'
+        ]);
+
+        Route::post('/roles/store/{id?}', [
+            'as' => 'roles.store',
+            'uses' => 'RoleController@store'
+        ]);
+
+        Route::get('/roles/show/{id}', [
+            'as' => 'roles.show',
+            'uses' => 'RoleController@show'
+        ]);
+
+        Route::get('api/roles', [
+            'uses' => 'RoleController@getRoles'
+        ]);
     });
 
 });
