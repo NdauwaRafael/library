@@ -111277,7 +111277,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -111376,23 +111376,25 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "vuetable-pagination" },
-        [
-          _c("vuetable-pagination-info", {
-            ref: "paginationInfo",
-            attrs: { "info-class": "pagination-info" }
-          }),
-          _vm._v(" "),
-          _c("vuetable-pagination", {
-            ref: "pagination",
-            attrs: { css: _vm.css.pagination },
-            on: { "vuetable-pagination:change-page": _vm.onChangePage }
-          })
-        ],
-        1
-      )
+      _c("div", { staticClass: "lib_table__foot" }, [
+        _c(
+          "div",
+          { staticClass: "vuetable-pagination" },
+          [
+            _c("vuetable-pagination-info", {
+              ref: "paginationInfo",
+              attrs: { "info-class": "pagination-info" }
+            }),
+            _vm._v(" "),
+            _c("vuetable-pagination", {
+              ref: "pagination",
+              attrs: { css: _vm.css.pagination },
+              on: { "vuetable-pagination:change-page": _vm.onChangePage }
+            })
+          ],
+          1
+        )
+      ])
     ])
   ])
 }

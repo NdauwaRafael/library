@@ -61,16 +61,17 @@
                </template>
            </vuetable>
        </div>
-       <div class="vuetable-pagination">
-           <vuetable-pagination-info ref="paginationInfo"
-                                     info-class="pagination-info"
-           ></vuetable-pagination-info>
-           <vuetable-pagination ref="pagination"
-                                :css="css.pagination"
-                                @vuetable-pagination:change-page="onChangePage"
-           ></vuetable-pagination>
+       <div class="lib_table__foot">
+           <div class="vuetable-pagination">
+               <vuetable-pagination-info ref="paginationInfo"
+                                         info-class="pagination-info"
+               ></vuetable-pagination-info>
+               <vuetable-pagination ref="pagination"
+                                    :css="css.pagination"
+                                    @vuetable-pagination:change-page="onChangePage"
+               ></vuetable-pagination>
+           </div>
        </div>
-
    </div>
     </div>
 </template>
