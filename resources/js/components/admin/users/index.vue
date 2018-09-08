@@ -29,10 +29,10 @@
 
 <template>
     <div>
-        <a href="/roles/create">Create Role</a>
+        <a href="/users/create">Add User</a>
         <filter-bar></filter-bar>
         <vuetable ref="vuetable"
-                  api-url="/api/roles"
+                  api-url="/api/users"
                   :fields="fields"
                   pagination-path=""
                   :css="css.table"

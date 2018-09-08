@@ -34,7 +34,7 @@ class UserRepository
     {
         return $this->tablePaginate(new User(), [], function ($user) {
             return  [
-                'firstname' => $user->present()->fullName,
+                'name' => $user->present()->fullName,
                 'email' => $user->email,
                 'phone' => $user->phone,
                 'role' =>  $user->role->name,

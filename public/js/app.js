@@ -111318,14 +111318,14 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("a", { attrs: { href: "/roles/create" } }, [_vm._v("Create Role")]),
+      _c("a", { attrs: { href: "/users/create" } }, [_vm._v("Add User")]),
       _vm._v(" "),
       _c("filter-bar"),
       _vm._v(" "),
       _c("vuetable", {
         ref: "vuetable",
         attrs: {
-          "api-url": "/api/roles",
+          "api-url": "/api/users",
           fields: _vm.fields,
           "pagination-path": "",
           css: _vm.css.table,
