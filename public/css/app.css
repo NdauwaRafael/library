@@ -8462,6 +8462,132 @@ html.is-reveal-open body {
   float: left;
 }
 
+/**
+ * Created by Raphael Karanja on 08/09/2018.
+ */
+
+.lib_table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  border: 1px solid #ededed;
+  background-color: #ffffff;
+}
+
+.lib_table__head {
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lib_table__head .filter-bar {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.lib_table__head .filter-bar .form-inline .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lib_table__head .filter-bar .form-inline .form-group label {
+  width: 20%;
+  opacity: 0;
+}
+
+.lib_table__head .filter-bar .form-inline .form-group input {
+  width: 50%;
+  margin: 0;
+}
+
+.lib_table__head .filter-bar .form-inline .form-group .filter_button {
+  width: 10%;
+  height: 40px;
+  margin-left: 15px;
+}
+
+.lib_table__body table thead {
+  background-color: #eeeeee;
+}
+
+.lib_table__body table thead th {
+  color: #006a5b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.lib_table__body table tbody tr:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+.lib_table__body table tbody tr td {
+  color: #4a494a;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/**
+ * Created by Raphael Karanja on 07/09/2018.
+ */
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/vendor/material-icons/iconMaterialIcons-Regular.eot?e79bfd88537def476913f3ed52f4f4b3);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(/fonts/vendor/material-icons/iconMaterialIcons-Regular.woff2?570eb83859dc23dd0eec423a49e147fe) format("woff2"), url(/fonts/vendor/material-icons/iconMaterialIcons-Regular.woff?012cf6a10129e2275d79d6adac7f3b02) format("woff"), url(/fonts/vendor/material-icons/iconMaterialIcons-Regular.ttf?a37b0c01c0baf1888ca812cc0508f6e2) format("truetype");
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga';
+}
+
+/* Sass map of icon names and codepoints */
+
 .lib_body {
   padding: 75px 20px 20px 20px;
   background: #eeeeee;

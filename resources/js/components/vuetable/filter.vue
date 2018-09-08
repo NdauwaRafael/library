@@ -3,9 +3,9 @@
         <form class="form-inline">
             <div class="form-group">
                 <label>Search for:</label>
-                <input type="text" v-model="filterText" class="form-control" @keyup.enter="doFilter" placeholder="name, nickname, or email">
-                <button class="btn btn-primary" @click.prevent="doFilter">Go</button>
-                <button class="btn" @click.prevent="resetFilter">Reset</button>
+                <input type="text" v-model="filterText" class="form-control" @keyup.enter="doFilter" placeholder="Search anything here...">
+                <el-button class="filter_button" type="primary" plain @click.prevent="doFilter">Go</el-button>
+                <el-button class="filter_button" type="info" plain @click.prevent="resetFilter" >Reset</el-button>
             </div>
         </form>
     </div>
@@ -23,7 +23,7 @@
                 this.$events.fire('filter-set', this.filterText)
             },
             resetFilter () {
-                this.filterText = ''
+                this.filterText = '';
                 this.$events.fire('filter-reset')
             }
         }

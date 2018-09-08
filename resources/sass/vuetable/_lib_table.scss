@@ -1,0 +1,71 @@
+/**
+ * Created by Raphael Karanja on 08/09/2018.
+ */
+.lib_table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  border: 1px solid #ededed;
+  background-color: #ffffff;
+  &__head {
+    background-color: #ffffff;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+
+    .filter-bar  {
+      flex: 1;
+      .form-inline {
+        .form-group {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          label {
+            width: 20%;
+            opacity: 0;
+          }
+          input {
+            width: 50%;
+            margin: 0;
+          }
+          .filter_button {
+            width: 10%;
+            height: 40px;
+            margin-left: 15px;
+          }
+
+        }
+      }
+    }
+  }
+
+  &__body {
+    table {
+      thead {
+        background-color: #eeeeee;
+        th {
+          color: #006a5b;
+          font-size: 14px;
+          font-weight: 600;
+
+        }
+      }
+      tbody {
+        tr {
+          &:nth-child(even){
+            background-color: #eeeeee;
+          }
+          td {
+            color: #4a494a;
+            font-size: 14px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+}

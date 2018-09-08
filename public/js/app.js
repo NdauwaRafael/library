@@ -110976,68 +110976,75 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "filter-bar" }, [
     _c("form", { staticClass: "form-inline" }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", [_vm._v("Search for:")]),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.filterText,
-              expression: "filterText"
-            }
-          ],
-          staticClass: "form-control",
-          attrs: { type: "text", placeholder: "name, nickname, or email" },
-          domProps: { value: _vm.filterText },
-          on: {
-            keyup: function($event) {
-              if (
-                !("button" in $event) &&
-                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-              ) {
-                return null
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
+          _c("label", [_vm._v("Search for:")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.filterText,
+                expression: "filterText"
               }
-              return _vm.doFilter($event)
-            },
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.filterText = $event.target.value
-            }
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary",
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", placeholder: "Search anything here..." },
+            domProps: { value: _vm.filterText },
             on: {
-              click: function($event) {
-                $event.preventDefault()
+              keyup: function($event) {
+                if (
+                  !("button" in $event) &&
+                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                ) {
+                  return null
+                }
                 return _vm.doFilter($event)
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.filterText = $event.target.value
               }
             }
-          },
-          [_vm._v("Go")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn",
-            on: {
-              click: function($event) {
-                $event.preventDefault()
-                return _vm.resetFilter($event)
+          }),
+          _vm._v(" "),
+          _c(
+            "el-button",
+            {
+              staticClass: "filter_button",
+              attrs: { type: "primary", plain: "" },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.doFilter($event)
+                }
               }
-            }
-          },
-          [_vm._v("Reset")]
-        )
-      ])
+            },
+            [_vm._v("Go")]
+          ),
+          _vm._v(" "),
+          _c(
+            "el-button",
+            {
+              staticClass: "filter_button",
+              attrs: { type: "info", plain: "" },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.resetFilter($event)
+                }
+              }
+            },
+            [_vm._v("Reset")]
+          )
+        ],
+        1
+      )
     ])
   ])
 }
@@ -111270,7 +111277,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -111301,6 +111308,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }, {
                 name: 'role',
                 title: 'Role'
+            }, {
+                name: '__slot:actions',
+                title: 'View User',
+                titleClass: 'text-center',
+                dataClass: 'text-center'
             }]
 
         };
@@ -111315,28 +111327,54 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("a", { attrs: { href: "/users/create" } }, [_vm._v("Add User")]),
+  return _c("div", { staticClass: "lib_page" }, [
+    _c("a", { attrs: { href: "/users/create" } }, [_vm._v("Add User")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "lib_table" }, [
+      _c("div", { staticClass: "lib_table__head" }, [_c("filter-bar")], 1),
       _vm._v(" "),
-      _c("filter-bar"),
-      _vm._v(" "),
-      _c("vuetable", {
-        ref: "vuetable",
-        attrs: {
-          "api-url": "/api/users",
-          fields: _vm.fields,
-          "pagination-path": "",
-          css: _vm.css.table,
-          "multi-sort": true,
-          "append-params": _vm.moreParams
-        },
-        on: {
-          "vuetable:cell-clicked": _vm.onCellClicked,
-          "vuetable:pagination-data": _vm.onPaginationData
-        }
-      }),
+      _c(
+        "div",
+        { staticClass: "lib_table__body" },
+        [
+          _c("vuetable", {
+            ref: "vuetable",
+            attrs: {
+              "api-url": "/api/users",
+              fields: _vm.fields,
+              "pagination-path": "",
+              css: _vm.css.table,
+              "multi-sort": true,
+              "append-params": _vm.moreParams
+            },
+            on: {
+              "vuetable:cell-clicked": _vm.onCellClicked,
+              "vuetable:pagination-data": _vm.onPaginationData
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "actions",
+                fn: function(props) {
+                  return [
+                    _c("div", { staticClass: "custom-actions" }, [
+                      _c(
+                        "a",
+                        { attrs: { href: "/users/" + props.rowData.id } },
+                        [
+                          _c("i", { staticClass: "material-icons" }, [
+                            _vm._v("visibility")
+                          ])
+                        ]
+                      )
+                    ])
+                  ]
+                }
+              }
+            ])
+          })
+        ],
+        1
+      ),
       _vm._v(" "),
       _c(
         "div",
@@ -111355,9 +111393,8 @@ var render = function() {
         ],
         1
       )
-    ],
-    1
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
