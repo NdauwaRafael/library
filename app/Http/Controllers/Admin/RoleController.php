@@ -16,9 +16,9 @@ class RoleController extends Controller
         $this->roleRepository = $roleRepository;
     }
 
-    public function index($id =null)
+    public function index()
     {
-        $roles = Role::all();
+        $roles = $this->getRoles();
 
         return view('admin.roles.index', [
             'roles' => $roles
