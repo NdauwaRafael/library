@@ -10,6 +10,7 @@
 
 window.$ = window.jQuery = require('jquery');
 require('foundation-sites');
+// require('bootstrap');
 require('../../node_modules/foundation-sites/js/foundation.accordionMenu');
 $(document).foundation();
 
