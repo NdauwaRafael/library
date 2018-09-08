@@ -16,17 +16,23 @@ use Illuminate\Support\Facades\Hash;
 class UserRepository
 {
     use TablePaginate;
+
+    public function getUserById($id)
+    {
+        return User::findOrFail($id);
+    }
+
     public function save($input)
     {
         return User::create([
-           'password' => Hash::make(str_random(8)),
-           'created_by' => $input['created_by'],
-           'username' => $input['username'],
-           'firstname' => $input['firstname'],
-           'lastname' => $input['lastname'],
-           'email' => $input['email'],
-           'department_id' => $input['department_id'],
-           'role_id' => $input['role_id'],
+            'password' => Hash::make(str_random(8)),
+            'created_by' => $input['created_by'],
+            'username' => $input['username'],
+            'firstname' => $input['firstname'],
+            'lastname' => $input['lastname'],
+            'email' => $input['email'],
+            'department_id' => $input['department_id'],
+            'role_id' => $input['role_id'],
         ]);
     }
 
@@ -37,7 +43,7 @@ class UserRepository
                 'name' => $user->present()->fullName,
                 'email' => $user->email,
                 'phone' => $user->phone,
-                'role' =>  $user->role->name,
+                'role' => $user->role->name,
                 'id' => $user->id
             ];
         });

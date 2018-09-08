@@ -41,10 +41,18 @@ Route::group(['middleware' => 'auth'], function () {
             'as' => 'create.user',
             'uses' => 'UserController@store'
         ]);
+
         Route::get('api/users', [
             'uses' => 'UserController@getUsers'
         ]);
 
+        Route::get('api/user/{id}', [
+            'uses' => 'UserController@getUserById'
+        ]);
+
+        Route::put('api/reset/password/{id}', [
+            'uses' => 'UserController@reset'
+        ]);
         //roles
         Route::get('/roles', [
             'as' => 'roles',
