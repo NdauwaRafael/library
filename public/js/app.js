@@ -111020,15 +111020,7 @@ var render = function() {
             attrs: { type: "text", placeholder: "Search anything here..." },
             domProps: { value: _vm.filterText },
             on: {
-              keyup: function($event) {
-                if (
-                  !("button" in $event) &&
-                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                ) {
-                  return null
-                }
-                return _vm.doFilter($event)
-              },
+              keyup: _vm.doFilter,
               input: function($event) {
                 if ($event.target.composing) {
                   return

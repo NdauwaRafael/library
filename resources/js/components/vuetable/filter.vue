@@ -3,7 +3,7 @@
         <form class="form-inline">
             <div class="form-group">
                 <label>Search for:</label>
-                <input type="text" v-model="filterText" class="form-control" @keyup.enter="doFilter" placeholder="Search anything here...">
+                <input type="text" v-model="filterText" class="form-control" @keyup="doFilter" placeholder="Search anything here...">
                 <el-button class="filter_button" type="primary" plain @click.prevent="doFilter">Go</el-button>
                 <el-button class="filter_button" type="info" plain @click.prevent="resetFilter">Reset</el-button>
             </div>
