@@ -33,6 +33,33 @@
         transition: border-color .2s cubic-bezier(.645,.045,.355,1);
         width: 100%;
       }
+
+      input[type="submit"] {
+        display: inline-block;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        background: #66b1ff;
+        border-color: #66b1ff;
+        color: #fff;
+        -webkit-appearance: none;
+        text-align: center;
+        box-sizing: border-box;
+        outline: none;
+        margin: 0;
+        transition: .1s;
+        font-weight: 500;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        padding: 12px 20px;
+        font-size: 14px;
+        border-radius: 4px;
+
+        &:hover {
+          opacity: .7;
+        }
+    }
     }
 
   }

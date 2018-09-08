@@ -8440,6 +8440,35 @@ html.is-reveal-open body {
   width: 100%;
 }
 
+.users__add form input[type="submit"] {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #66b1ff;
+  border-color: #66b1ff;
+  color: #fff;
+  -webkit-appearance: none;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  -webkit-transition: .1s;
+  transition: .1s;
+  font-weight: 500;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.users__add form input[type="submit"]:hover {
+  opacity: .7;
+}
+
 /**
  * Created by Raphael Karanja on 08/09/2018.
  */
