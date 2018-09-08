@@ -12,7 +12,10 @@
 @include('layouts.partials.sidebar')
 
 <section class="lib_body" id="app">
-    @yield('content')
+
+    <div >
+        @yield('content')
+    </div>
 
     @include('layouts.partials.footer')
 </section>
