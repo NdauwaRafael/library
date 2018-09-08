@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
     <div>
-        <roles :lists="{{ $roles }}"  inline-template></roles>
+        <roles></roles>
     </div>
 @endsection
