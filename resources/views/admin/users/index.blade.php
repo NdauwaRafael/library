@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
     <div>
-        <users :lists="{{ $users }}"></users>
+        <users></users>
     </div>
 @endsection
