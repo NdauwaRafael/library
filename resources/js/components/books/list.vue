@@ -67,7 +67,7 @@
                 >
                     <template slot="actions"  slot-scope="props">
                         <div class="custom-actions">
-                            <a :href="'/users/'+props.rowData.id" >
+                            <a :href="'/books/'+props.rowData.id" >
                                 <i class="material-icons">visibility</i>
                             </a>
                         </div>

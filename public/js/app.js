@@ -113241,7 +113241,7 @@ var render = function() {
                     _c("div", { staticClass: "custom-actions" }, [
                       _c(
                         "a",
-                        { attrs: { href: "/users/" + props.rowData.id } },
+                        { attrs: { href: "/books/" + props.rowData.id } },
                         [
                           _c("i", { staticClass: "material-icons" }, [
                             _vm._v("visibility")
