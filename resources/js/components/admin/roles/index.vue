@@ -26,10 +26,14 @@
 
 <template>
     <div class="lib_page">
-        <a href="/roles/create">Create Role</a>
         <div class="lib_table">
             <div class="lib_table__head">
-                <filter-bar></filter-bar>
+                <div class="action">
+                    <a  href="/roles/create">Add Role</a>
+                </div>
+                <div class="filters">
+                    <filter-bar></filter-bar>
+                </div>
             </div>
             <div class="lib_table__body">
                 <vuetable ref="vuetable"

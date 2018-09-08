@@ -111285,7 +111285,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -111336,10 +111336,12 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "lib_page" }, [
-    _c("a", { attrs: { href: "/users/create" } }, [_vm._v("Add User")]),
-    _vm._v(" "),
     _c("div", { staticClass: "lib_table" }, [
-      _c("div", { staticClass: "lib_table__head" }, [_c("filter-bar")], 1),
+      _c("div", { staticClass: "lib_table__head" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "filters" }, [_c("filter-bar")], 1)
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -111406,7 +111408,16 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "action" }, [
+      _c("a", { attrs: { href: "/users/create" } }, [_vm._v("Add User")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -111502,7 +111513,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -112531,10 +112542,12 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "lib_page" }, [
-    _c("a", { attrs: { href: "/roles/create" } }, [_vm._v("Create Role")]),
-    _vm._v(" "),
     _c("div", { staticClass: "lib_table" }, [
-      _c("div", { staticClass: "lib_table__head" }, [_c("filter-bar")], 1),
+      _c("div", { staticClass: "lib_table__head" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "filters" }, [_c("filter-bar")], 1)
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -112581,7 +112594,16 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "action" }, [
+      _c("a", { attrs: { href: "/roles/create" } }, [_vm._v("Add Role")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

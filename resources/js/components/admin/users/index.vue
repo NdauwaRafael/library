@@ -35,10 +35,14 @@
 
 <template>
     <div class="lib_page">
-        <a href="/users/create">Add User</a>
    <div class="lib_table">
        <div class="lib_table__head">
-           <filter-bar></filter-bar>
+           <div class="action">
+               <a  href="/users/create">Add User</a>
+           </div>
+           <div class="filters">
+               <filter-bar></filter-bar>
+           </div>
        </div>
 
        <div class="lib_table__body">

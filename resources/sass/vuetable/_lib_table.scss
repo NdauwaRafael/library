@@ -15,9 +15,43 @@
     width: 100%;
     justify-content: flex-end;
     align-items: center;
+    padding: 0 10px;
+    .action {
+      width: 20%;
+      a {
+        display: inline-block;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        background: #409eff;;
+        border: 1px solid #dcdfe6;
+        color: #ffffff;
+        -webkit-appearance: none;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: 0;
+        margin: 0;
+        -webkit-transition: .1s;
+        transition: .1s;
+        font-weight: 500;
+        padding: 12px 20px;
+        font-size: 14px;
+        border-radius: 4px;
+
+        &:hover {
+          opacity: .7;
+        }
+      }
+    }
+    .filters{
+      width: 80%;
+    }
+
 
     .filter-bar  {
       flex: 1;
+
       .form-inline {
         .form-group {
           display: flex;
