@@ -1,6 +1,7 @@
 <nav class="topbar">
     <div class="topbar__title">
-        Modern Library
+        {{--Modern Library--}}
+        <img src="/img/logo.png" alt="Modern Library">
     </div>
 
     <div class="topbar__content">

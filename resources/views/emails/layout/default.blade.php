@@ -19,8 +19,8 @@
                      padding:  10px 0;" >
             <div style="display: block;
                                 text-align: center">
-                {{--<img class="e-logo" style="--}}
-{{--                    width: 30%;max-width:150px;height:auto;" src="">--}}
+                <img class="e-logo" style="
+                    width: 30%;max-width:150px;height:auto;" src="{{asset('/img/email_logo.png')}}">
             </div>
 
         </div>
