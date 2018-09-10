@@ -10,6 +10,10 @@ import ViewBook from './components/books/view.vue';
 import ListBooks from './components/books/list.vue';
 import ResetPassword from './components/admin/users/resetPassword.vue';
 import showUser from './components/admin/users/view.vue';
+import AddDepartment from './components/department/add.vue';
+import listDepartments from './components/department/list.vue';
+import AddSubject from './components/subject/add.vue';
+import listSubjects from './components/subject/list.vue';
 
 
 export default new Router({
@@ -38,6 +42,27 @@ export default new Router({
             path: '/user/show/:id',
             name: 'user.show',
             component: showUser
+        },
+        {
+            path: '/createDepartment',
+            name: 'add.department',
+            component: AddDepartment
+        },
+        {
+            path: '/departments',
+            name: 'departments',
+            component: listDepartments
+        },
+
+        {
+            path: '/createSubject',
+            name: 'add.subject',
+            component: AddSubject
+        },
+        {
+            path: '/subjects',
+            name: 'subjects',
+            component: listSubjects
         },
     ],
     mode: 'history',

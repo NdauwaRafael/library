@@ -29,7 +29,7 @@
         <div class="lib_table">
             <div class="lib_table__head">
                 <div class="action">
-                    <a  href="/department/create">Add Department</a>
+                    <a  href="/createDepartment">Add Department</a>
                 </div>
                 <div class="filters">
                     <filter-bar></filter-bar>

@@ -43,7 +43,6 @@
             <li>
                 <a href="#">Subject</a>
                 <ul class="menu vertical nested">
-                    <li><a href="/subjects">Add Subject</a></li>
                     <li><a href="/subjects">Subjects</a></li>
                 </ul>
             </li>
@@ -51,8 +50,7 @@
             <li>
                 <a href="#">Department</a>
                 <ul class="menu vertical nested">
-                    <li><a href="/subjects">Add Department</a></li>
-                    <li><a href="/subjects">Departments</a></li>
+                    <li><a href="/departments">Departments</a></li>
                 </ul>
             </li>
 

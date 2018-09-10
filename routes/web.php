@@ -75,6 +75,22 @@ Route::group(['middleware' => 'auth'], function () {
             'as' => 'roles.permissions',
             'uses' => 'RoleController@editPermissions'
         ]);
+
+        Route::post('api/department', [
+            'uses' => 'DepartmentController@store'
+        ]);
+
+        Route::get('api/departments', [
+            'uses' => 'DepartmentController@getDepartments'
+        ]);
+
+        Route::post('api/subject', [
+            'uses' => 'SubjectController@store'
+        ]);
+
+        Route::get('api/subjects', [
+            'uses' => 'SubjectController@getSubjects'
+        ]);
     });
 
     Route::group(['namespace' => 'Book'], function () {

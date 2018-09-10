@@ -44148,12 +44148,24 @@ var app = new Vue({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_admin_users_resetPassword_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_admin_users_resetPassword_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_admin_users_view_vue__ = __webpack_require__(404);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_admin_users_view_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_admin_users_view_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_department_add_vue__ = __webpack_require__(420);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_department_add_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_department_add_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_department_list_vue__ = __webpack_require__(423);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_department_list_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_department_list_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_subject_add_vue__ = __webpack_require__(412);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_subject_add_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_subject_add_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_subject_list_vue__ = __webpack_require__(415);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_subject_list_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_subject_list_vue__);
 /**
  * Created by Raphael Karanja on 07/09/2018.
  */
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
+
+
+
+
 
 
 
@@ -44182,6 +44194,22 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
         path: '/user/show/:id',
         name: 'user.show',
         component: __WEBPACK_IMPORTED_MODULE_6__components_admin_users_view_vue___default.a
+    }, {
+        path: '/createDepartment',
+        name: 'add.department',
+        component: __WEBPACK_IMPORTED_MODULE_7__components_department_add_vue___default.a
+    }, {
+        path: '/departments',
+        name: 'departments',
+        component: __WEBPACK_IMPORTED_MODULE_8__components_department_list_vue___default.a
+    }, {
+        path: '/createSubject',
+        name: 'add.subject',
+        component: __WEBPACK_IMPORTED_MODULE_9__components_subject_add_vue___default.a
+    }, {
+        path: '/subjects',
+        name: 'subjects',
+        component: __WEBPACK_IMPORTED_MODULE_10__components_subject_list_vue___default.a
     }],
     mode: 'history',
     hashbang: false,
@@ -113283,9 +113311,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
-        return {};
+        return {
+            subject: {}
+        };
     },
-    methods: {}
+    methods: {
+        submitForm: function submitForm() {
+            var _this = this;
+
+            this.$http.post('/api/subject', this.subject).then(function (response) {
+                _this.loading = false;
+                if (response.status == 200) {
+                    var data = response.body;
+                    if (data.success) {
+                        _this.$router.push({ name: 'subjects' });
+                    } else {}
+                }
+            }, function (response) {});
+        }
+    }
 });
 
 /***/ }),
@@ -113296,7 +113340,57 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", {})
+  return _c("div", { staticClass: "library_page " }, [
+    _c(
+      "div",
+      { staticClass: "book__add" },
+      [
+        _c(
+          "el-form",
+          { attrs: { model: _vm.book } },
+          [
+            _c(
+              "el-form-item",
+              { attrs: { label: "Subject Name" } },
+              [
+                _c("el-input", {
+                  model: {
+                    value: _vm.subject.name,
+                    callback: function($$v) {
+                      _vm.$set(_vm.subject, "name", $$v)
+                    },
+                    expression: "subject.name"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "el-form-item",
+              [
+                _c(
+                  "el-button",
+                  {
+                    attrs: { type: "primary" },
+                    on: {
+                      click: function($event) {
+                        _vm.submitForm("subject")
+                      }
+                    }
+                  },
+                  [_vm._v("Save")]
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -113496,7 +113590,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "action" }, [
-      _c("a", { attrs: { href: "/subject/create" } }, [_vm._v("Add Subject")])
+      _c("a", { attrs: { href: "/createSubject" } }, [_vm._v("Add Subject")])
     ])
   }
 ]
@@ -113565,9 +113659,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
-        return {};
+        return {
+            department: {}
+        };
     },
-    methods: {}
+    methods: {
+        submitForm: function submitForm() {
+            var _this = this;
+
+            this.$http.post('/api/department', this.department).then(function (response) {
+                _this.loading = false;
+                if (response.status == 200) {
+                    var data = response.body;
+                    if (data.success) {
+                        _this.$router.push({ name: 'departments' });
+                    } else {}
+                }
+            }, function (response) {});
+        }
+    }
 });
 
 /***/ }),
@@ -113578,7 +113688,57 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", {})
+  return _c("div", { staticClass: "library_page " }, [
+    _c(
+      "div",
+      { staticClass: "book__add" },
+      [
+        _c(
+          "el-form",
+          { attrs: { model: _vm.book } },
+          [
+            _c(
+              "el-form-item",
+              { attrs: { label: "Department Name" } },
+              [
+                _c("el-input", {
+                  model: {
+                    value: _vm.department.name,
+                    callback: function($$v) {
+                      _vm.$set(_vm.department, "name", $$v)
+                    },
+                    expression: "department.name"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "el-form-item",
+              [
+                _c(
+                  "el-button",
+                  {
+                    attrs: { type: "primary" },
+                    on: {
+                      click: function($event) {
+                        _vm.submitForm("department")
+                      }
+                    }
+                  },
+                  [_vm._v("Save")]
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -113778,7 +113938,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "action" }, [
-      _c("a", { attrs: { href: "/department/create" } }, [
+      _c("a", { attrs: { href: "/createDepartment" } }, [
         _vm._v("Add Department")
       ])
     ])
