@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'UserController@index'
         ]);
 
-        Route::get('/users/show/{$id}','UserController@show');
+        Route::get('/users/show/{id}','UserController@show');
 
         Route::get('/users/create/{id?}', [
             'as' => 'users.create',

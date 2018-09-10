@@ -1,4 +1,4 @@
 @extends('layouts.default')
 @section('content')
-    <view-user user="{{Auth::user()->all}}"></view-user>
+    <view-user user="{{$user}}" ></view-user>
 @endsection
