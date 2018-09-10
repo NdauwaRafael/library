@@ -49148,7 +49148,7 @@ var render = function() {
           ])
         ])
       ]),
-      _vm._v(" "),
+      _vm._v("\n    " + _vm._s(_vm.user) + "\n    "),
       _c("div", { staticClass: "profile" }, [
         _vm._m(1),
         _vm._v(" "),

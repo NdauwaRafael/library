@@ -12,7 +12,7 @@
             update(){
 
             }
-        },
+        }
     }
 </script>
 <template>
@@ -47,7 +47,7 @@
 
             </div>
         </div>
-
+        {{user}}
         <div class="profile">
             <div class="profile__avatar">
                 <img src="/img/user.png" alt="User Avatar">
