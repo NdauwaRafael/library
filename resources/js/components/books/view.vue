@@ -13,8 +13,8 @@
         methods: {
             reserveABook(){
                     this.details.user_id =  this.user.id;
-                    this.details.book_id =  this.book.id;
-                    this.$http.post('/api/book/reserve', details)
+                    this.details.book_id =  this.$route.params.id;
+                    this.$http.post('/api/book/reserve', this.details)
                         .then(({data})=>{
                                 this.$notify({
                                     title: 'Success',

@@ -47290,8 +47290,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             this.details.user_id = this.user.id;
-            this.details.book_id = this.book.id;
-            this.$http.post('/api/book/reserve', details).then(function (_ref) {
+            this.details.book_id = this.$route.params.id;
+            this.$http.post('/api/book/reserve', this.details).then(function (_ref) {
                 var data = _ref.data;
 
                 _this.$notify({

@@ -37,4 +37,17 @@ trait BookRules
 
         return $this->verdict($request, $rules);
     }
+
+    public function reserveBook($request)
+    {
+        $rules = [
+            'book_id' => 'required',
+            'user_id' => 'required',
+            'issue_date' => 'required',
+            'return_date' => 'required',
+        ];
+
+        return $this->verdict($request, $rules);
+    }
+
 }

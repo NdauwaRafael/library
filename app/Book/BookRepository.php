@@ -9,7 +9,9 @@
 namespace App\Book;
 
 
+use App\Book\Issues\Issue;
 use App\Http\Controllers\TablePaginate;
+use Illuminate\Support\Facades\Auth;
 
 class BookRepository
 {
@@ -25,6 +27,16 @@ class BookRepository
         return Book::create($input);
     }
 
+    public function saveReserve($input)
+    {
+      return Issue::create([
+         'user_id' => Auth::user()->id,
+         'book_id' => $input['book_id'],
+         'issue_date' => $input['issue_date'],
+         'return_date' => $input['return_date'],
+         'status' => 'approved'
+      ]);
+    }
     public function getBooks()
     {
         return $this->tablePaginate(new Book(), [], function ($book) {
