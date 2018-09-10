@@ -21,7 +21,7 @@
     width: 60%;
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+
 
     .head {
       display: flex;
@@ -37,6 +37,7 @@
     .description {
       display: flex;
       flex-direction: column;
+      margin-top: 20px;
 
       &__item {
         display: flex;

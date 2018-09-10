@@ -49109,13 +49109,17 @@ var render = function() {
             _vm._v(" "),
             _c("tbody", [
               _c("tr", [
-                _c("td"),
+                _c("td", [
+                  _vm._v(
+                    _vm._s(_vm.user.firstname) + " " + _vm._s(_vm.user.lastname)
+                  )
+                ]),
                 _vm._v(" "),
-                _c("td"),
+                _c("td", [_vm._v(_vm._s(_vm.user.email))]),
                 _vm._v(" "),
-                _c("td"),
+                _c("td", [_vm._v(_vm._s(_vm.user.role))]),
                 _vm._v(" "),
-                _c("td"),
+                _c("td", [_vm._v(_vm._s(_vm.user.department))]),
                 _vm._v(" "),
                 _c(
                   "td",
@@ -49148,32 +49152,34 @@ var render = function() {
           ])
         ])
       ]),
-      _vm._v("\n    " + _vm._s(_vm.user) + "\n    "),
+      _vm._v(" "),
       _c("div", { staticClass: "profile" }, [
         _vm._m(1),
         _vm._v(" "),
         _c("div", { staticClass: "profile__details" }, [
-          _c(
-            "div",
-            { staticClass: "head" },
-            [
-              _c("h3", [
-                _vm._v(
-                  _vm._s(_vm.user.firstname) +
-                    " " +
-                    _vm._s(_vm.user.lastname) +
-                    " "
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "el-button",
-                { attrs: { type: "primary", icon: "el-icon-edit" } },
-                [_vm._v("Edit")]
+          _c("div", { staticClass: "head" }, [
+            _c("h3", [
+              _vm._v(
+                _vm._s(_vm.user.firstname) +
+                  " " +
+                  _vm._s(_vm.user.lastname) +
+                  " "
               )
-            ],
-            1
-          ),
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              { attrs: { href: "/users/edit/" + _vm.user.id } },
+              [
+                _c(
+                  "el-button",
+                  { attrs: { type: "primary", icon: "el-icon-edit" } },
+                  [_vm._v("Edit")]
+                )
+              ],
+              1
+            )
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "description" }, [
             _c("div", { staticClass: "description__item" }, [
@@ -49188,9 +49194,17 @@ var render = function() {
               _c("span", [_vm._v(_vm._s(_vm.user.email))])
             ]),
             _vm._v(" "),
-            _vm._m(2),
+            _c("div", { staticClass: "description__item" }, [
+              _c("span", [_vm._v("Department:")]),
+              _vm._v(" "),
+              _c("span", [_vm._v(_vm._s(_vm.user.department))])
+            ]),
             _vm._v(" "),
-            _vm._m(3)
+            _c("div", { staticClass: "description__item" }, [
+              _c("span", [_vm._v("Role")]),
+              _vm._v(" "),
+              _c("span", [_vm._v(_vm._s(_vm.user.role))])
+            ])
           ])
         ])
       ]),
@@ -49258,9 +49272,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Email")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Phone")]),
-        _vm._v(" "),
         _c("th", [_vm._v("Role")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Department")]),
         _vm._v(" "),
         _c("th", [_vm._v("Action")])
       ])
@@ -49272,22 +49286,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "profile__avatar" }, [
       _c("img", { attrs: { src: "/img/user.png", alt: "User Avatar" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "description__item" }, [
-      _c("span", [_vm._v("Department:")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "description__item" }, [
-      _c("span", [_vm._v("Role")])
     ])
   }
 ]
