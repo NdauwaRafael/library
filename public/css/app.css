@@ -8972,14 +8972,11 @@ html.is-reveal-open body {
 /* Sass map of icon names and codepoints */
 
 [type='text'],
-[type='password'],
 [type='date'],
 [type='datetime'],
 [type='datetime-local'],
 [type='month'],
 [type='week'],
-[type='email'],
-[type='number'],
 [type='search'],
 [type='tel'],
 [type='time'],
@@ -8987,6 +8984,10 @@ html.is-reveal-open body {
 [type='color'],
 textarea {
   margin: 0;
+}
+
+label {
+  margin-bottom: 15px;
 }
 
 .el-form-item .el-date-editor.el-input,
