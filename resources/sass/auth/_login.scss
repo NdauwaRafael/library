@@ -6,6 +6,10 @@
   //justify-content: center;
   //align-items: center;
   padding-top: 150px;
+  -webkit-animation: suspend-on 12s infinite;
+  -moz-animation: suspend-on 12s infinite;
+  animation: suspend-on 12s infinite ;
+  animation-delay: 6s;
 
   &__card {
     max-width: 500px;
@@ -36,5 +40,28 @@
     font-size: 12px;
     margin: 15px 0;
     display: block;
+  }
+}
+
+
+@keyframes suspend-on {
+  0% {
+    background: url('/img/banner2.jpg') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: -20px -100px;
+    height: 90vh;
+
+  }
+  100% {
+    background: url('/img/banner1.jpg') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: -20px;
+    height: 90vh;
+    margin: -20px;
+
   }
 }
