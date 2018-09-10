@@ -44433,11 +44433,13 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
         path: '/reset/password/:id',
         name: 'reset.password',
         component: __WEBPACK_IMPORTED_MODULE_5__components_admin_users_resetPassword_vue___default.a
-    }, {
-        path: '/user/show/:id',
-        name: 'user.show',
-        component: __WEBPACK_IMPORTED_MODULE_6__components_admin_users_view_vue___default.a
-    }, {
+    },
+    // {
+    //     path: '/user/show/:id',
+    //     name: 'user.show',
+    //     component: showUser
+    // },
+    {
         path: '/createDepartment',
         name: 'add.department',
         component: __WEBPACK_IMPORTED_MODULE_7__components_department_add_vue___default.a
@@ -49147,7 +49149,52 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(1),
+      _c("div", { staticClass: "profile" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("div", { staticClass: "profile__details" }, [
+          _c(
+            "div",
+            { staticClass: "head" },
+            [
+              _c("h3", [_vm._v(_vm._s(_vm.user.name))]),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                { attrs: { type: "primary", icon: "el-icon-edit" } },
+                [_vm._v("Edit")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "description" }, [
+            _c("div", { staticClass: "description__item" }, [
+              _c("span", [_vm._v("Username:")]),
+              _vm._v(" "),
+              _c("span", [_vm._v(_vm._s(_vm.user.username))])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "description__item" }, [
+              _c("span", [_vm._v("Email:")]),
+              _vm._v(" "),
+              _c("span", [_vm._v(_vm._s(_vm.user.email))])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "description__item" }, [
+              _c("span", [_vm._v("Department:")]),
+              _vm._v(" "),
+              _c("span", [_vm._v(_vm._s(_vm.user.department))])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "description__item" }, [
+              _c("span", [_vm._v("Role")]),
+              _vm._v(" "),
+              _c("span", [_vm._v(_vm._s(_vm.user.role))])
+            ])
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "el-dialog",
@@ -49224,12 +49271,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "profile" }, [
-      _c("div", { staticClass: "profile__avatar" }, [
-        _c("img", { attrs: { src: "/img/user.png", alt: "User Avatar" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "profile__details" })
+    return _c("div", { staticClass: "profile__avatar" }, [
+      _c("img", { attrs: { src: "/img/user.png", alt: "User Avatar" } })
     ])
   }
 ]
@@ -114062,8 +114105,6 @@ var render = function() {
         "div",
         { staticClass: "lib_table__body" },
         [
-          _c("search-bar"),
-          _vm._v(" "),
           _c("vuetable", {
             ref: "vuetable",
             attrs: {
@@ -114086,7 +114127,7 @@ var render = function() {
                     _c("div", { staticClass: "custom-actions" }, [
                       _c(
                         "a",
-                        { attrs: { href: "/user/show/" + props.rowData.id } },
+                        { attrs: { href: "/users/show/" + props.rowData.id } },
                         [
                           _c("i", { staticClass: "material-icons" }, [
                             _vm._v("visibility")

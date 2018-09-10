@@ -8433,6 +8433,8 @@ html.is-reveal-open body {
 
 .profile__avatar img {
   border-radius: 5px;
+  height: 200px;
+  width: 200px;
 }
 
 .profile__details {

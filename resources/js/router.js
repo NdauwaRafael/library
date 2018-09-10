@@ -38,11 +38,11 @@ export default new Router({
             name: 'reset.password',
             component: ResetPassword
         },
-        {
-            path: '/user/show/:id',
-            name: 'user.show',
-            component: showUser
-        },
+        // {
+        //     path: '/user/show/:id',
+        //     name: 'user.show',
+        //     component: showUser
+        // },
         {
             path: '/createDepartment',
             name: 'add.department',
