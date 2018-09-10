@@ -24,7 +24,7 @@
                 {
                     name: 'status',
                     title: 'Status',
-                }
+                },
                 {
                     name: '__slot:actions',
                     title: 'View Request',
