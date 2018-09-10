@@ -49173,7 +49173,13 @@ var render = function() {
               [
                 _c(
                   "el-button",
-                  { attrs: { type: "primary", icon: "el-icon-edit" } },
+                  {
+                    attrs: {
+                      size: "mini",
+                      type: "primary",
+                      icon: "el-icon-edit"
+                    }
+                  },
                   [_vm._v("Edit")]
                 )
               ],

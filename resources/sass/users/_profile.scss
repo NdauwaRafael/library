@@ -26,12 +26,16 @@
     .head {
       display: flex;
       flex-direction: column;
+      border-bottom: 1px solid #eeeeee;
+      padding-bottom: 15px;
       button {
         width: 100px;
       }
       h3 {
-        border-bottom: 1px solid #eeeeee;
+        text-transform: uppercase;
+        padding-bottom: 5px;
       }
+
     }
 
     .description {

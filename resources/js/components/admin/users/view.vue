@@ -55,7 +55,7 @@
                 <div class="head">
                     <h3>{{user.firstname}} {{user.lastname}} </h3>
                     <a :href="'/users/edit/' + user.id">
-                        <el-button type="primary" icon="el-icon-edit">Edit</el-button>
+                        <el-button size="mini" type="primary" icon="el-icon-edit">Edit</el-button>
                     </a>
                 </div>
                 <div class="description">

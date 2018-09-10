@@ -8458,6 +8458,8 @@ html.is-reveal-open body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 15px;
 }
 
 .profile__details .head button {
@@ -8465,7 +8467,8 @@ html.is-reveal-open body {
 }
 
 .profile__details .head h3 {
-  border-bottom: 1px solid #eeeeee;
+  text-transform: uppercase;
+  padding-bottom: 5px;
 }
 
 .profile__details .description {
