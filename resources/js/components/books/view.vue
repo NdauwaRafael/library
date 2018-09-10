@@ -5,5 +5,7 @@
     }
 </script>
 <template>
-    <div class=""></div>
+    <div class="">
+        <h4>show page</h4>
+    </div>
 </template>

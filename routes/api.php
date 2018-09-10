@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['namespace' => 'Admin'], function () {
+    Route::put('api/reset/password/{id}', [
+        'uses' => 'UserController@resetPassword'
+    ]);
+    Route::get('api/user/{id}', [
+        'uses' => 'UserController@getUserById'
+    ]);
 });

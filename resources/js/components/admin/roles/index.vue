@@ -11,11 +11,14 @@
                     title: 'Name'
                 },
                 {
-                    name: 'created_at',
-                    title: 'Since',
+                    name: 'description',
+                    title: 'Description'
+                },
+                {
+                    name: '__slot:actions',
+                    title: 'View User',
                     titleClass: 'text-center',
-                    dataClass: 'text-center',
-                    callback: 'formatDate|DD-MM-YYYY'
+                    dataClass: 'text-center'
                 },
 
             ]
@@ -46,6 +49,13 @@
                           @vuetable:cell-clicked="onCellClicked"
                           @vuetable:pagination-data="onPaginationData"
                 ></vuetable>
+                <template slot="actions"  slot-scope="props">
+                    <div class="custom-actions">
+                        <a :href="'/role/show/'+props.rowData.id" >
+                            <i class="material-icons">visibility</i>
+                        </a>
+                    </div>
+                </template>
             </div>
 
             <div class="lib_table__foot">

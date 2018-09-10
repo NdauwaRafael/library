@@ -18,4 +18,6 @@ Vue.component('list-subject', require('./subject/list.vue'));
 Vue.component('add-department', require('./department/add.vue'));
 Vue.component('list-department', require('./department/list.vue'));
 
+Vue.component('search-bar', require('./vuetable/searchbar.vue'));
+
 

@@ -7,9 +7,21 @@
             resetForm(formName) {
                 this.$refs[formName].resetFields();
             },
-            submitForm(){
-
-            }
+            submitForm:function(){
+                this.$http.post('/api/book', this.book)
+                    .then((response) => {
+                        this.loading = false;
+                        if (response.status == 200) {
+                            var data = response.body;
+                            if (data.success) {
+                                this.$router.push({name:'book'});
+                            }
+                            else {
+                            }
+                        }
+                    }, (response) => {
+                    });
+            },
         },
     }
 </script>

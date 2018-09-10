@@ -42,11 +42,12 @@
                <a  href="/users/create">Add User</a>
            </div>
            <div class="filters">
-               <filter-bar></filter-bar>
+               <!--<filter-bar></filter-bar>-->
            </div>
        </div>
 
        <div class="lib_table__body">
+           <search-bar></search-bar>
            <vuetable ref="vuetable"
                      api-url="/api/users"
                      :fields="fields"
@@ -57,13 +58,13 @@
                      @vuetable:cell-clicked="onCellClicked"
                      @vuetable:pagination-data="onPaginationData"
            >
-               <!--<template slot="actions"  slot-scope="props">-->
-                   <!--<div class="custom-actions">-->
-                       <!--<a :href="'/users/show/'+props.rowData.id" >-->
-                           <!--<i class="material-icons">visibility</i>-->
-                       <!--</a>-->
-                   <!--</div>-->
-               <!--</template>-->
+               <template slot="actions"  slot-scope="props">
+                   <div class="custom-actions">
+                       <a :href="'/user/show/'+props.rowData.id" >
+                           <i class="material-icons">visibility</i>
+                       </a>
+                   </div>
+               </template>
            </vuetable>
        </div>
        <div class="lib_table__foot">
