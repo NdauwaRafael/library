@@ -114899,12 +114899,47 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+
     data: function data() {
-        return {};
+        return {
+            approve: false,
+            reject: false,
+            request: {}
+
+        };
     },
-    methods: {}
+    methods: _defineProperty({
+        approveRequest: function approveRequest() {
+            var _this = this;
+
+            this.request.status = 'approve';
+            this.$http.post('/api/request/approve', this.request).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.$notify({
+                    title: 'Success',
+                    message: 'Request has been Approved!!',
+                    type: 'success'
+                });
+            }, function () {});
+        }
+    }, 'approveRequest', function approveRequest() {
+        var _this2 = this;
+
+        this.request.status = 'reject';
+        this.$http.post('/api/request/reject', this.request).then(function (_ref2) {
+            var data = _ref2.data;
+
+            _this2.$notify({
+                title: 'Success',
+                message: 'Request has been rejected,',
+                type: 'success'
+            });
+        }, function () {});
+    })
 });
 
 /***/ }),
@@ -114915,9 +114950,197 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", {})
+  return _c(
+    "div",
+    { staticClass: "lib_page" },
+    [
+      _c("div", { staticClass: "lib_table" }, [
+        _c("div", { staticClass: "lib_table__head" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "lib_table__body" }, [
+          _c("table", [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("tbody", [
+              _c("tr", [
+                _c("td", [_vm._v(_vm._s(_vm.book.book))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.book.issue_date))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.book.return_date))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.book.user))]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c("el-button", {
+                      attrs: {
+                        type: "primary",
+                        icon: "el-icon-success",
+                        circle: ""
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.approve = true
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("el-button", {
+                      attrs: {
+                        type: "danger",
+                        icon: "el-icon-delete",
+                        circle: ""
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.reject = true
+                        }
+                      }
+                    })
+                  ],
+                  1
+                )
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
+      ]),
+      _vm._v(" "),
+      _c(
+        "el-dialog",
+        {
+          attrs: { title: "Approve Request", visible: _vm.approve },
+          on: {
+            "update:visible": function($event) {
+              _vm.approve = $event
+            }
+          }
+        },
+        [
+          _c(
+            "span",
+            {
+              staticClass: "dialog-footer",
+              attrs: { slot: "footer" },
+              slot: "footer"
+            },
+            [
+              _c(
+                "el-button",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.editBook = false
+                    }
+                  }
+                },
+                [_vm._v("Cancel")]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                {
+                  attrs: { type: "primary" },
+                  on: {
+                    click: function($event) {
+                      _vm.approveRequest()
+                    }
+                  }
+                },
+                [_vm._v("Update Book Details")]
+              )
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "el-dialog",
+        {
+          attrs: { title: "Reject Request", visible: _vm.reject },
+          on: {
+            "update:visible": function($event) {
+              _vm.reject = $event
+            }
+          }
+        },
+        [
+          _c(
+            "span",
+            {
+              staticClass: "dialog-footer",
+              attrs: { slot: "footer" },
+              slot: "footer"
+            },
+            [
+              _c(
+                "el-button",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.deleteBook = false
+                    }
+                  }
+                },
+                [_vm._v("Cancel")]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                {
+                  attrs: { type: "primary" },
+                  on: {
+                    click: function($event) {
+                      _vm.rejectRequest()
+                    }
+                  }
+                },
+                [_vm._v("Reserve Book")]
+              )
+            ],
+            1
+          )
+        ]
+      )
+    ],
+    1
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Book Title")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Issue Date")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Return Date")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Borrower")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Actions")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "description" }, [
+      _c("h3", [_vm._v("Book Synopsis")]),
+      _vm._v(" "),
+      _c("p")
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
