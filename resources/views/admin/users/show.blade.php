@@ -1,4 +1,4 @@
 @extends('layouts.default')
 @section('content')
-    <view-user></view-user>
+    <view-user user=""></view-user>
 @endsection
