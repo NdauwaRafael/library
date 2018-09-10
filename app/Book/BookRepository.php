@@ -29,6 +29,7 @@ class BookRepository
     {
         return $this->tablePaginate(new Book(), [], function ($book) {
             return [
+                'id' => $book->id,
                 'title' => $book->title,
                 'author' => $book->author,
                 'synopsis' => $book->synopsis,
