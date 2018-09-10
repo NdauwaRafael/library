@@ -49,13 +49,12 @@
         </div>
 
         <div class="profile">
-
             <div class="profile__avatar">
                 <img src="/img/user.png" alt="User Avatar">
             </div>
             <div class="profile__details">
                 <div class="head">
-                    <h3>{{user.name}}</h3>
+                    <h3>{{user.firstname}} {{user.lastname}} </h3>
                     <el-button type="primary" icon="el-icon-edit">Edit</el-button>
                 </div>
                 <div class="description">
@@ -69,11 +68,11 @@
                     </div>
                     <div class="description__item">
                         <span>Department:</span>
-                        <span>{{user.department}}</span>
+                        <!--<span>{{user.department}}</span>-->
                     </div>
                     <div class="description__item">
                         <span>Role</span>
-                        <span>{{user.role}}</span>
+                        <!--<span>{{user.role}}</span>-->
                     </div>
                 </div>
             </div>
