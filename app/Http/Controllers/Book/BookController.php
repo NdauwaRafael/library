@@ -42,4 +42,9 @@ class BookController extends Controller
             'message' => 'Created successfully.'
         ]);
     }
+
+    public function show($id)
+    {
+       return response()->json( $this->bookRepository->getBookById($id));
+    }
 }

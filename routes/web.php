@@ -10,14 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['namespace' => 'Admin'], function () {
-    Route::put('api/reset/password/{id}', [
-        'uses' => 'UserController@resetPassword'
-    ]);
-    Route::get('api/user/{id}', [
-        'uses' => 'UserController@getUserById'
-    ]);
-});
 
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/login', 'SessionsController@create')->name('login');
@@ -68,17 +60,34 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'RoleController@store'
         ]);
 
-        Route::get('/roles/show/{id}', [
-            'as' => 'roles.show',
-            'uses' => 'RoleController@show'
-        ]);
+        Route::get('/roles/show/{id}',['uses' => 'RoleController@show']);
 
         Route::get('api/roles', [
             'uses' => 'RoleController@getRoles'
         ]);
+
+        Route::get('/roles/permissions/{id}', [
+            'as' => 'roles.permissions',
+            'uses' => 'RoleController@permissions'
+        ]);
+
+        Route::post('/roles/permissions/{id}', [
+            'as' => 'roles.permissions',
+            'uses' => 'RoleController@editPermissions'
+        ]);
     });
 
-
+    Route::group(['namespace' => 'Book'], function () {
+        Route::post('api/book', [
+            'uses' => 'BookController@store'
+        ]);
+        Route::get('api/books', [
+            'uses' => 'BookController@index'
+        ]);
+        Route::get('api/book/{id}', [
+            'uses' => 'BookController@show'
+        ]);
+    });
 });
 
 Route::get('{vue_capture?}', function () {

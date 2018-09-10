@@ -9,6 +9,7 @@ import AddBook from './components/books/add.vue';
 import ViewBook from './components/books/view.vue';
 import ListBooks from './components/books/list.vue';
 import ResetPassword from './components/admin/users/resetPassword.vue';
+import showUser from './components/admin/users/view.vue';
 
 
 export default new Router({
@@ -19,8 +20,8 @@ export default new Router({
             component: AddBook
         },
         {
-            path: '/viewbook/:id',
-            name: 'view.book',
+            path: '/book/show:id',
+            name: 'book.show',
             component: ViewBook
         },
         {
@@ -32,6 +33,11 @@ export default new Router({
             path: '/reset/password/:id',
             name: 'reset.password',
             component: ResetPassword
+        },
+        {
+            path: '/user/show/:id',
+            name: 'user.show',
+            component: showUser
         },
     ],
     mode: 'history',

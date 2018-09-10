@@ -5,7 +5,7 @@
                 loading: false,
                 formErrors: {},
                 item: {
-                    id: null,
+                    id:'',
                     name: '',
                 },
             }

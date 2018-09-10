@@ -7,10 +7,24 @@ use App\Admin\Roles\Role;
 use App\General\Users\userPresenter;
 use Illuminate\Database\Eloquent\Model;
 use Laracasts\Presenter\PresentableTrait;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class User extends Model
 {
-    use PresentableTrait;
+    use PresentableTrait,SearchableTrait;
+
+    protected $searchable = [
+        'columns' => [
+            'users.firstname' => 5,
+            'users.lastname' => 5,
+            'users.email' => 5,
+            'roles.name' => 5,
+        ],
+        'joins' => [
+            'roles' => ['users.role_id', 'roles.id']
+        ],
+        'groupBy' => 'users.id'
+    ];
 
     protected $table = 'users';
 

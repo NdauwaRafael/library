@@ -13,11 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::group(['namespace' => 'Book'], function () {
-    Route::post('/book', [
-        'uses' => 'BookController@store'
+Route::group(['namespace' => 'Admin'], function () {
+    Route::put('api/reset/password/{id}', [
+        'uses' => 'UserController@resetPassword'
     ]);
-    Route::get('/books', [
-        'uses' => 'BookController@index'
+    Route::get('api/user/{id}', [
+        'uses' => 'UserController@getUserById'
     ]);
 });
