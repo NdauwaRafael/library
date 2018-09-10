@@ -1,15 +1,24 @@
 /**
  * Created by Raphael Karanja on 06/09/2018.
  */
+@import "slider";
 .login {
   //display: flex;
   //justify-content: center;
   //align-items: center;
   padding-top: 150px;
-  -webkit-animation: suspend-on 12s infinite;
-  -moz-animation: suspend-on 12s infinite;
-  animation: suspend-on 12s infinite ;
-  animation-delay: 6s;
+  //-webkit-animation: suspend-on 12s infinite;
+  //-moz-animation: suspend-on 12s infinite;
+  //animation: suspend-on 12s infinite ;
+  //animation-delay: .6s;
+
+  background-image:url(/img/banner1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: -20px -100px;
+  height: 90vh;
+
 
   &__card {
     max-width: 500px;
@@ -44,24 +53,18 @@
 }
 
 
-@keyframes suspend-on {
-  0% {
-    background: url('/img/banner2.jpg') ;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin: -20px -100px;
-    height: 90vh;
-
-  }
-  100% {
-    background: url('/img/banner1.jpg') ;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin: -20px;
-    height: 90vh;
-    margin: -20px;
-
-  }
-}
+//@keyframes suspend-on {
+//  0%{
+//    background:url(/img/banner1.jpg);
+//  }
+//  33%{
+//    background:url(/img/banner2.jpg);
+//  }
+//  66%{
+//    background:url(/img/banner3.jpg);
+//  }
+//  100%{
+//    background:url(/img/banner4.jpg);
+//  }
+//
+//}

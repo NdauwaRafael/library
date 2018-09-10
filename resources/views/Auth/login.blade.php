@@ -1,7 +1,7 @@
 @extends('layouts.default')
 @section('content')
     <div class="container">
-        <div class="login">
+        <div class="login banner-bg">
             <div class="login__card">
                 <form action="/login" method="post">
                     {{csrf_field()}}
