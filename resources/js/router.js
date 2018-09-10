@@ -24,7 +24,7 @@ export default new Router({
             component: AddBook
         },
         {
-            path: '/book/show:id',
+            path: '/book/show/:id',
             name: 'book.show',
             component: ViewBook
         },

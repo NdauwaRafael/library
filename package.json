@@ -30,6 +30,7 @@
         "element-ui": "^2.4.6",
         "img-loader": "^3.0.0",
         "material-icons": "^0.2.3",
+        "normalize-scss": "^7.0.1",
         "npm": "^6.4.1",
         "vue-resource": "^1.5.1"
     }

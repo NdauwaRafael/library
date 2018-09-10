@@ -1,21 +1,17 @@
 <script>
     export default {
-        props: {
-            book: {
-                required: true
-            },
-            user: {
-                required: true
-            }
-        },
+
         data: () => ({
             reserveBook: false,
             deleteBook: false,
             editBook: false,
-            details: {}
+            details: {},
+            book: { },
+            user: {}
+
         }),
         methods: {
-            reserveBook(){
+            reserveABook(){
                     this.details.user_id =  this.user.id;
                     this.details.book_id =  this.book.id;
                     this.$http.post('/api/book/reserve', details)
@@ -30,8 +26,8 @@
 
                             })
             },
-            deleteBook(){},
-            editBook(){}
+            deleteABook(){},
+            editABook(){}
         },
     }
 </script>
@@ -59,19 +55,17 @@
                         <td>{{book.created_at}}</td>
                         <td>
                             <el-button type="primary" @click="editBook = true" icon="el-icon-edit" circle></el-button>
-                            <el-button icon="el-icon-message" @click="reserveBook = true" >Request</el-button>
                             <el-button type="danger" icon="el-icon-delete" @click="deleteBook = true" circle></el-button>
+                            <el-button icon="el-icon-message" @click="reserveBook = true" >Request</el-button>
                         </td>
                     </tr>
                     </tbody>
                 </table>
 
             </div>
-            <div class="lib_table__foot">
-                <div class="description">
-                    <h3>Book Synopsis</h3>
-                    <p></p>
-                </div>
+            <div class="description">
+                <h3>Book Synopsis</h3>
+                <p></p>
             </div>
 
         </div>
@@ -82,21 +76,21 @@
 
             <span slot="footer" class="dialog-footer">
                 <el-button @click="editBook = false">Cancel</el-button>
-                <el-button type="primary" @click="editBook()">Update Book Details</el-button>
+                <el-button type="primary" @click="editABook()">Update Book Details</el-button>
             </span>
         </el-dialog>
         <el-dialog
                 title="Reserve book"
                 :visible.sync="reserveBook">
-            <el-form ref="form" :model="details" labelPosition="top" >
-                <el-form-item label="Pick Up Date">
+            <el-form ref="form" :model="details" labelPosition="top" style="width: 100%" >
+                <el-form-item label="Pick Up Date"  label-width="100%">
                     <el-date-picker
                             v-model="details.issue_date"
                             type="date"
                             placeholder="Pick a day">
                     </el-date-picker>
                 </el-form-item>
-                <el-form-item label="Return Date">
+                <el-form-item label="Return Date"  label-width="100%">
                     <el-date-picker
                             v-model="details.return_date"
                             type="date"
@@ -106,7 +100,7 @@
             </el-form>
             <span slot="footer" class="dialog-footer">
                 <el-button @click="reserveBook = false">Cancel</el-button>
-                <el-button type="primary" @click="reserveBook()">Reserve Book</el-button>
+                <el-button type="primary" @click="reserveABook()">Reserve Book</el-button>
             </span>
         </el-dialog>
         <el-dialog
@@ -115,7 +109,7 @@
 
             <span slot="footer" class="dialog-footer">
                 <el-button @click="deleteBook = false">Cancel</el-button>
-                <el-button type="primary" @click="deleteBook()">Reserve Book</el-button>
+                <el-button type="primary" @click="deleteABook()">Reserve Book</el-button>
             </span>
         </el-dialog>
 

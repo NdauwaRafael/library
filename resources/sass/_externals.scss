@@ -11,3 +11,15 @@ $material-icons-font-name: 'MaterialIcons-Regular' !default;
 $material-icons-font-size: 24px !default;
 $material-icons-font-family: 'Material Icons' !default;
 
+@import "~normalize-scss/sass/normalize";
+
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+  margin: 0;
+}
+
+.el-form-item {
+  .el-date-editor.el-input, .el-date-editor.el-input__inner {
+    width: 100%;
+  }
+}
+
