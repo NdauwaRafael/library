@@ -21,7 +21,7 @@ Vue.component('list-department', require('./department/list.vue'));
 Vue.component('search-bar', require('./vuetable/searchbar.vue'));
 
 //requests
-Vue.compomemt('all-requests', require('./admin/requests/list.vue'));
-Vue.compomemt('view-request', require('./admin/requests/show.vue'));
+Vue.component('all-requests', require('./admin/requests/list.vue'));
+Vue.component('view-request', require('./admin/requests/show.vue'));
 
 

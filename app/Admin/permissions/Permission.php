@@ -10,6 +10,7 @@ namespace Admin\permissions;
 
 
 use App\Admin\Roles\Role;
+use App\Admin\Users\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Permission extends Model
@@ -26,6 +27,11 @@ class Permission extends Model
     public function roles()
     {
         return $this->hasMany(Role::class);
+    }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
     }
 
 }
