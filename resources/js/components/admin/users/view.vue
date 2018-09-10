@@ -12,7 +12,7 @@
             update(){
 
             }
-        },
+        }
     }
 </script>
 <template>
@@ -25,18 +25,18 @@
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Phone</th>
                         <th>Role</th>
+                        <th>Department</th>
                         <th>Action</th>
                     </tr>
                     </thead>
 
                     <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{user.firstname}} {{user.lastname}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.role}}</td>
+                        <td>{{user.department}}</td>
                         <td>
                             <el-button type="primary" @click="editUser = true" icon="el-icon-edit" circle></el-button>
                             <el-button type="danger" icon="el-icon-delete" circle></el-button>
@@ -47,16 +47,16 @@
 
             </div>
         </div>
-
         <div class="profile">
-
             <div class="profile__avatar">
                 <img src="/img/user.png" alt="User Avatar">
             </div>
             <div class="profile__details">
                 <div class="head">
-                    <h3>{{user.name}}</h3>
-                    <el-button type="primary" icon="el-icon-edit">Edit</el-button>
+                    <h3>{{user.firstname}} {{user.lastname}} </h3>
+                    <a :href="'/users/edit/' + user.id">
+                        <el-button size="mini" type="primary" icon="el-icon-edit">Edit</el-button>
+                    </a>
                 </div>
                 <div class="description">
                     <div class="description__item">

@@ -8425,6 +8425,8 @@ html.is-reveal-open body {
   display: flex;
   width: 100%;
   margin-top: 20px;
+  background: #fff;
+  padding: 10px;
 }
 
 .profile__avatar {
@@ -8456,10 +8458,17 @@ html.is-reveal-open body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 15px;
+}
+
+.profile__details .head button {
+  width: 100px;
 }
 
 .profile__details .head h3 {
-  border-bottom: 1px solid #eeeeee;
+  text-transform: uppercase;
+  padding-bottom: 5px;
 }
 
 .profile__details .description {
@@ -8470,19 +8479,26 @@ html.is-reveal-open body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 20px;
 }
 
 .profile__details .description__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 10px 0;
 }
 
-.profile__details .description__item:first-child {
+.profile__details .description__item span {
+  width: 70%;
+}
+
+.profile__details .description__item span:first-child {
   font-weight: 600;
+  width: 30%;
 }
 
 .users__add {
@@ -8782,6 +8798,7 @@ html.is-reveal-open body {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 10px;
+  min-height: 50px;
 }
 
 .lib_table__head .action {

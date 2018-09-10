@@ -30,7 +30,7 @@
             deleteABook(){},
             editABook(){},
             checkPermission: function () {
-                this.$http.get('/api/permission/canReserveBook')
+                this.$http.get('/api/permission/cANManage')
                     .then((response) => {
                         this.canReserveBook = response.data
                     });
