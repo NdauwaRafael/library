@@ -48,6 +48,14 @@
             </div>
         </div>
 
+        <div class="profile">
+
+            <div class="profile__avatar">
+                <img src="/img/user.png" alt="User Avatar">
+            </div>
+            <div class="profile__details"></div>
+        </div>
+
         <el-dialog
                 title="Tips"
                 :visible.sync="editUser">

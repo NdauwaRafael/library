@@ -49147,6 +49147,8 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
       _c(
         "el-dialog",
         {
@@ -49216,6 +49218,18 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Action")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "profile" }, [
+      _c("div", { staticClass: "profile__avatar" }, [
+        _c("img", { attrs: { src: "/img/user.png", alt: "User Avatar" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "profile__details" })
     ])
   }
 ]

@@ -8415,6 +8415,37 @@ html.is-reveal-open body {
  * Created by Raphael Karanja on 07/09/2018.
  */
 
+/**
+ * Created by Raphael Karanja on 10/09/2018.
+ */
+
+.profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.profile__avatar {
+  width: 40%;
+}
+
+.profile__avatar img {
+  border-radius: 5px;
+}
+
+.profile__details {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .users__add {
   background: #ffffff;
   padding: 20px;
