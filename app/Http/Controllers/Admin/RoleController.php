@@ -78,7 +78,6 @@ class RoleController extends Controller
 
     public function editPermissions(Request $request,$id)
     {
-
         $permissions = $request->except(['_token']);
 
         $role = $this->roleRepository->getRoleById($id);
