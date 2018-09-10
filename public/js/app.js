@@ -47516,24 +47516,20 @@ if (false) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        book: {
-            required: true
-        },
-        user: {
-            required: true
-        }
-    },
+
     data: function data() {
         return {
             reserveBook: false,
             deleteBook: false,
             editBook: false,
-            details: {}
+            details: {},
+            book: {},
+            user: {}
+
         };
     },
     methods: {
-        reserveBook: function reserveBook() {
+        reserveABook: function reserveABook() {
             var _this = this;
 
             this.details.user_id = this.user.id;
@@ -47548,8 +47544,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 });
             }, function () {});
         },
-        deleteBook: function deleteBook() {},
-        editBook: function editBook() {}
+        deleteABook: function deleteABook() {},
+        editABook: function editABook() {}
     }
 });
 
@@ -47598,19 +47594,6 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _c(
-                      "el-button",
-                      {
-                        attrs: { icon: "el-icon-message" },
-                        on: {
-                          click: function($event) {
-                            _vm.reserveBook = true
-                          }
-                        }
-                      },
-                      [_vm._v("Request")]
-                    ),
-                    _vm._v(" "),
                     _c("el-button", {
                       attrs: {
                         type: "danger",
@@ -47622,7 +47605,20 @@ var render = function() {
                           _vm.deleteBook = true
                         }
                       }
-                    })
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "el-button",
+                      {
+                        attrs: { icon: "el-icon-message" },
+                        on: {
+                          click: function($event) {
+                            _vm.reserveBook = true
+                          }
+                        }
+                      },
+                      [_vm._v("Request")]
+                    )
                   ],
                   1
                 )
@@ -47671,7 +47667,7 @@ var render = function() {
                   attrs: { type: "primary" },
                   on: {
                     click: function($event) {
-                      _vm.editBook()
+                      _vm.editABook()
                     }
                   }
                 },
@@ -47698,12 +47694,13 @@ var render = function() {
             "el-form",
             {
               ref: "form",
+              staticStyle: { width: "100%" },
               attrs: { model: _vm.details, labelPosition: "top" }
             },
             [
               _c(
                 "el-form-item",
-                { attrs: { label: "Pick Up Date" } },
+                { attrs: { label: "Pick Up Date", "label-width": "100%" } },
                 [
                   _c("el-date-picker", {
                     attrs: { type: "date", placeholder: "Pick a day" },
@@ -47721,7 +47718,7 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "el-form-item",
-                { attrs: { label: "Return Date" } },
+                { attrs: { label: "Return Date", "label-width": "100%" } },
                 [
                   _c("el-date-picker", {
                     attrs: { type: "date", placeholder: "Pick a day" },
@@ -47766,7 +47763,7 @@ var render = function() {
                   attrs: { type: "primary" },
                   on: {
                     click: function($event) {
-                      _vm.reserveBook()
+                      _vm.reserveABook()
                     }
                   }
                 },
@@ -47816,7 +47813,7 @@ var render = function() {
                   attrs: { type: "primary" },
                   on: {
                     click: function($event) {
-                      _vm.deleteBook()
+                      _vm.deleteABook()
                     }
                   }
                 },
@@ -47854,12 +47851,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "lib_table__foot" }, [
-      _c("div", { staticClass: "description" }, [
-        _c("h3", [_vm._v("Book Synopsis")]),
-        _vm._v(" "),
-        _c("p")
-      ])
+    return _c("div", { staticClass: "description" }, [
+      _c("h3", [_vm._v("Book Synopsis")]),
+      _vm._v(" "),
+      _c("p")
     ])
   }
 ]

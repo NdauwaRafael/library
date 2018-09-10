@@ -8882,6 +8882,29 @@ html.is-reveal-open body {
 
 /* Sass map of icon names and codepoints */
 
+[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+textarea {
+  margin: 0;
+}
+
+.el-form-item .el-date-editor.el-input,
+.el-form-item .el-date-editor.el-input__inner {
+  width: 100%;
+}
+
 .lib_body {
   padding: 75px 20px 20px 20px;
   background: #eeeeee;
