@@ -47,7 +47,7 @@
         <div class="lib_table">
             <div class="lib_table__head">
                 <div class="action">
-                    <a  href="/books/create">Add a Book</a>
+                    <a  href="/addbook">Add a Book</a>
                 </div>
                 <div class="filters">
                     <filter-bar></filter-bar>
@@ -67,7 +67,7 @@
                 >
                     <template slot="actions"  slot-scope="props">
                         <div class="custom-actions">
-                            <router-link :to="{path: '/book/show/'+props.rowData.id}" >
+                            <router-link :to="{path: '/book/show', params: {id: props.rowData.id}}" >
                                 <i class="material-icons">visibility</i>
                             </router-link>
                         </div>
