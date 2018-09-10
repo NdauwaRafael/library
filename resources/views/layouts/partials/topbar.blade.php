@@ -14,7 +14,7 @@
                                     {{Auth::user()->firstname}} {{Auth::user()->lastname}}
                                 </a>
                                 <ul class="menu">
-                                      <li><a href="#">Profile</a></li>
+                                      <li><a href="/users/show/{{auth()->user()->id}} ">Profile</a></li>
                                       <li><a href="/logout">Logout</a></li>
                                 </ul>
                               </li>
