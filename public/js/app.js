@@ -44422,7 +44422,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
         name: 'add.book',
         component: __WEBPACK_IMPORTED_MODULE_2__components_books_add_vue___default.a
     }, {
-        path: '/book/show:id',
+        path: '/book/show/:id',
         name: 'book.show',
         component: __WEBPACK_IMPORTED_MODULE_3__components_books_view_vue___default.a
     }, {
@@ -48752,7 +48752,7 @@ var render = function() {
                           {
                             attrs: {
                               to: {
-                                path: "/book/show",
+                                name: "book.show",
                                 params: { id: props.rowData.id }
                               }
                             }

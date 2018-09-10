@@ -67,7 +67,7 @@
                 >
                     <template slot="actions"  slot-scope="props">
                         <div class="custom-actions">
-                            <router-link :to="{path: '/book/show', params: {id: props.rowData.id}}" >
+                            <router-link :to="{name: 'book.show', params: {id: props.rowData.id}}" >
                                 <i class="material-icons">visibility</i>
                             </router-link>
                         </div>
