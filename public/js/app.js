@@ -47522,6 +47522,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             reserveBook: false,
+            canReserveBook: false,
             deleteBook: false,
             editBook: false,
             details: {},
@@ -47547,7 +47548,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }, function () {});
         },
         deleteABook: function deleteABook() {},
-        editABook: function editABook() {}
+        editABook: function editABook() {},
+
+        checkPermission: function checkPermission() {
+            var _this2 = this;
+
+            this.$http.get('/api/permission/cANManage').then(function (response) {
+                _this2.canReserveBook = response.data;
+            });
+        }
+    },
+    mounted: function mounted() {
+        this.checkPermission();
     }
 });
 
