@@ -20,5 +20,26 @@
     width: 60%;
     display: flex;
     flex-direction: column;
+
+    .head {
+      display: flex;
+      flex-direction: column;
+      h3 {
+        border-bottom: 1px solid #eeeeee;
+      }
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+
+      &__item {
+        display: flex;
+        justify-content: space-between;
+        &:first-child {
+          font-weight: 600;
+        }
+      }
+    }
   }
 }
