@@ -47629,7 +47629,11 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(1)
+        _c("div", { staticClass: "description" }, [
+          _c("h5", [_vm._v("Book Synopsis")]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.book.synopsis))])
+        ])
       ]),
       _vm._v(" "),
       _c(
@@ -47847,16 +47851,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Actions")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "description" }, [
-      _c("h3", [_vm._v("Book Synopsis")]),
-      _vm._v(" "),
-      _c("p")
     ])
   }
 ]
@@ -114902,13 +114896,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-
+    props: {
+        issue: {
+            required: true
+        }
+    },
     data: function data() {
         return {
             approve: false,
             reject: false,
             request: {}
-
         };
     },
     methods: _defineProperty({
@@ -114939,7 +114936,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 type: 'success'
             });
         }, function () {});
-    })
+    }),
+    mounted: function mounted() {
+        this.request = this.issue;
+    }
 });
 
 /***/ }),
@@ -115005,9 +115005,7 @@ var render = function() {
               ])
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _vm._m(1)
+        ])
       ]),
       _vm._v(" "),
       _c(
@@ -115128,16 +115126,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Actions")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "description" }, [
-      _c("h3", [_vm._v("Book Synopsis")]),
-      _vm._v(" "),
-      _c("p")
     ])
   }
 ]

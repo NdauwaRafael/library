@@ -1,12 +1,14 @@
 <script>
     export default {
-
+        props: {
+            issue: {
+                required: true
+            }
+        },
         data: () => ({
             approve: false,
             reject: false,
             request: {},
-
-
         }),
         methods: {
             approveRequest(){
@@ -38,6 +40,9 @@
                         })
             },
         },
+        mounted(){
+            this.request = this.issue;
+        }
     }
 </script>
 <template>
@@ -70,10 +75,6 @@
                     </tbody>
                 </table>
 
-            </div>
-            <div class="description">
-                <h3>Book Synopsis</h3>
-                <p></p>
             </div>
 
         </div>

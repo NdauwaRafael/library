@@ -64,8 +64,8 @@
 
             </div>
             <div class="description">
-                <h3>Book Synopsis</h3>
-                <p></p>
+                <h5>Book Synopsis</h5>
+                <p>{{book.synopsis}}</p>
             </div>
 
         </div>
