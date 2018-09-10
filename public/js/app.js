@@ -47516,10 +47516,41 @@ if (false) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {};
+    props: {
+        book: {
+            required: true
+        },
+        user: {
+            required: true
+        }
     },
-    methods: {}
+    data: function data() {
+        return {
+            reserveBook: false,
+            deleteBook: false,
+            editBook: false,
+            details: {}
+        };
+    },
+    methods: {
+        reserveBook: function reserveBook() {
+            var _this = this;
+
+            this.details.user_id = this.user.id;
+            this.details.book_id = this.book.id;
+            this.$http.post('/api/book/reserve', details).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.$notify({
+                    title: 'Success',
+                    message: 'Request sent successfully, you will be notified back within 24 hours if the request was successful.',
+                    type: 'success'
+                });
+            }, function () {});
+        },
+        deleteBook: function deleteBook() {},
+        editBook: function editBook() {}
+    }
 });
 
 /***/ }),
@@ -47530,14 +47561,306 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "lib_page" },
+    [
+      _c("div", { staticClass: "lib_table" }, [
+        _c("div", { staticClass: "lib_table__head" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "lib_table__body" }, [
+          _c("table", [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("tbody", [
+              _c("tr", [
+                _c("td", [_vm._v(_vm._s(_vm.book.title))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.book.author))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.book.subject))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.book.created_at))]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c("el-button", {
+                      attrs: {
+                        type: "primary",
+                        icon: "el-icon-edit",
+                        circle: ""
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.editBook = true
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "el-button",
+                      {
+                        attrs: { icon: "el-icon-message" },
+                        on: {
+                          click: function($event) {
+                            _vm.deleteBook = true
+                          }
+                        }
+                      },
+                      [_vm._v("Request")]
+                    ),
+                    _vm._v(" "),
+                    _c("el-button", {
+                      attrs: {
+                        type: "danger",
+                        icon: "el-icon-delete",
+                        circle: ""
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.deleteBook = true
+                        }
+                      }
+                    })
+                  ],
+                  1
+                )
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
+      ]),
+      _vm._v(" "),
+      _c(
+        "el-dialog",
+        {
+          attrs: { title: "Edit Book", visible: _vm.editBook },
+          on: {
+            "update:visible": function($event) {
+              _vm.editBook = $event
+            }
+          }
+        },
+        [
+          _c(
+            "span",
+            {
+              staticClass: "dialog-footer",
+              attrs: { slot: "footer" },
+              slot: "footer"
+            },
+            [
+              _c(
+                "el-button",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.editBook = false
+                    }
+                  }
+                },
+                [_vm._v("Cancel")]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                {
+                  attrs: { type: "primary" },
+                  on: {
+                    click: function($event) {
+                      _vm.editBook()
+                    }
+                  }
+                },
+                [_vm._v("Update Book Details")]
+              )
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "el-dialog",
+        {
+          attrs: { title: "Reserve book", visible: _vm.reserveBook },
+          on: {
+            "update:visible": function($event) {
+              _vm.reserveBook = $event
+            }
+          }
+        },
+        [
+          _c(
+            "el-form",
+            {
+              ref: "form",
+              attrs: { model: _vm.details, labelPosition: "top" }
+            },
+            [
+              _c(
+                "el-form-item",
+                { attrs: { label: "Pick Up Date" } },
+                [
+                  _c("el-date-picker", {
+                    attrs: { type: "date", placeholder: "Pick a day" },
+                    model: {
+                      value: _vm.details.issue_date,
+                      callback: function($$v) {
+                        _vm.$set(_vm.details, "issue_date", $$v)
+                      },
+                      expression: "details.issue_date"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                { attrs: { label: "Return Date" } },
+                [
+                  _c("el-date-picker", {
+                    attrs: { type: "date", placeholder: "Pick a day" },
+                    model: {
+                      value: _vm.details.return_date,
+                      callback: function($$v) {
+                        _vm.$set(_vm.details, "return_date", $$v)
+                      },
+                      expression: "details.return_date"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "span",
+            {
+              staticClass: "dialog-footer",
+              attrs: { slot: "footer" },
+              slot: "footer"
+            },
+            [
+              _c(
+                "el-button",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.reserveBook = false
+                    }
+                  }
+                },
+                [_vm._v("Cancel")]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                {
+                  attrs: { type: "primary" },
+                  on: {
+                    click: function($event) {
+                      _vm.reserveBook()
+                    }
+                  }
+                },
+                [_vm._v("Reserve Book")]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "el-dialog",
+        {
+          attrs: { title: "Delete Book", visible: _vm.deleteBook },
+          on: {
+            "update:visible": function($event) {
+              _vm.deleteBook = $event
+            }
+          }
+        },
+        [
+          _c(
+            "span",
+            {
+              staticClass: "dialog-footer",
+              attrs: { slot: "footer" },
+              slot: "footer"
+            },
+            [
+              _c(
+                "el-button",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.deleteBook = false
+                    }
+                  }
+                },
+                [_vm._v("Cancel")]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                {
+                  attrs: { type: "primary" },
+                  on: {
+                    click: function($event) {
+                      _vm.deleteBook()
+                    }
+                  }
+                },
+                [_vm._v("Reserve Book")]
+              )
+            ],
+            1
+          )
+        ]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", {}, [_c("h4", [_vm._v("show page")])])
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Book Title")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Author")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Subject")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Added on")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Actions")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "lib_table__foot" }, [
+      _c("div", { staticClass: "description" }, [
+        _c("h3", [_vm._v("Book Synopsis")]),
+        _vm._v(" "),
+        _c("p")
+      ])
+    ])
   }
 ]
 render._withStripped = true
