@@ -113814,7 +113814,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -113837,9 +113837,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             fields: [{
                 name: 'name',
                 title: 'Name'
-            }, {
-                name: 'description',
-                title: 'Description'
             }, {
                 name: '__slot:actions',
                 title: 'View User',
@@ -113869,29 +113866,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        {
-          staticClass: "lib_table__body",
-          scopedSlots: _vm._u([
-            {
-              key: "actions",
-              fn: function(props) {
-                return [
-                  _c("div", { staticClass: "custom-actions" }, [
-                    _c(
-                      "a",
-                      { attrs: { href: "/role/show/" + props.rowData.id } },
-                      [
-                        _c("i", { staticClass: "material-icons" }, [
-                          _vm._v("visibility")
-                        ])
-                      ]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        },
+        { staticClass: "lib_table__body" },
         [
           _c("vuetable", {
             ref: "vuetable",
@@ -113906,7 +113881,27 @@ var render = function() {
             on: {
               "vuetable:cell-clicked": _vm.onCellClicked,
               "vuetable:pagination-data": _vm.onPaginationData
-            }
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "actions",
+                fn: function(props) {
+                  return [
+                    _c("div", { staticClass: "custom-actions" }, [
+                      _c(
+                        "a",
+                        { attrs: { href: "/role/show/" + props.rowData.id } },
+                        [
+                          _c("i", { staticClass: "material-icons" }, [
+                            _vm._v("visibility")
+                          ])
+                        ]
+                      )
+                    ])
+                  ]
+                }
+              }
+            ])
           })
         ],
         1

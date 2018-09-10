@@ -10,10 +10,7 @@
                     name: 'name',
                     title: 'Name'
                 },
-                {
-                    name: 'description',
-                    title: 'Description'
-                },
+
                 {
                     name: '__slot:actions',
                     title: 'View User',
@@ -48,14 +45,15 @@
                           :append-params="moreParams"
                           @vuetable:cell-clicked="onCellClicked"
                           @vuetable:pagination-data="onPaginationData"
-                ></vuetable>
-                <template slot="actions"  slot-scope="props">
-                    <div class="custom-actions">
-                        <a :href="'/role/show/'+props.rowData.id" >
-                            <i class="material-icons">visibility</i>
-                        </a>
-                    </div>
-                </template>
+                >
+                    <template slot="actions"  slot-scope="props">
+                        <div class="custom-actions">
+                            <a :href="'/role/show/'+props.rowData.id" >
+                                <i class="material-icons">visibility</i>
+                            </a>
+                        </div>
+                    </template>
+                </vuetable>
             </div>
 
             <div class="lib_table__foot">
