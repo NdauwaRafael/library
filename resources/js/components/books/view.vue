@@ -3,6 +3,7 @@
 
         data: () => ({
             reserveBook: false,
+            canReserveBook: false,
             deleteBook: false,
             editBook: false,
             details: {},
@@ -27,8 +28,17 @@
                             })
             },
             deleteABook(){},
-            editABook(){}
+            editABook(){},
+            checkPermission: function () {
+                this.$http.get('/api/permission/cANManage')
+                    .then((response) => {
+                        this.canReserveBook = response.data
+                    });
+            },
         },
+        mounted:function () {
+          this.checkPermission();
+        }
     }
 </script>
 <template>

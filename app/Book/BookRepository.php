@@ -9,8 +9,9 @@
 namespace App\Book;
 
 
-use App\Book\Issues\Issue;
+use App\Book\Issue;
 use App\Http\Controllers\TablePaginate;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class BookRepository
@@ -30,10 +31,10 @@ class BookRepository
     public function saveReserve($input)
     {
       return Issue::create([
-         'user_id' => Auth::user()->id,
+         'user_id' => auth::user()->id,
          'book_id' => $input['book_id'],
-         'issue_date' => $input['issue_date'],
-         'return_date' => $input['return_date'],
+         'issue_date' =>Carbon::parse($input['issue_date']),
+         'return_date' => Carbon::parse($input['return_date']),
          'status' => 'approved'
       ]);
     }

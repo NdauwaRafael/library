@@ -44,6 +44,9 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'UserController@getUsers'
         ]);
 
+        //check permission
+
+        Route::get('/api/permission/{permissionName}', 'UserController@checkPermission');
         //roles
         Route::get('/roles', [
             'as' => 'roles',

@@ -58,7 +58,9 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->roleRepository->save($request->all());
+
+        return view('admin.roles.index');
     }
 
     /**
@@ -76,7 +78,7 @@ class RoleController extends Controller
         ]);
     }
 
-    public function editPermissions(Request $request,$id)
+    public function editPermissions(Request $request, $id)
     {
         $permissions = $request->except(['_token']);
 

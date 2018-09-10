@@ -55,4 +55,9 @@ class RoleRepository
             }
         }
     }
+
+    public function save($input)
+    {
+        return Role::create($input);
+    }
 }
