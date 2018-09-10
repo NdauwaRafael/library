@@ -8344,6 +8344,8 @@ html.is-reveal-open body {
   bottom: 0;
   left: 0;
   padding-top: 20px;
+  height: calc(100% - 55px);
+  overflow-y: auto;
 }
 
 .sidebar .menu li {
@@ -8412,6 +8414,76 @@ html.is-reveal-open body {
 /**
  * Created by Raphael Karanja on 07/09/2018.
  */
+
+/**
+ * Created by Raphael Karanja on 10/09/2018.
+ */
+
+.profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.profile__avatar {
+  width: 40%;
+}
+
+.profile__avatar img {
+  border-radius: 5px;
+  height: 200px;
+  width: 200px;
+}
+
+.profile__details {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile__details .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile__details .head h3 {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.profile__details .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile__details .description__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profile__details .description__item:first-child {
+  font-weight: 600;
+}
 
 .users__add {
   background: #ffffff;

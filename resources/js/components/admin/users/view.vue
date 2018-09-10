@@ -48,6 +48,37 @@
             </div>
         </div>
 
+        <div class="profile">
+
+            <div class="profile__avatar">
+                <img src="/img/user.png" alt="User Avatar">
+            </div>
+            <div class="profile__details">
+                <div class="head">
+                    <h3>{{user.name}}</h3>
+                    <el-button type="primary" icon="el-icon-edit">Edit</el-button>
+                </div>
+                <div class="description">
+                    <div class="description__item">
+                        <span>Username:</span>
+                        <span>{{user.username}}</span>
+                    </div>
+                    <div class="description__item">
+                        <span>Email:</span>
+                        <span>{{user.email}}</span>
+                    </div>
+                    <div class="description__item">
+                        <span>Department:</span>
+                        <span>{{user.department}}</span>
+                    </div>
+                    <div class="description__item">
+                        <span>Role</span>
+                        <span>{{user.role}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <el-dialog
                 title="Tips"
                 :visible.sync="editUser">

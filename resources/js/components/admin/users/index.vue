@@ -47,7 +47,7 @@
        </div>
 
        <div class="lib_table__body">
-           <search-bar></search-bar>
+           <!--<search-bar></search-bar>-->
            <vuetable ref="vuetable"
                      api-url="/api/users"
                      :fields="fields"
@@ -60,7 +60,7 @@
            >
                <template slot="actions"  slot-scope="props">
                    <div class="custom-actions">
-                       <a :href="'/user/show/'+props.rowData.id" >
+                       <a :href="'/users/show/'+props.rowData.id" >
                            <i class="material-icons">visibility</i>
                        </a>
                    </div>
