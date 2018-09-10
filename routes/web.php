@@ -60,7 +60,7 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'RoleController@store'
         ]);
 
-        Route::get('/roles/show/{id}',['uses' => 'RoleController@show']);
+        Route::get('/role/show/{id}',['uses' => 'RoleController@show']);
 
         Route::get('api/roles', [
             'uses' => 'RoleController@getRoles'

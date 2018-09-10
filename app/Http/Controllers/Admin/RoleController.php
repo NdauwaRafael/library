@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Admin\permissions\Permission;
 use Admin\Roles\RoleRepository;
 use App\Admin\Roles\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Laracasts\Flash\Flash;
 
 class RoleController extends Controller
 {
@@ -74,13 +76,38 @@ class RoleController extends Controller
         ]);
     }
 
-    public function editPermissions($id)
+    public function editPermissions(Request $request,$id)
     {
 
+        $permissions = $request->except(['_token']);
+
+        $role = $this->roleRepository->getRoleById($id);
+
+        $rolePermissions = $role->rolePermissions;
+
+        foreach ($rolePermissions as $rolePermission) {
+            $rolePermission->delete();
+        }
+
+        $this->roleRepository->addPermissions($permissions, $id);
+
+        Flash::success("Role permissions added successfully");
+
+        return redirect('/role/show/' . $role->id);
     }
 
     public function permissions($id)
     {
+        $role = $this->roleRepository->getRoleById($id);
 
+        $role_permissions = $role->rolePermissions->pluck('permission_id');
+
+        $Permissions = Permission::all();
+
+        return view('admin.roles.permissions', [
+            'permissions' => $Permissions,
+            'role' => $role,
+            'role_permissions' => $role_permissions
+        ]);
     }
 }

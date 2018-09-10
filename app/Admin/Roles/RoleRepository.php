@@ -9,6 +9,7 @@
 namespace Admin\Roles;
 
 
+use Admin\permissions\RolePermission;
 use App\Admin\Roles\Role;
 use App\Http\Controllers\TablePaginate;
 
@@ -35,5 +36,23 @@ class RoleRepository
     public function listRoles()
     {
         return $this->tablePaginate(new Role(), [], $this->universalTransformer());
+    }
+
+    public function addPermissions($permissions, $id)
+    {
+        $role = $this->getRoleById($id);
+
+        $rolePermissions = $role->rolePermissions()->get();
+
+        foreach (array_keys($permissions) as $permission) {
+            if ($rolePermissions->contains('permission_id', $permission)) {
+                RolePermission::where('permission_id', $permission)->restore();
+            } else {
+                RolePermission::create([
+                    'role_id' => $role->id,
+                    'permission_id' => $permission
+                ]);
+            }
+        }
     }
 }

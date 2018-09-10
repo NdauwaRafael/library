@@ -4,6 +4,7 @@ namespace App\Admin\Roles;
 
 use Admin\permissions\Permission;
 use Admin\permissions\RolePermission;
+use App\Admin\Users\User;
 use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
@@ -27,6 +28,11 @@ class Role extends Model
         'slug',
         'description'
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 
     public function permission()
     {
