@@ -5,8 +5,14 @@
                 required: true
             }
         },
-        data: () => ({}),
-        methods: {},
+        data: () => ({
+            editUser: false
+        }),
+        methods: {
+            update(){
+
+            }
+        },
     }
 </script>
 <template>
@@ -32,7 +38,7 @@
                         <td></td>
                         <td></td>
                         <td>
-                            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+                            <el-button type="primary" @click="editUser = true" icon="el-icon-edit" circle></el-button>
                             <el-button type="danger" icon="el-icon-delete" circle></el-button>
                         </td>
                     </tr>
@@ -41,5 +47,16 @@
 
             </div>
         </div>
+
+        <el-dialog
+                title="Tips"
+                :visible.sync="editUser">
+
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="editUser = false">Cancel</el-button>
+                <el-button type="primary" @click="update()">Update User</el-button>
+            </span>
+        </el-dialog>
+
     </div>
 </template>

@@ -48747,9 +48747,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     data: function data() {
-        return {};
+        return {
+            editUser: false
+        };
     },
-    methods: {}
+    methods: {
+        update: function update() {}
+    }
 });
 
 /***/ }),
@@ -48760,47 +48764,110 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "lib_page" }, [
-    _c("div", { staticClass: "lib_table" }, [
-      _c("div", { staticClass: "lib_table__head" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "lib_table__body" }, [
-        _c("table", [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _c("td"),
-              _vm._v(" "),
-              _c("td"),
-              _vm._v(" "),
-              _c("td"),
-              _vm._v(" "),
-              _c("td"),
-              _vm._v(" "),
-              _c(
-                "td",
-                [
-                  _c("el-button", {
-                    attrs: { type: "primary", icon: "el-icon-edit", circle: "" }
-                  }),
-                  _vm._v(" "),
-                  _c("el-button", {
-                    attrs: {
-                      type: "danger",
-                      icon: "el-icon-delete",
-                      circle: ""
-                    }
-                  })
-                ],
-                1
-              )
+  return _c(
+    "div",
+    { staticClass: "lib_page" },
+    [
+      _c("div", { staticClass: "lib_table" }, [
+        _c("div", { staticClass: "lib_table__head" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "lib_table__body" }, [
+          _c("table", [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("tbody", [
+              _c("tr", [
+                _c("td"),
+                _vm._v(" "),
+                _c("td"),
+                _vm._v(" "),
+                _c("td"),
+                _vm._v(" "),
+                _c("td"),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c("el-button", {
+                      attrs: {
+                        type: "primary",
+                        icon: "el-icon-edit",
+                        circle: ""
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.editUser = true
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("el-button", {
+                      attrs: {
+                        type: "danger",
+                        icon: "el-icon-delete",
+                        circle: ""
+                      }
+                    })
+                  ],
+                  1
+                )
+              ])
             ])
           ])
         ])
-      ])
-    ])
-  ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "el-dialog",
+        {
+          attrs: { title: "Tips", visible: _vm.editUser },
+          on: {
+            "update:visible": function($event) {
+              _vm.editUser = $event
+            }
+          }
+        },
+        [
+          _c(
+            "span",
+            {
+              staticClass: "dialog-footer",
+              attrs: { slot: "footer" },
+              slot: "footer"
+            },
+            [
+              _c(
+                "el-button",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.editUser = false
+                    }
+                  }
+                },
+                [_vm._v("Cancel")]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                {
+                  attrs: { type: "primary" },
+                  on: {
+                    click: function($event) {
+                      _vm.update()
+                    }
+                  }
+                },
+                [_vm._v("Update User")]
+              )
+            ],
+            1
+          )
+        ]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
