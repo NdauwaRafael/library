@@ -47092,7 +47092,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         resetForm: function resetForm(formName) {
             this.$refs[formName].resetFields();
         },
-        submitForm: function submitForm() {}
+
+        submitForm: function submitForm() {
+            var _this = this;
+
+            this.$http.post('/api/book', this.book).then(function (response) {
+                _this.loading = false;
+                if (response.status == 200) {
+                    var data = response.body;
+                    if (data.success) {
+                        _this.$router.push({ name: 'book' });
+                    } else {}
+                }
+            }, function (response) {});
+        }
     }
 });
 

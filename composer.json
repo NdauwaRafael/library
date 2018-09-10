@@ -29,7 +29,8 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Admin\\": "app/Admin/"
+            "Admin\\": "app/Admin/",
+            "Book\\": "app/Book/"
         }
     },
     "autoload-dev": {
