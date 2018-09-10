@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Admin\Departments\DepartmentRepository;
 use Admin\Roles\RoleRepository;
 use Admin\Users\UserRepository;
+use App\General\Authorize\Authorization;
 use App\Mail\SendUserActivationLink;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,6 +13,8 @@ use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
+    use Authorization;
+
     public $departmentRepository, $roleRepository, $userRepository;
 
     public function __construct(DepartmentRepository $departmentRepository, RoleRepository $roleRepository,
@@ -76,5 +79,10 @@ class UserController extends Controller
         $this->userRepository->getUserById($id)->update($request->all());
 
         return view('/login');
+    }
+
+    public function checkPermission($permissionName)
+    {
+        return response()->json($this->booleanHasPermission($permissionName));
     }
 }

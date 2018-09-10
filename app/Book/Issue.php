@@ -16,7 +16,7 @@ class Issue extends Model
     ];
 
     protected $fillable = [
-        'book_id','issue_date','return_date','status'
+        'book_id','issue_date','return_date','status','user_id'
     ];
 
     public function book()

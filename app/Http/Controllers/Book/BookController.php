@@ -45,16 +45,6 @@ class BookController extends Controller
 
     public function reserveBook(Request $request)
     {
-        $validation = $this->reserveBook($request);
-
-        if ($validation) {
-            return response()->json([
-                'success' => false,
-                'message' => 'There are errors in the form',
-                'error' => $validation->messages()->getMessages()
-            ]);
-        }
-
         $this->bookRepository->saveReserve($request->all());
 
         return response()->json([
