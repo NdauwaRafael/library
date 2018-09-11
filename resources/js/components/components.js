@@ -24,4 +24,8 @@ Vue.component('search-bar', require('./vuetable/searchbar.vue'));
 Vue.component('all-request', require('./admin/requests/list.vue'));
 Vue.component('view-request', require('./admin/requests/show.vue'));
 
+//dashboard
+Vue.component('dashboard-cards', require('./dashboard/dashboard.vue'));
+
+
 

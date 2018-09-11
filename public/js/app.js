@@ -110454,6 +110454,9 @@ Vue.component('search-bar', __webpack_require__(433));
 Vue.component('all-request', __webpack_require__(436));
 Vue.component('view-request', __webpack_require__(441));
 
+//dashboard
+Vue.component('dashboard-cards', __webpack_require__(453));
+
 /***/ }),
 /* 379 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -115491,6 +115494,198 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 448 */,
+/* 449 */,
+/* 450 */,
+/* 451 */,
+/* 452 */,
+/* 453 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(454)
+/* template */
+var __vue_template__ = __webpack_require__(455)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/dashboard/dashboard.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-96ac3b44", Component.options)
+  } else {
+    hotAPI.reload("data-v-96ac3b44", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 454 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        books: {
+            required: true
+        },
+        requests: {
+            required: true
+        }
+    },
+    data: function data() {
+        return {};
+    },
+    methods: {}
+});
+
+/***/ }),
+/* 455 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "d_cards" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
+    _c("div", { staticClass: "d_cards__item" }, [
+      _vm._m(3),
+      _vm._v(" "),
+      _vm._m(4),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "d_cards__item__foot" },
+        [
+          _c("el-button", [_vm._v("Learn More")]),
+          _vm._v(" "),
+          _c("el-button", { attrs: { type: "primary" } }, [_vm._v("Choose")])
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d_cards__item" }, [
+      _c("div", { staticClass: "d_cards__item__head books" }, [
+        _c("h3", [_vm._v("All books")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "d_cards__item__body" }, [
+        _c("h3", [_vm._v("700")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("There are 700 books in the library")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "d_cards__item__foot" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d_cards__item" }, [
+      _c("div", { staticClass: "d_cards__item__head issued" }, [
+        _c("h3", [_vm._v("Issued books")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "d_cards__item__body" }, [
+        _c("h3", [_vm._v("700")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("There are 700 issued books")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "d_cards__item__foot" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d_cards__item" }, [
+      _c("div", { staticClass: "d_cards__item__head active" }, [
+        _c("h3", [_vm._v("Active Requests")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "d_cards__item__body" }, [
+        _c("h3", [_vm._v("50")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v("There are 50 active requests that have not been addressed")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "d_cards__item__foot" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d_cards__item__head users" }, [
+      _c("h3", [_vm._v("All Students")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d_cards__item__body" }, [
+      _c("h3", [_vm._v("500")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("There are 500 students subscribed in the system")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-96ac3b44", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
