@@ -116290,7 +116290,7 @@ var staticRenderFns = [
         attrs: { "data-accordion-menu": "" }
       },
       [
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Dashboard")])]),
+        _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("Dashboard")])]),
         _vm._v(" "),
         _c("li", [
           _c("a", { attrs: { href: "#" } }, [_vm._v("Books")]),
