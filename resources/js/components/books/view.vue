@@ -8,13 +8,15 @@
             editBook: false,
             details: {},
             book: { },
-            user: {}
+            user: {},
+            reservingBook: false
 
         }),
         methods: {
             reserveABook(){
                     this.details.user_id =  this.user.id;
                     this.details.book_id =  this.$route.params.id;
+                    this.reservingBook = true;
                     this.$http.post('/api/book/reserve', this.details)
                         .then(({data})=>{
                                 this.$notify({
@@ -22,12 +24,14 @@
                                     message: 'Request sent successfully, you will be notified back within 24 hours if the request was successful.',
                                     type: 'success'
                                 });
+                                this.reservingBook = false;
                                this.reserveBook = false;
                                 this.details = {};
                                 window.location.href = "/requests";
+
                         },
                             ()=>{
-
+                                this.reservingBook = false;
                             })
             },
             getBookDetails:function(){
@@ -110,8 +114,8 @@
         </el-dialog>
         <el-dialog
                 title="Reserve book"
-                :visible.sync="reserveBook">
-            <el-form ref="form" :model="details" labelPosition="top" style="width: 100%" >
+                :visible.sync="reserveBook" >
+            <el-form ref="form" :model="details" v-loading="reservingBook" labelPosition="top" style="width: 100%"  >
                 <el-form-item label="Pick Up Date"  label-width="100%">
                     <el-date-picker
                             v-model="details.issue_date"

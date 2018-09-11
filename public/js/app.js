@@ -47579,7 +47579,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             editBook: false,
             details: {},
             book: {},
-            user: {}
+            user: {},
+            reservingBook: false
 
         };
     },
@@ -47589,6 +47590,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.details.user_id = this.user.id;
             this.details.book_id = this.$route.params.id;
+            this.reservingBook = true;
             this.$http.post('/api/book/reserve', this.details).then(function (_ref) {
                 var data = _ref.data;
 
@@ -47597,10 +47599,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     message: 'Request sent successfully, you will be notified back within 24 hours if the request was successful.',
                     type: 'success'
                 });
+                _this.reservingBook = false;
                 _this.reserveBook = false;
                 _this.details = {};
                 window.location.href = "/requests";
-            }, function () {});
+            }, function () {
+                _this.reservingBook = false;
+            });
         },
 
         getBookDetails: function getBookDetails() {
@@ -47755,6 +47760,14 @@ var render = function() {
           _c(
             "el-form",
             {
+              directives: [
+                {
+                  name: "loading",
+                  rawName: "v-loading",
+                  value: _vm.reservingBook,
+                  expression: "reservingBook"
+                }
+              ],
               ref: "form",
               staticStyle: { width: "100%" },
               attrs: { model: _vm.details, labelPosition: "top" }
