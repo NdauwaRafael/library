@@ -109,10 +109,10 @@ class BookRepository
 
         return [
             'book' => $issue->book->title,
-//            'status' => $issue->status,
-//            'issue_date' => $issue->issue_date,
-//            'return_date' => $issue->return_date,
-//            'user' => $issue->user->present()->fullName,
+            'status' => $issue->status,
+            'issue_date' => $issue->issue_date,
+            'return_date' => $issue->return_date,
+            'user' => $issue->user->present()->fullName,
             'id' => $issue->id
         ];
     }

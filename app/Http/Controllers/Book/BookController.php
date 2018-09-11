@@ -66,7 +66,6 @@ class BookController extends Controller
             'fetched' => true,
             'data' => $books
         ];
-
     }
 
     public function getBookDetails($id)
@@ -79,11 +78,21 @@ class BookController extends Controller
         ];
     }
 
-    public function approveBook(Request $request)
+    public function approveBook(Request $request, $id)
     {
-        $book =  $this->bookRepository->saveReserve($request->all());
+        $book = $this->bookRepository->getIssueById($id)->update($request->all());
 
         Mail::to('libray@library.com')->queue(new SendApprovedBookRequestMail($book));
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Created successfully.'
+        ]);
+    }
+
+    public function rejectBook(Request $request, $id)
+    {
+        $this->bookRepository->getIssueById($id)->update($request->all());
 
         return response()->json([
             'success' => true,
@@ -108,10 +117,10 @@ class BookController extends Controller
 
     public function showRequest($id)
     {
-        $issue = $this->bookRepository->getIssueById($id);
+        $issue = $this->bookRepository->getIssueDetails($id);
 
         return view('admin.requests.show', [
-            'issue' => $issue
+            'issue' => json_encode($issue)
         ]);
     }
 

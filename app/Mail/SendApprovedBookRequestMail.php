@@ -12,10 +12,11 @@ class SendApprovedBookRequestMail extends Mailable
     use Queueable, SerializesModels;
 
     public $book;
+
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param $book
      */
     public function __construct($book)
     {
@@ -30,7 +31,7 @@ class SendApprovedBookRequestMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Book Request Approved - ' . $this->book->title)
-            ->view('emails.book.approved');
+        return $this->subject('Book Request Approved ')
+            ->view('emails.books.approved');
     }
 }

@@ -9,11 +9,12 @@
             approve: false,
             reject: false,
             request: {},
+            book: {}
         }),
         methods: {
             approveRequest(){
-                this.request.status = 'approve';
-                this.$http.post('/api/request/approve', this.request)
+                this.request.status = 'approved';
+                this.$http.post('/api/request/approve/' + this.request.id, this.request)
                     .then(({data})=>{
                             this.$notify({
                                 title: 'Success',
@@ -25,9 +26,9 @@
 
                         })
             },
-            approveRequest(){
-                this.request.status = 'reject';
-                this.$http.post('/api/request/reject', this.request)
+            rejectRequest(){
+                this.request.status = 'rejected';
+                this.$http.post('/api/request/reject/' + this.request.id, this.request)
                     .then(({data})=>{
                             this.$notify({
                                 title: 'Success',
@@ -42,6 +43,8 @@
         },
          mounted(){
              this.request = this.issue;
+             this.book = this.issue;
+
          }
     }
 </script>
