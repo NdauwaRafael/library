@@ -47665,6 +47665,14 @@ var render = function() {
                     _c(
                       "el-button",
                       {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: this.book.status != "Pending",
+                            expression: "this.book.status != 'Pending'"
+                          }
+                        ],
                         attrs: { icon: "el-icon-message" },
                         on: {
                           click: function($event) {
