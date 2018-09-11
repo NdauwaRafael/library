@@ -87,9 +87,7 @@
                         <td>{{book.subject}}</td>
                         <td>{{book.created_at}}</td>
                         <td>
-                            <!--<el-button type="primary" @click="editBook = true" icon="el-icon-edit" circle></el-button>-->
-                            <!--<el-button type="danger" icon="el-icon-delete" @click="deleteBook = true" circle></el-button>-->
-                            <el-button icon="el-icon-message" @click="reserveBook = true" >Request</el-button>
+                            <el-button icon="el-icon-message" @click="reserveBook = true"  v-show="this.book.status != 'Pending'">Request</el-button>
                         </td>
                     </tr>
                     </tbody>
