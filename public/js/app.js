@@ -115851,9 +115851,13 @@ var render = function() {
         "div",
         { staticClass: "d_cards__item__foot" },
         [
-          _c("el-button", [_vm._v("Learn More")]),
+          _c("el-button", [
+            _c("a", { attrs: { href: "/listbooks" } }, [_vm._v("Learn More")])
+          ]),
           _vm._v(" "),
-          _c("el-button", { attrs: { type: "primary" } }, [_vm._v("Choose")])
+          _c("el-button", { attrs: { type: "primary" } }, [
+            _c("a", { attrs: { href: "/listbooks" } }, [_vm._v("Choose")])
+          ])
         ],
         1
       )
@@ -115868,9 +115872,13 @@ var render = function() {
         "div",
         { staticClass: "d_cards__item__foot" },
         [
-          _c("el-button", [_vm._v("Learn More")]),
+          _c("el-button", [
+            _c("a", { attrs: { href: "/issued" } }, [_vm._v("Learn More")])
+          ]),
           _vm._v(" "),
-          _c("el-button", { attrs: { type: "primary" } }, [_vm._v("Choose")])
+          _c("el-button", { attrs: { type: "primary" } }, [
+            _c("a", { attrs: { href: "/issued" } }, [_vm._v("Choose")])
+          ])
         ],
         1
       )
@@ -115885,9 +115893,13 @@ var render = function() {
         "div",
         { staticClass: "d_cards__item__foot" },
         [
-          _c("el-button", [_vm._v("Learn More")]),
+          _c("el-button", [
+            _c("a", { attrs: { href: "/requests" } }, [_vm._v("Learn More")])
+          ]),
           _vm._v(" "),
-          _c("el-button", { attrs: { type: "primary" } }, [_vm._v("Choose")])
+          _c("el-button", { attrs: { type: "primary" } }, [
+            _c("a", { attrs: { href: "/requests" } }, [_vm._v("Choose")])
+          ])
         ],
         1
       )
@@ -115902,9 +115914,13 @@ var render = function() {
         "div",
         { staticClass: "d_cards__item__foot" },
         [
-          _c("el-button", [_vm._v("Learn More")]),
+          _c("el-button", [
+            _c("a", { attrs: { href: "/users" } }, [_vm._v("Learn More")])
+          ]),
           _vm._v(" "),
-          _c("el-button", { attrs: { type: "primary" } }, [_vm._v("Choose")])
+          _c("el-button", { attrs: { type: "primary" } }, [
+            _c("a", { attrs: { href: "/users" } }, [_vm._v("Choose")])
+          ])
         ],
         1
       )

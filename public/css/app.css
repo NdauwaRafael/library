@@ -8933,6 +8933,10 @@ html.is-reveal-open body {
   display: flex;
 }
 
+.lib_table .description {
+  padding: 10px;
+}
+
 /**
  * Created by Raphael Karanja on 07/09/2018.
  */
@@ -9015,7 +9019,7 @@ label {
       -ms-flex: 1;
           flex: 1;
   min-width: 300px;
-  max-width: 350px;
+  max-width: 400px;
   min-height: 200px;
   border: 1px solid #eeeeee;
   display: -webkit-box;
