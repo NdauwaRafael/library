@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Book;
 
 use App\Book\BookRepository;
 use App\Book\BookRules;
+use App\Mail\SendApprovedBookRequestMail;
+use App\Mail\SendRequestBookMail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class BookController extends Controller
 {
@@ -45,7 +48,9 @@ class BookController extends Controller
 
     public function reserveBook(Request $request)
     {
-        $this->bookRepository->saveReserve($request->all());
+       $book = $this->bookRepository->saveReserve($request->all());
+
+       Mail::to('libray@library.com')->queue(new SendRequestBookMail($book));
 
         return response()->json([
             'success' => true,
@@ -55,6 +60,37 @@ class BookController extends Controller
 
     public function show($id)
     {
-       return response()->json( $this->bookRepository->getBookById($id));
+        return response()->json($this->bookRepository->getBookById($id));
+    }
+
+    public function approveBook(Request $request)
+    {
+        $book =  $this->bookRepository->saveReserve($request->all());
+
+        Mail::to('libray@library.com')->queue(new SendApprovedBookRequestMail($book));
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Created successfully.'
+        ]);
+    }
+
+    public function getBookRequests()
+    {
+        return response()->json($this->bookRepository->getBookRequests());
+    }
+
+    public function allRequests()
+    {
+        return view('admin.requests.index');
+    }
+
+    public function showRequest($id)
+    {
+        $issue = $this->bookRepository->getIssueById($id);
+
+        return view('admin.requests.show', [
+            'issue' => $issue
+        ]);
     }
 }

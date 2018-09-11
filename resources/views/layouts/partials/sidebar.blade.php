@@ -16,7 +16,7 @@
             </li>
 
             <li>
-                <a href="#">Requests</a>
+                <a href="/requests">Requests</a>
             </li>
 
             <li>

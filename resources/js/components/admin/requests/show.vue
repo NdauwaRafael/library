@@ -1,10 +1,10 @@
 <script>
     export default {
-        props: {
-            issue: {
-                required: true
-            }
-        },
+        // props: {
+        //     issue: {
+        //         required: true
+        //     }
+        // },
         data: () => ({
             approve: false,
             reject: false,
@@ -40,44 +40,44 @@
                         })
             },
         },
-        mounted(){
-            this.request = this.issue;
-        }
+        // mounted(){
+        //     this.request = this.issue;
+        // }
     }
 </script>
 <template>
     <div class="lib_page">
-        <div class="lib_table">
-            <div class="lib_table__head"></div>
-            <div class="lib_table__body">
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Book Title</th>
-                        <th>Issue Date</th>
-                        <th>Return Date</th>
-                        <th>Borrower</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
+        <!--<div class="lib_table">-->
+            <!--<div class="lib_table__head"></div>-->
+            <!--<div class="lib_table__body">-->
+                <!--<table>-->
+                    <!--<thead>-->
+                    <!--<tr>-->
+                        <!--<th>Book Title</th>-->
+                        <!--<th>Issue Date</th>-->
+                        <!--<th>Return Date</th>-->
+                        <!--<th>Borrower</th>-->
+                        <!--<th>Actions</th>-->
+                    <!--</tr>-->
+                    <!--</thead>-->
 
-                    <tbody>
-                    <tr>
-                        <td>{{book.book}}</td>
-                        <td>{{book.issue_date}}</td>
-                        <td>{{book.return_date}}</td>
-                        <td>{{book.user}}</td>
-                        <td>
-                            <el-button type="primary" @click="approve = true" icon="el-icon-success" circle></el-button>
-                            <el-button type="danger" icon="el-icon-delete" @click="reject = true" circle></el-button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                    <!--<tbody>-->
+                    <!--<tr>-->
+                        <!--&lt;!&ndash;<td>{{book.book}}</td>&ndash;&gt;-->
+                        <!--<td>{{book.issue_date}}</td>-->
+                        <!--<td>{{book.return_date}}</td>-->
+                        <!--<td>{{book.user}}</td>-->
+                        <!--<td>-->
+                            <!--<el-button type="primary" @click="approve = true" icon="el-icon-success" circle></el-button>-->
+                            <!--<el-button type="danger" icon="el-icon-delete" @click="reject = true" circle></el-button>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--</tbody>-->
+                <!--</table>-->
 
-            </div>
+            <!--</div>-->
 
-        </div>
+        <!--</div>-->
 
         <el-dialog
                 title="Approve Request"

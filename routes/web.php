@@ -109,6 +109,23 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('api/book/reserve', [
             'uses' => 'BookController@reserveBook'
         ]);
+
+        Route::post('api/request/approve', [
+            'uses' => 'BookController@approveBook'
+        ]);
+
+        Route::get('api/requests', [
+            'uses' => 'BookController@getBookRequests'
+        ]);
+
+        Route::get('/requests/show/{id}', [
+            'uses' => 'BookController@showRequest'
+        ]);
+
+        Route::get('/requests', [
+            'uses' => 'BookController@allRequests'
+        ]);
+//
     });
 });
 
