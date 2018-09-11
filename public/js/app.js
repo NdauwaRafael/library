@@ -115262,6 +115262,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 });
                 _this.approving = false;
                 _this.approve = false;
+                window.location.href;
             }, function () {
                 _this.approving = false;
                 _this.approve = false;
@@ -115282,6 +115283,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 });
                 _this2.rejecting = false;
                 _this2.reject = false;
+                window.location.href;
             }, function () {
                 _this2.rejecting = false;
                 _this2.reject = false;
@@ -115327,6 +115329,14 @@ var render = function() {
                   "td",
                   [
                     _c("el-button", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.book.status == "Pending",
+                          expression: "book.status == 'Pending'"
+                        }
+                      ],
                       attrs: {
                         type: "primary",
                         icon: "el-icon-success",
@@ -115340,6 +115350,14 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("el-button", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.book.status == "Pending",
+                          expression: "book.status == 'Pending'"
+                        }
+                      ],
                       attrs: {
                         type: "danger",
                         icon: "el-icon-delete",

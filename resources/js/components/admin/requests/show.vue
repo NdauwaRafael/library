@@ -26,6 +26,7 @@
                             });
                             this.approving = false;
                             this.approve = false;
+                            window.location.href
                         },
                         ()=>{
                             this.approving = false;
@@ -44,6 +45,7 @@
                             });
                             this.rejecting = false;
                             this.reject = false;
+                            window.location.href
                         },
                         ()=>{
                             this.rejecting = false;
@@ -75,14 +77,15 @@
                     </thead>
 
                     <tbody>
+
                     <tr>
                         <td>{{book.book}}</td>
                         <td>{{book.issue_date}}</td>
                         <td>{{book.return_date}}</td>
                         <td>{{book.user}}</td>
                         <td>
-                            <el-button type="primary" @click="approve = true" icon="el-icon-success" circle></el-button>
-                            <el-button type="danger" icon="el-icon-delete" @click="reject = true" circle></el-button>
+                            <el-button type="primary" v-show="book.status == 'Pending'" @click="approve = true" icon="el-icon-success" circle></el-button>
+                            <el-button type="danger" v-show="book.status == 'Pending'" icon="el-icon-delete" @click="reject = true" circle></el-button>
                         </td>
                     </tr>
                     </tbody>
