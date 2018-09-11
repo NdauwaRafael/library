@@ -47597,6 +47597,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     message: 'Request sent successfully, you will be notified back within 24 hours if the request was successful.',
                     type: 'success'
                 });
+                _this.reserveBook = false;
+                _this.details = {};
+                window.location.href = "/requests";
             }, function () {});
         },
 

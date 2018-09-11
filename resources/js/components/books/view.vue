@@ -22,6 +22,9 @@
                                     message: 'Request sent successfully, you will be notified back within 24 hours if the request was successful.',
                                     type: 'success'
                                 });
+                               this.reserveBook = false;
+                                this.details = {};
+                                window.location.href = "/requests";
                         },
                             ()=>{
 
