@@ -1,4 +1,4 @@
 @extends('layouts.default')
-@section('content')
+@section('content'){{$issue}}
     <view-request :issue="{{$issue}}"></view-request>
 @endsection

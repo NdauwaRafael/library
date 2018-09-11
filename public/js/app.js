@@ -110172,7 +110172,7 @@ Vue.component('list-department', __webpack_require__(186));
 Vue.component('search-bar', __webpack_require__(428));
 
 //requests
-Vue.component('all-requests', __webpack_require__(431));
+Vue.component('all-request', __webpack_require__(431));
 Vue.component('view-request', __webpack_require__(436));
 
 /***/ }),
@@ -114919,11 +114919,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        issue: {
-            required: true
-        }
-    },
+    // props: {
+    //     issue: {
+    //         required: true
+    //     }
+    // },
     data: function data() {
         return {
             approve: false,
@@ -114959,10 +114959,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 type: 'success'
             });
         }, function () {});
-    }),
-    mounted: function mounted() {
-        this.request = this.issue;
-    }
+    })
+    // mounted(){
+    //     this.request = this.issue;
+    // }
 });
 
 /***/ }),
@@ -114977,60 +114977,6 @@ var render = function() {
     "div",
     { staticClass: "lib_page" },
     [
-      _c("div", { staticClass: "lib_table" }, [
-        _c("div", { staticClass: "lib_table__head" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "lib_table__body" }, [
-          _c("table", [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("tbody", [
-              _c("tr", [
-                _c("td", [_vm._v(_vm._s(_vm.book.book))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.book.issue_date))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.book.return_date))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(_vm.book.user))]),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  [
-                    _c("el-button", {
-                      attrs: {
-                        type: "primary",
-                        icon: "el-icon-success",
-                        circle: ""
-                      },
-                      on: {
-                        click: function($event) {
-                          _vm.approve = true
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("el-button", {
-                      attrs: {
-                        type: "danger",
-                        icon: "el-icon-delete",
-                        circle: ""
-                      },
-                      on: {
-                        click: function($event) {
-                          _vm.reject = true
-                        }
-                      }
-                    })
-                  ],
-                  1
-                )
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
       _c(
         "el-dialog",
         {
@@ -115132,26 +115078,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("Book Title")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Issue Date")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Return Date")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Borrower")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Actions")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
