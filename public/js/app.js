@@ -115201,7 +115201,6 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -115213,15 +115212,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return {
             approve: false,
             reject: false,
-            request: {}
+            request: {},
+            book: {}
         };
     },
-    methods: _defineProperty({
+    methods: {
         approveRequest: function approveRequest() {
             var _this = this;
 
-            this.request.status = 'approve';
-            this.$http.post('/api/request/approve', this.request).then(function (_ref) {
+            this.request.status = 'approved';
+            this.$http.post('/api/request/approve/' + this.request.id, this.request).then(function (_ref) {
                 var data = _ref.data;
 
                 _this.$notify({
@@ -115230,23 +115230,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                     type: 'success'
                 });
             }, function () {});
+        },
+        rejectRequest: function rejectRequest() {
+            var _this2 = this;
+
+            this.request.status = 'rejected';
+            this.$http.post('/api/request/reject/' + this.request.id, this.request).then(function (_ref2) {
+                var data = _ref2.data;
+
+                _this2.$notify({
+                    title: 'Success',
+                    message: 'Request has been rejected,',
+                    type: 'success'
+                });
+            }, function () {});
         }
-    }, 'approveRequest', function approveRequest() {
-        var _this2 = this;
-
-        this.request.status = 'reject';
-        this.$http.post('/api/request/reject', this.request).then(function (_ref2) {
-            var data = _ref2.data;
-
-            _this2.$notify({
-                title: 'Success',
-                message: 'Request has been rejected,',
-                type: 'success'
-            });
-        }, function () {});
-    }),
+    },
     mounted: function mounted() {
         this.request = this.issue;
+        this.book = this.issue;
     }
 });
 

@@ -141,8 +141,12 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'BookController@reserveBook'
         ]);
 
-        Route::post('api/request/approve', [
+        Route::post('api/request/approve/{id}', [
             'uses' => 'BookController@approveBook'
+        ]);
+
+        Route::post('api/request/reject/{id}', [
+            'uses' => 'BookController@rejectBook'
         ]);
 
         Route::get('api/requests', [
