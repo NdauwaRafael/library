@@ -12,6 +12,7 @@
 @include('layouts.partials.sidebar')
 
 <section class="lib_body" id="app">
+    @include('partials.flash')
 <div v-if="$route.name">
     <router-view></router-view>
 </div>
@@ -28,6 +29,7 @@
 <script src="/js/app.js"></script>
 <script>
     $(document).foundation();
+    $('#flash-overlay-modal').modal();
 </script>
 </body>
 </html>

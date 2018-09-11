@@ -71,6 +71,19 @@ class BookRepository
         });
     }
 
+    public function getBookDetails($id)
+    {
+        $book = $this->getBookById($id);
+        return [
+            'id' => $book->id,
+            'title' => $book->title,
+            'subject' => $book->subject->name,
+            'author' => $book->author,
+            'synopsis' => $book->synopsis,
+            'created_at' => date_format($book->created_at,'Y-m-d H:i:s'),
+        ];
+    }
+
     public function getApprovedBooks()
     {
         return $this->tablePaginate(Issue::where('status','Approved')->orderBy('id','ASC'), [], function ($request) {

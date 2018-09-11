@@ -10,6 +10,7 @@ use App\Mail\SendUserActivationLink;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use Laracasts\Flash\Flash;
 
 class UserController extends Controller
 {
@@ -56,6 +57,8 @@ class UserController extends Controller
         $user = $this->userRepository->save($request->all());
 
         Mail::to($user->email)->queue(new SendUserActivationLink($user));
+
+        Flash::success("Added successfully");
 
         return View('Auth.login');
     }

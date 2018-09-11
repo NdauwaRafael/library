@@ -60,7 +60,23 @@ class BookController extends Controller
 
     public function show($id)
     {
-        return response()->json($this->bookRepository->getBookById($id));
+        $books = $this->bookRepository->getBookById($id);
+
+        return [
+            'fetched' => true,
+            'data' => $books
+        ];
+
+    }
+
+    public function getBookDetails($id)
+    {
+        $books = $this->bookRepository->getBookDetails($id);
+
+        return [
+            'fetched' => true,
+            'data' => $books
+        ];
     }
 
     public function approveBook(Request $request)
@@ -97,5 +113,10 @@ class BookController extends Controller
         return view('admin.requests.show', [
             'issue' => $issue
         ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->bookRepository->getBookById($id)->update($request->all());
     }
 }

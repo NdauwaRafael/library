@@ -24,4 +24,6 @@ Vue.component('search-bar', require('./vuetable/searchbar.vue'));
 Vue.component('all-request', require('./admin/requests/list.vue'));
 Vue.component('view-request', require('./admin/requests/show.vue'));
 
+Vue.component('flash-message', require('./flash/flash.vue'));
+
 
