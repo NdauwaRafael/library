@@ -2,7 +2,7 @@
     @auth
         <ul class="vertical menu accordion-menu" data-accordion-menu>
             <li>
-                <a href="#">Dashboard</a>
+                <a href="/">Dashboard</a>
             </li>
 
             <li>
