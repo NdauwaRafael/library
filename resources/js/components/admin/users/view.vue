@@ -56,7 +56,7 @@
                         <td>{{user.department}}</td>
                         <td>
                             <el-button type="primary"  icon="el-icon-edit" circle>
-                                <a href="/users/show-role/">Edit Role</a>
+                                <a :href="'/users/show-role/'+user.id">Edit Role</a>
                             </el-button>
                         </td>
                     </tr>
