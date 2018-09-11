@@ -9096,6 +9096,7 @@ label {
 .d_cards__item__body p {
   font-size: 12px;
   opacity: .7;
+  text-align: center;
 }
 
 .d_cards__item__body h3 {

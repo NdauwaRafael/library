@@ -115578,16 +115578,61 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "d_cards" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _vm._m(2),
+    _c("div", { staticClass: "d_cards__item" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "d_cards__item__foot" },
+        [
+          _c("el-button", [_vm._v("Learn More")]),
+          _vm._v(" "),
+          _c("el-button", { attrs: { type: "primary" } }, [_vm._v("Choose")])
+        ],
+        1
+      )
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "d_cards__item" }, [
+      _vm._m(2),
+      _vm._v(" "),
       _vm._m(3),
       _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "d_cards__item__foot" },
+        [
+          _c("el-button", [_vm._v("Learn More")]),
+          _vm._v(" "),
+          _c("el-button", { attrs: { type: "primary" } }, [_vm._v("Choose")])
+        ],
+        1
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "d_cards__item" }, [
       _vm._m(4),
+      _vm._v(" "),
+      _vm._m(5),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "d_cards__item__foot" },
+        [
+          _c("el-button", [_vm._v("Learn More")]),
+          _vm._v(" "),
+          _c("el-button", { attrs: { type: "primary" } }, [_vm._v("Choose")])
+        ],
+        1
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "d_cards__item" }, [
+      _vm._m(6),
+      _vm._v(" "),
+      _vm._m(7),
       _vm._v(" "),
       _c(
         "div",
@@ -115607,56 +115652,66 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d_cards__item" }, [
-      _c("div", { staticClass: "d_cards__item__head books" }, [
-        _c("h3", [_vm._v("All books")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "d_cards__item__body" }, [
-        _c("h3", [_vm._v("700")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("There are 700 books in the library")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "d_cards__item__foot" })
+    return _c("div", { staticClass: "d_cards__item__head books" }, [
+      _c("h3", [_vm._v("All books")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d_cards__item" }, [
-      _c("div", { staticClass: "d_cards__item__head issued" }, [
-        _c("h3", [_vm._v("Issued books")])
-      ]),
+    return _c("div", { staticClass: "d_cards__item__body" }, [
+      _c("h3", [_vm._v("700")]),
       _vm._v(" "),
-      _c("div", { staticClass: "d_cards__item__body" }, [
-        _c("h3", [_vm._v("700")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("There are 700 issued books")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "d_cards__item__foot" })
+      _c("p", [
+        _vm._v(
+          "There are 700 books in the library. Reading lists begin as a shelf full of hope until the year flies by, and you find yourself flooded with procrastination. "
+        )
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d_cards__item" }, [
-      _c("div", { staticClass: "d_cards__item__head active" }, [
-        _c("h3", [_vm._v("Active Requests")])
-      ]),
+    return _c("div", { staticClass: "d_cards__item__head issued" }, [
+      _c("h3", [_vm._v("Issued books")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d_cards__item__body" }, [
+      _c("h3", [_vm._v("700")]),
       _vm._v(" "),
-      _c("div", { staticClass: "d_cards__item__body" }, [
-        _c("h3", [_vm._v("50")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v("There are 50 active requests that have not been addressed")
-        ])
-      ]),
+      _c("p", [
+        _vm._v(
+          "There are 700 issued books. Cheers to the books we’ve been meaning to read all these years and should probably start at some point."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d_cards__item__head active" }, [
+      _c("h3", [_vm._v("Active Requests")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d_cards__item__body" }, [
+      _c("h3", [_vm._v("50")]),
       _vm._v(" "),
-      _c("div", { staticClass: "d_cards__item__foot" })
+      _c("p", [
+        _vm._v(
+          "There are 50 active requests that have not been addressed. We may live in challenging times, and there's no better escape than through a good book. "
+        )
+      ])
     ])
   },
   function() {
@@ -115674,7 +115729,11 @@ var staticRenderFns = [
     return _c("div", { staticClass: "d_cards__item__body" }, [
       _c("h3", [_vm._v("500")]),
       _vm._v(" "),
-      _c("p", [_vm._v("There are 500 students subscribed in the system")])
+      _c("p", [
+        _vm._v(
+          "There are 500 students subscribed in the system. We’re all big readers here. So it’s no surprise that we not only read different kinds of books, but we also read in vastly different ways. "
+        )
+      ])
     ])
   }
 ]
