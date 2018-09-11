@@ -27,6 +27,21 @@
 
                             })
             },
+            getBookDetails:function(){
+                var id = this.$route.params.id;
+                this.$http.get('/api/book-details/' + id)
+                    .then((response) => {
+                        if (response.status == 200) {
+                            var data = response.data;
+                            if (data.fetched) {
+                                this.$set(this, 'book', response.data.data);
+                            }
+                            else {
+                            }
+                        }
+                    }, (response) => {
+                    });
+            },
             deleteABook(){},
             editABook(){},
             checkPermission: function () {
@@ -38,6 +53,7 @@
         },
         mounted:function () {
           this.checkPermission();
+          this.getBookDetails();
         }
     }
 </script>
@@ -64,8 +80,8 @@
                         <td>{{book.subject}}</td>
                         <td>{{book.created_at}}</td>
                         <td>
-                            <el-button type="primary" @click="editBook = true" icon="el-icon-edit" circle></el-button>
-                            <el-button type="danger" icon="el-icon-delete" @click="deleteBook = true" circle></el-button>
+                            <!--<el-button type="primary" @click="editBook = true" icon="el-icon-edit" circle></el-button>-->
+                            <!--<el-button type="danger" icon="el-icon-delete" @click="deleteBook = true" circle></el-button>-->
                             <el-button icon="el-icon-message" @click="reserveBook = true" >Request</el-button>
                         </td>
                     </tr>

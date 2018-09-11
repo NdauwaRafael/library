@@ -116,11 +116,17 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('api/book', [
             'uses' => 'BookController@store'
         ]);
+        Route::put('api/book/{id}', [
+            'uses' => 'BookController@update'
+        ]);
         Route::get('api/books', [
             'uses' => 'BookController@index'
         ]);
         Route::get('api/book/{id}', [
             'uses' => 'BookController@show'
+        ]);
+        Route::get('api/book-details/{id}', [
+            'uses' => 'BookController@getBookDetails'
         ]);
         Route::post('api/book/reserve', [
             'uses' => 'BookController@reserveBook'

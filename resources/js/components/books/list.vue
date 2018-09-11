@@ -70,6 +70,9 @@
                             <router-link :to="{name: 'book.show', params: {id: props.rowData.id}}" >
                                 <i class="material-icons">visibility</i>
                             </router-link>
+                            <router-link :to="{name: 'book.edit', params: {id: props.rowData.id}}" >
+                                <i class="material-icons">visibility</i>
+                            </router-link>
                         </div>
                     </template>
                 </vuetable>

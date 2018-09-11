@@ -2,6 +2,7 @@
 
 namespace App\Book;
 
+use App\Admin\Subjects\Subject;
 use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
@@ -18,4 +19,9 @@ class Book extends Model
     protected $fillable = [
        'author','synopsis','title','subject_id'
     ];
+
+    public function subject()
+    {
+       return $this->belongsTo(Subject::class,'subject_id');
+    }
 }

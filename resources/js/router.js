@@ -10,6 +10,7 @@ import ViewBook from './components/books/view.vue';
 import ListBooks from './components/books/list.vue';
 import ResetPassword from './components/admin/users/resetPassword.vue';
 import showUser from './components/admin/users/view.vue';
+import EditBook from './components/books/edit.vue';
 import AddDepartment from './components/department/add.vue';
 import listDepartments from './components/department/list.vue';
 import AddSubject from './components/subject/add.vue';
@@ -28,6 +29,11 @@ export default new Router({
             path: '/book/show/:id',
             name: 'book.show',
             component: ViewBook
+        },
+        {
+            path: '/book/edit/:id',
+            name: 'book.edit',
+            component: EditBook
         },
         {
             path: '/listbooks',

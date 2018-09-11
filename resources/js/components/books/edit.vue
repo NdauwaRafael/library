@@ -9,16 +9,13 @@
                 this.$refs[formName].resetFields();
             },
             submitForm: function () {
-                this.$http.post('/api/book', this.book)
+                var id = this.$route.params.id;
+                this.$http.put('/api/book/' + id, this.book)
                     .then((response) => {
                         this.loading = false;
                         if (response.status == 200) {
                             var data = response.body;
-                            if (data.success) {
-                                this.$router.push({name: 'list.book'});
-                            }
-                            else {
-                            }
+                            this.$router.push({ name: 'list.book' });
                         }
                     }, (response) => {
                     });
@@ -38,10 +35,27 @@
                     }, (response) => {
                     });
             },
+
+            getBookDetails:function(){
+                var id = this.$route.params.id;
+                this.$http.get('/api/book/' + id)
+                    .then((response) => {
+                        if (response.status == 200) {
+                            var data = response.data;
+                            if (data.fetched) {
+                                this.$set(this, 'book', response.data.data);
+                            }
+                            else {
+                            }
+                        }
+                    }, (response) => {
+                    });
+            }
         },
         mounted:function(){
             console.log('subjects',this.subjects)
             this.getSubjectList();
+            this.getBookDetails();
         }
     }
 </script>
