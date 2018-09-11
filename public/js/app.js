@@ -49226,9 +49226,13 @@ var render = function() {
                         }
                       },
                       [
-                        _c("a", { attrs: { href: "/users/show-role/" } }, [
-                          _vm._v("Edit Role")
-                        ])
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "/users/show-role/" + _vm.user.id }
+                          },
+                          [_vm._v("Edit Role")]
+                        )
                       ]
                     )
                   ],
