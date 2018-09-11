@@ -9,10 +9,13 @@
             approve: false,
             reject: false,
             request: {},
-            book: {}
+            book: {},
+            approving: false,
+            rejecting: false
         }),
         methods: {
             approveRequest(){
+                this.approving = true;
                 this.request.status = 'approved';
                 this.$http.post('/api/request/approve/' + this.request.id, this.request)
                     .then(({data})=>{
@@ -21,13 +24,17 @@
                                 message: 'Request has been Approved!!',
                                 type: 'success'
                             });
+                            this.approving = false;
+                            this.approve = false;
                         },
                         ()=>{
-
+                            this.approving = false;
+                            this.approve = false;
                         })
             },
             rejectRequest(){
                 this.request.status = 'rejected';
+                this.rejecting = true;
                 this.$http.post('/api/request/reject/' + this.request.id, this.request)
                     .then(({data})=>{
                             this.$notify({
@@ -35,9 +42,12 @@
                                 message: 'Request has been rejected,',
                                 type: 'success'
                             });
+                            this.rejecting = false;
+                            this.reject = false;
                         },
                         ()=>{
-
+                            this.rejecting = false;
+                            this.reject = false;
                         })
             },
         },
@@ -86,7 +96,7 @@
                 title="Approve Request"
                 :visible.sync="approve">
 
-            <span slot="footer" class="dialog-footer">
+            <span slot="footer" class="dialog-footer" v-loading="rejecting">
                 <el-button @click="editBook = false">Cancel</el-button>
                 <el-button type="primary" @click="approveRequest()">Update Book Details</el-button>
             </span>
@@ -96,7 +106,7 @@
                 title="Reject Request"
                 :visible.sync="reject">
 
-            <span slot="footer" class="dialog-footer">
+            <span slot="footer" class="dialog-footer" v-loading="approving">
                 <el-button @click="deleteBook = false">Cancel</el-button>
                 <el-button type="primary" @click="rejectRequest()">Reserve Book</el-button>
             </span>

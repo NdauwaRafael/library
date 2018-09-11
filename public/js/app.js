@@ -115233,13 +115233,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             approve: false,
             reject: false,
             request: {},
-            book: {}
+            book: {},
+            approving: false,
+            rejecting: false
         };
     },
     methods: {
         approveRequest: function approveRequest() {
             var _this = this;
 
+            this.approving = true;
             this.request.status = 'approved';
             this.$http.post('/api/request/approve/' + this.request.id, this.request).then(function (_ref) {
                 var data = _ref.data;
@@ -115249,12 +115252,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     message: 'Request has been Approved!!',
                     type: 'success'
                 });
-            }, function () {});
+                _this.approving = false;
+                _this.approve = false;
+            }, function () {
+                _this.approving = false;
+                _this.approve = false;
+            });
         },
         rejectRequest: function rejectRequest() {
             var _this2 = this;
 
             this.request.status = 'rejected';
+            this.rejecting = true;
             this.$http.post('/api/request/reject/' + this.request.id, this.request).then(function (_ref2) {
                 var data = _ref2.data;
 
@@ -115263,7 +115272,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     message: 'Request has been rejected,',
                     type: 'success'
                 });
-            }, function () {});
+                _this2.rejecting = false;
+                _this2.reject = false;
+            }, function () {
+                _this2.rejecting = false;
+                _this2.reject = false;
+            });
         }
     },
     mounted: function mounted() {
@@ -115352,6 +115366,14 @@ var render = function() {
           _c(
             "span",
             {
+              directives: [
+                {
+                  name: "loading",
+                  rawName: "v-loading",
+                  value: _vm.rejecting,
+                  expression: "rejecting"
+                }
+              ],
               staticClass: "dialog-footer",
               attrs: { slot: "footer" },
               slot: "footer"
@@ -115401,6 +115423,14 @@ var render = function() {
           _c(
             "span",
             {
+              directives: [
+                {
+                  name: "loading",
+                  rawName: "v-loading",
+                  value: _vm.approving,
+                  expression: "approving"
+                }
+              ],
               staticClass: "dialog-footer",
               attrs: { slot: "footer" },
               slot: "footer"
