@@ -12,10 +12,12 @@ $material-icons-font-size: 24px !default;
 $material-icons-font-family: 'Material Icons' !default;
 
 
-[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+[type='text'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'],  [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
   margin: 0;
 }
-
+label {
+  margin-bottom: 15px;
+}
 .el-form-item {
   .el-date-editor.el-input, .el-date-editor.el-input__inner {
     width: 100%;
