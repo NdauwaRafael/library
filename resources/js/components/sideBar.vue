@@ -9,19 +9,15 @@
             <ul class="menu vertical nested">
                 <li><a href="/issued">Issued Books</a></li>
                 <li><a href="/listbooks">all Books</a></li>
-                <li><a href="/addbook">Add Book</a></li>
+                <li v-if="canManageLibrary"><a href="/addbook">Add Book</a></li>
             </ul>
         </li>
 
-        <li>
+        <li v-if="canManageLibrary">
             <a href="/requests">Requests</a>
         </li>
 
-        <li>
-            <a href="#">Issues</a>
-        </li>
-
-        <li>
+        <li v-if="canManageLibrary">
             <a href="#">Users</a>
 
             <ul class="menu vertical nested">
@@ -30,21 +26,21 @@
 
         </li>
 
-        <li>
+        <li v-if="canManageLibrary">
             <a href="#">Roles & Permissions</a>
             <ul class="menu vertical nested">
                 <li><a href="/roles">Roles</a></li>
             </ul>
         </li>
 
-        <li>
+        <li v-if="canManageLibrary">
             <a href="#">Subject</a>
             <ul class="menu vertical nested">
                 <li><a href="/subjects">Subjects</a></li>
             </ul>
         </li>
 
-        <li>
+        <li v-if="canManageLibrary">
             <a href="#">Department</a>
             <ul class="menu vertical nested">
                 <li><a href="/departments">Departments</a></li>
@@ -56,7 +52,20 @@
 
 <script>
     export default {
-        name: "sideBar"
+        data: () => ({
+            canManageLibrary:false
+        }),
+        methods: {
+            checkPermission: function () {
+                this.$http.get('/api/permission/canManageLibrary')
+                    .then((response) => {
+                        this.canManageLibrary = response.data
+                    });
+            },
+        },
+        mounted:function () {
+            this.checkPermission();
+        }
     }
 </script>
 

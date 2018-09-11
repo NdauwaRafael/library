@@ -8,8 +8,20 @@
                 required: true
             }
         },
-        data: () => ({}),
-        methods: {},
+        data: () => ({
+            canManageUsers:false
+        }),
+        methods: {
+            checkPermission: function () {
+                this.$http.get('/api/permission/canManageUsers')
+                    .then((response) => {
+                        this.canManageUsers = response.data
+                    });
+            },
+        },
+        mounted:function () {
+            this.checkPermission();
+        }
     }
 </script>
 <template>

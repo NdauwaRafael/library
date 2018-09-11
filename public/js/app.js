@@ -115930,9 +115930,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     data: function data() {
-        return {};
+        return {
+            canManageUsers: false
+        };
     },
-    methods: {}
+    methods: {
+        checkPermission: function checkPermission() {
+            var _this = this;
+
+            this.$http.get('/api/permission/canManageUsers').then(function (response) {
+                _this.canManageUsers = response.data;
+            });
+        }
+    },
+    mounted: function mounted() {
+        this.checkPermission();
+    }
 });
 
 /***/ }),
@@ -116214,7 +116227,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -116277,13 +116290,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "sideBar"
+    data: function data() {
+        return {
+            canManageLibrary: false
+        };
+    },
+    methods: {
+        checkPermission: function checkPermission() {
+            var _this = this;
+
+            this.$http.get('/api/permission/canManageLibrary').then(function (response) {
+                _this.canManageLibrary = response.data;
+            });
+        }
+    },
+    mounted: function mounted() {
+        this.checkPermission();
+    }
 });
 
 /***/ }),
@@ -116294,89 +116319,129 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "ul",
+    {
+      staticClass: "vertical menu accordion-menu",
+      attrs: { "data-accordion-menu": "" }
+    },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Books")]),
+        _vm._v(" "),
+        _c("ul", { staticClass: "menu vertical nested" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._m(2),
+          _vm._v(" "),
+          _vm.canManageLibrary
+            ? _c("li", [
+                _c("a", { attrs: { href: "/addbook" } }, [_vm._v("Add Book")])
+              ])
+            : _vm._e()
+        ])
+      ]),
+      _vm._v(" "),
+      _vm.canManageLibrary
+        ? _c("li", [
+            _c("a", { attrs: { href: "/requests" } }, [_vm._v("Requests")])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.canManageLibrary
+        ? _c("li", [
+            _c("a", { attrs: { href: "#" } }, [_vm._v("Users")]),
+            _vm._v(" "),
+            _vm._m(3)
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.canManageLibrary
+        ? _c("li", [
+            _c("a", { attrs: { href: "#" } }, [_vm._v("Roles & Permissions")]),
+            _vm._v(" "),
+            _vm._m(4)
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.canManageLibrary
+        ? _c("li", [
+            _c("a", { attrs: { href: "#" } }, [_vm._v("Subject")]),
+            _vm._v(" "),
+            _vm._m(5)
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.canManageLibrary
+        ? _c("li", [
+            _c("a", { attrs: { href: "#" } }, [_vm._v("Department")]),
+            _vm._v(" "),
+            _vm._m(6)
+          ])
+        : _vm._e()
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "ul",
-      {
-        staticClass: "vertical menu accordion-menu",
-        attrs: { "data-accordion-menu": "" }
-      },
-      [
-        _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("Dashboard")])]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Books")]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "menu vertical nested" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "/issued" } }, [_vm._v("Issued Books")])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "/listbooks" } }, [_vm._v("all Books")])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "/addbook" } }, [_vm._v("Add Book")])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/requests" } }, [_vm._v("Requests")])
-        ]),
-        _vm._v(" "),
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Issues")])]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Users")]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "menu vertical nested" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "/users" } }, [_vm._v("View Users")])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Roles & Permissions")]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "menu vertical nested" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "/roles" } }, [_vm._v("Roles")])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Subject")]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "menu vertical nested" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "/subjects" } }, [_vm._v("Subjects")])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Department")]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "menu vertical nested" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "/departments" } }, [
-                _vm._v("Departments")
-              ])
-            ])
-          ])
-        ])
-      ]
-    )
+    return _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("Dashboard")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "/issued" } }, [_vm._v("Issued Books")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "/listbooks" } }, [_vm._v("all Books")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "menu vertical nested" }, [
+      _c("li", [_c("a", { attrs: { href: "/users" } }, [_vm._v("View Users")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "menu vertical nested" }, [
+      _c("li", [_c("a", { attrs: { href: "/roles" } }, [_vm._v("Roles")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "menu vertical nested" }, [
+      _c("li", [
+        _c("a", { attrs: { href: "/subjects" } }, [_vm._v("Subjects")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "menu vertical nested" }, [
+      _c("li", [
+        _c("a", { attrs: { href: "/departments" } }, [_vm._v("Departments")])
+      ])
+    ])
   }
 ]
 render._withStripped = true
