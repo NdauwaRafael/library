@@ -8,20 +8,23 @@
     <link href="/css/app.css" rel="stylesheet" type="text/css">
 </head>
 <body >
-@include('layouts.partials.topbar')
-@include('layouts.partials.sidebar')
+<div  id="app">
+    @include('layouts.partials.topbar')
+    @include('layouts.partials.sidebar')
+    <section class="lib_body">
+        @include('partials.flash')
+        <div v-if="$route.name">
+            <router-view></router-view>
+        </div>
+        <div v-else>
+            @yield('content')
+        </div>
 
-<section class="lib_body" id="app">
-    @include('partials.flash')
-<div v-if="$route.name">
-    <router-view></router-view>
+        @include('layouts.partials.footer')
+    </section>
+
 </div>
-    <div v-else>
-        @yield('content')
-    </div>
 
-    @include('layouts.partials.footer')
-</section>
 
 
 
