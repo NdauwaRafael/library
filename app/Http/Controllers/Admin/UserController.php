@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Admin\Departments\DepartmentRepository;
 use Admin\Roles\RoleRepository;
 use Admin\Users\UserRepository;
+use App\Admin\Roles\Role;
 use App\General\Authorize\Authorization;
 use App\Mail\SendUserActivationLink;
 use Illuminate\Http\Request;
@@ -72,6 +73,27 @@ class UserController extends Controller
         ]);
     }
 
+    public function showRole($id)
+    {
+        $user = $this->userRepository->getUserById($id);
+
+        $roles = Role::pluck('name', 'id');
+
+        return view('admin.users.show_role', [
+            'user' => $user,
+            'roles' => $roles
+        ]);
+    }
+    public function showDetails($id)
+    {
+        $user = $this->userRepository->getUserDetails($id);
+
+        return [
+            'fetched' => true,
+            'data' => $user
+        ];
+    }
+
     public function getUsers()
     {
         return $this->userRepository->listUsers();
@@ -87,5 +109,12 @@ class UserController extends Controller
     public function checkPermission($permissionName)
     {
         return response()->json($this->booleanHasPermission($permissionName));
+    }
+
+    public function roleAssignment(Request $request, $id)
+    {
+        $this->userRepository->roleAssignment($id, $request->get('role_id'));
+
+        return redirect('/users');
     }
 }

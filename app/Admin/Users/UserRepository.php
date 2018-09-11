@@ -47,8 +47,34 @@ class UserRepository
                 'email' => $user->email,
                 'phone' => $user->phone,
                 'role' => $user->role->name,
+                'department' => $user->department->name,
                 'id' => $user->id
             ];
         });
+    }
+
+    public function getUserDetails($id)
+    {
+        $user = $this->getUserById($id);
+
+        return  [
+            'name' => $user->present()->fullName,
+            'email' => $user->email,
+            'phone' => $user->phone,
+            'role' => $user->role->name,
+            'department' => $user->department->name,
+            'id' => $user->id
+        ];
+    }
+
+    public function roleAssignment($id, $role)
+    {
+        $user = $this->getUserById($id);
+
+        $user->role_id = $role;
+
+        $user->save();
+
+        return $user;
     }
 }

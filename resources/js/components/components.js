@@ -26,6 +26,7 @@ Vue.component('view-request', require('./admin/requests/show.vue'));
 
 //dashboard
 Vue.component('dashboard-cards', require('./dashboard/dashboard.vue'));
+Vue.component('side-bar', require('./sideBar.vue'));
 
 
 

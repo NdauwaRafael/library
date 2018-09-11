@@ -1,17 +1,34 @@
 <script>
     export default {
         props: {
-            user: {
-                required: true
-            }
-        },
+            users: { }
+    },
         data: () => ({
-            editUser: false
+            editUser: false,
+            user:{ }
         }),
         methods: {
             update(){
 
+            },
+            getUserDetails:function(){
+                var id = this.$route.params.id;
+                this.$http.get('/api/user/' + this.users.id)
+                    .then((response) => {
+                        if (response.status == 200) {
+                            var data = response.data;
+                            if (data.fetched) {
+                                this.$set(this, 'user', response.data.data);
+                            }
+                            else {
+                            }
+                        }
+                    }, (response) => {
+                    });
             }
+        },
+        mounted:function () {
+            this.getUserDetails();
         }
     }
 </script>
@@ -33,13 +50,14 @@
 
                     <tbody>
                     <tr>
-                        <td>{{user.firstname}} {{user.lastname}}</td>
+                        <td>{{user.name}}</td>
                         <td>{{user.email}}</td>
                         <td>{{user.role}}</td>
                         <td>{{user.department}}</td>
                         <td>
-                            <el-button type="primary" @click="editUser = true" icon="el-icon-edit" circle></el-button>
-                            <el-button type="danger" icon="el-icon-delete" circle></el-button>
+                            <el-button type="primary"  icon="el-icon-edit" circle>
+                                <a href="/users/show-role/">Edit Role</a>
+                            </el-button>
                         </td>
                     </tr>
                     </tbody>
@@ -55,7 +73,7 @@
                 <div class="head">
                     <h3>{{user.firstname}} {{user.lastname}} </h3>
                     <a :href="'/users/edit/' + user.id">
-                        <el-button size="mini" type="primary" icon="el-icon-edit">Edit</el-button>
+                        <!--<el-button size="mini" type="primary" icon="el-icon-edit">Edit</el-button>-->
                     </a>
                 </div>
                 <div class="description">

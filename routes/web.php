@@ -42,6 +42,15 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/users/show/{id}', 'UserController@show');
 
+        Route::get('/api/user/{id}', 'UserController@showDetails');
+
+        Route::post('/users/role_assignment/{id}', [
+            'as' => 'users.role_assignment',
+            'uses' => 'UserController@roleAssignment'
+        ]);
+
+        Route::get('/users/show-role/{id}', 'UserController@showRole');
+
 //        Route::get('/users/create/{id?}', [
 //            'as' => 'users.create',
 //            'uses' => 'UserController@create'
