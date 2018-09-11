@@ -29,7 +29,7 @@
 <script src="/js/app.js"></script>
 <script>
     $(document).foundation();
-//    $('#flash-overlay-modal').modal();
+    $('#flash-overlay-modal').modal();
 </script>
 </body>
 </html>

@@ -71,7 +71,7 @@
                                 <i class="material-icons">visibility</i>
                             </router-link>
                             <router-link :to="{name: 'book.edit', params: {id: props.rowData.id}}" >
-                                <i class="material-icons">visibility</i>
+                                <i class="material-icons">edit</i>
                             </router-link>
                         </div>
                     </template>

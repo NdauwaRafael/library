@@ -48820,7 +48820,7 @@ var render = function() {
                           },
                           [
                             _c("i", { staticClass: "material-icons" }, [
-                              _vm._v("visibility")
+                              _vm._v("edit")
                             ])
                           ]
                         )
