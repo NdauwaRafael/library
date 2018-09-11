@@ -35,7 +35,7 @@ class BookRepository
             'book_id' => $input['book_id'],
             'issue_date' => Carbon::parse($input['issue_date']),
             'return_date' => Carbon::parse($input['return_date']),
-            'status' => 'approved'
+            'status' => 'Pending'
         ]);
     }
 
