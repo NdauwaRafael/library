@@ -6,9 +6,9 @@
         </div>
         <div class="top_bar_search">
             <div class="table_search">
-                    <md-button class="md-icon-button search_button" @click="toggleSearch = !toggleSearch">
-                        <md-icon>search</md-icon>
-                    </md-button>
+                    <el-button type="primary" @click="toggleSearch = !toggleSearch">
+                        <i class="material-icons">search</i>
+                    </el-button>
             </div>
             <transition name="slide-fade">
                 <div class="search_form" v-show="toggleSearch">

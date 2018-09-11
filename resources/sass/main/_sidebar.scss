@@ -18,7 +18,7 @@
       a {
         color: #ffffff;
 
-        &:hover {
+        &:hover, &:active {
           background: #9b9b9b;
           border-left: 3px solid #206e6a;
           padding-left: calc(1rem - 3px);
