@@ -9006,13 +9006,16 @@ label {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .d_cards__item {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  min-width: 320px;
+  min-width: 300px;
+  max-width: 350px;
   min-height: 200px;
   border: 1px solid #eeeeee;
   display: -webkit-box;
@@ -9024,6 +9027,7 @@ label {
           flex-direction: column;
   background: #ffffff;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .d_cards__item:last-child {
