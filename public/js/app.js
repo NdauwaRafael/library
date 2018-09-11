@@ -114852,17 +114852,16 @@ var render = function() {
           { staticClass: "table_search" },
           [
             _c(
-              "md-button",
+              "el-button",
               {
-                staticClass: "md-icon-button search_button",
+                attrs: { type: "primary" },
                 on: {
                   click: function($event) {
                     _vm.toggleSearch = !_vm.toggleSearch
                   }
                 }
               },
-              [_c("md-icon", [_vm._v("search")])],
-              1
+              [_c("i", { staticClass: "material-icons" }, [_vm._v("search")])]
             )
           ],
           1
