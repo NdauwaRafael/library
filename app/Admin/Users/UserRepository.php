@@ -9,6 +9,7 @@
 namespace Admin\Users;
 
 
+use App\Admin\Roles\Role;
 use App\Admin\Users\User;
 use App\Http\Controllers\TablePaginate;
 use Illuminate\Support\Facades\Hash;
@@ -24,15 +25,17 @@ class UserRepository
 
     public function save($input)
     {
+        $role = Role::where('name','Student')->first();
+
         return User::create([
-            'password' => Hash::make(str_random(8)),
+            'password' => Hash::make($input['password']),
             'created_by' => $input['created_by'],
             'username' => $input['username'],
             'firstname' => $input['firstname'],
             'lastname' => $input['lastname'],
             'email' => $input['email'],
             'department_id' => $input['department_id'],
-            'role_id' => $input['role_id'],
+            'role_id' => $role->id,
         ]);
     }
 

@@ -8,7 +8,6 @@
             <li>
                 <a href="#">Books</a>
                 <ul class="menu vertical nested">
-                    <li><a href="#">Issue Book</a></li>
                     <li><a href="/issued">Issued Books</a></li>
                     <li><a href="/listbooks">all Books</a></li>
                     <li><a href="/addbook">Add Book</a></li>
@@ -27,7 +26,6 @@
                 <a href="#">Users</a>
 
                 <ul class="menu vertical nested">
-                    <li><a href="/users/create">Add User</a></li>
                     <li><a href="/users">View Users</a></li>
                 </ul>
 
