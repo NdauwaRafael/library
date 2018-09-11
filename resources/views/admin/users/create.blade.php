@@ -28,14 +28,17 @@
                              :value="department.value"></option>
                  </select>
              </label>
-             <label>Role
-                 <select name="role_id" required>
-                     <option value="" label="Select A Role" disabled selected></option>
-                     <option v-for="role in roles"
-                             :label="role.label"
-                             :value="role.value"></option>
-                 </select>
+             <label>Password
+                 <el-input  type="password" placeholder="Password"  name="password" value="{{old('password')}}" required></el-input>
              </label>
+             {{--<label>Role--}}
+                 {{--<select name="role_id" required>--}}
+                     {{--<option value="" label="Select A Role" disabled selected></option>--}}
+                     {{--<option v-for="role in roles"--}}
+                             {{--:label="role.label"--}}
+                             {{--:value="role.value"></option>--}}
+                 {{--</select>--}}
+             {{--</label>--}}
          </div>
      </create-user>
      <div class="small-12 large-2 cell">

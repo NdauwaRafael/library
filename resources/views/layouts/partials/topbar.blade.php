@@ -22,8 +22,8 @@
                 </span>
             @endauth
             @guest
-                <span><a href="/login">Sign In</a></span>
-                <span><a href="/register">Sign Up</a></span>
+                <span><a href="/login">Login</a></span>
+                <span><a href="/users/create">Register</a></span>
             @endguest
         </div>
     </div>

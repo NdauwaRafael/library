@@ -57,7 +57,7 @@ class UserController extends Controller
 
         Mail::to($user->email)->queue(new SendUserActivationLink($user));
 
-        return redirect()->back();
+        return View('Auth.login');
     }
 
     public function show($id)

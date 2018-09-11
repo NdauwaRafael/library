@@ -14,6 +14,18 @@
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/login', 'SessionsController@create')->name('login');
     Route::post('/login', 'SessionsController@store');
+
+    Route::group(['namespace' => 'Admin'], function () {
+        Route::get('/users/create/{id?}', [
+            'as' => 'users.create',
+            'uses' => 'UserController@create'
+        ]);
+
+        Route::post('/create/user', [
+            'as' => 'create.user',
+            'uses' => 'UserController@store'
+        ]);
+    });
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -28,17 +40,17 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'UserController@index'
         ]);
 
-        Route::get('/users/show/{id}','UserController@show');
+        Route::get('/users/show/{id}', 'UserController@show');
 
-        Route::get('/users/create/{id?}', [
-            'as' => 'users.create',
-            'uses' => 'UserController@create'
-        ]);
-
-        Route::post('/create/user', [
-            'as' => 'create.user',
-            'uses' => 'UserController@store'
-        ]);
+//        Route::get('/users/create/{id?}', [
+//            'as' => 'users.create',
+//            'uses' => 'UserController@create'
+//        ]);
+//
+//        Route::post('/create/user', [
+//            'as' => 'create.user',
+//            'uses' => 'UserController@store'
+//        ]);
 
         Route::get('api/users', [
             'uses' => 'UserController@getUsers'
@@ -63,7 +75,7 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'RoleController@store'
         ]);
 
-        Route::get('/role/show/{id}',['uses' => 'RoleController@show']);
+        Route::get('/role/show/{id}', ['uses' => 'RoleController@show']);
 
         Route::get('api/roles', [
             'uses' => 'RoleController@getRoles'
