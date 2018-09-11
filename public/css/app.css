@@ -8933,6 +8933,10 @@ html.is-reveal-open body {
   display: flex;
 }
 
+.lib_table .description {
+  padding: 10px;
+}
+
 /**
  * Created by Raphael Karanja on 07/09/2018.
  */
