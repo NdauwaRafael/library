@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
     <div class="dashboard">
-        Dashboard
+        <dashboard-cards></dashboard-cards>
     </div>
 @endsection
