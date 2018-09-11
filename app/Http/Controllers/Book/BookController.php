@@ -80,6 +80,11 @@ class BookController extends Controller
         return response()->json($this->bookRepository->getBookRequests());
     }
 
+    public function getApprovedBook()
+    {
+        return response()->json($this->bookRepository->getApprovedBooks());
+    }
+
     public function allRequests()
     {
         return view('admin.requests.index');

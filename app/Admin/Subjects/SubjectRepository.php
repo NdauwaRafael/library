@@ -34,4 +34,16 @@ class SubjectRepository
             ];
         });
     }
+
+    public function getSubjectsList()
+    {
+        $roles = Subject::orderBy('name')->get();
+
+        return $roles->map(function ($role) {
+            return [
+                'value' => $role->id,
+                'label' => $role->name,
+            ];
+        });
+    }
 }

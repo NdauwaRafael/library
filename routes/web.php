@@ -94,6 +94,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('api/subjects', [
             'uses' => 'SubjectController@getSubjects'
         ]);
+
+        Route::get('api/subject', [
+            'uses' => 'SubjectController@index'
+        ]);
     });
 
     Route::group(['namespace' => 'Book'], function () {
@@ -116,6 +120,10 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('api/requests', [
             'uses' => 'BookController@getBookRequests'
+        ]);
+
+        Route::get('api/approved', [
+            'uses' => 'BookController@getApprovedBook'
         ]);
 
         Route::get('/requests/show/{id}', [

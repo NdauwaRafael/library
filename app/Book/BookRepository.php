@@ -59,8 +59,21 @@ class BookRepository
 
     public function getBookRequests()
     {
+        return $this->tablePaginate(Issue::where('status','Pending')->orderBy('id','ASC'), [], function ($request) {
+            return [
+                'book' => $request->book->title,
+                'status' => $request->status,
+                'issue_date' => $request->issue_date,
+                'return_date' => $request->return_date,
+                'user' => $request->user->present()->fullName,
+                'id' => $request->id
+            ];
+        });
+    }
 
-        return $this->tablePaginate(new Issue(), [], function ($request) {
+    public function getApprovedBooks()
+    {
+        return $this->tablePaginate(Issue::where('status','Approved')->orderBy('id','ASC'), [], function ($request) {
             return [
                 'book' => $request->book->title,
                 'status' => $request->status,

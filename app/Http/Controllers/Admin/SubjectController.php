@@ -41,4 +41,14 @@ class SubjectController extends Controller
     {
         return $this->subjectRepository->listSubjects();
     }
+
+    public function index()
+    {
+        $subjects = $this->subjectRepository->getSubjectsList();
+
+        return [
+            'fetched' => true,
+            'data' => $subjects
+        ];
+    }
 }

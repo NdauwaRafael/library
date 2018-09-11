@@ -16,6 +16,6 @@ class Book extends Model
     ];
 
     protected $fillable = [
-       'author','synopsis','title'
+       'author','synopsis','title','subject_id'
     ];
 }

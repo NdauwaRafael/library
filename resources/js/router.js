@@ -14,6 +14,7 @@ import AddDepartment from './components/department/add.vue';
 import listDepartments from './components/department/list.vue';
 import AddSubject from './components/subject/add.vue';
 import listSubjects from './components/subject/list.vue';
+import listIssued from './components/admin/requests/approved.vue';
 
 
 export default new Router({
@@ -63,6 +64,11 @@ export default new Router({
             path: '/subjects',
             name: 'subjects',
             component: listSubjects
+        },
+        {
+            path: '/issued',
+            name: 'issued',
+            component: listIssued
         },
     ],
     mode: 'history',
