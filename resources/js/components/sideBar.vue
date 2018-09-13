@@ -1,10 +1,10 @@
 <template>
     <ul class="vertical menu accordion-menu" data-accordion-menu>
-        <li>
+        <li v-if="canViewBooks">
             <a href="/">Dashboard</a>
         </li>
 
-        <li>
+        <li v-if="canViewBooks">
             <a href="#">Books</a>
             <ul class="menu vertical nested">
                 <li><a href="/issued">Issued Books</a></li>
@@ -53,13 +53,18 @@
 <script>
     export default {
         data: () => ({
-            canManageLibrary:true
+            canManageLibrary:true,
+            canViewBooks:true
         }),
         methods: {
             checkPermission: function () {
                 this.$http.get('/api/permission/canManageLibrary')
                     .then((response) => {
                         this.canManageLibrary = response.data
+                    });
+                this.$http.get('/api/permission/canViewBooks')
+                    .then((response) => {
+                        this.canViewBooks = response.data
                     });
             },
         },
