@@ -44336,7 +44336,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(221);
-module.exports = __webpack_require__(447);
+module.exports = __webpack_require__(450);
 
 
 /***/ }),
@@ -44366,7 +44366,7 @@ __webpack_require__(378);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', __webpack_require__(444));
+Vue.component('example-component', __webpack_require__(447));
 
 var app = new Vue({
   el: '#app',
@@ -110486,8 +110486,8 @@ Vue.component('all-request', __webpack_require__(436));
 Vue.component('view-request', __webpack_require__(441));
 
 //dashboard
-Vue.component('dashboard-cards', __webpack_require__(453));
-Vue.component('side-bar', __webpack_require__(459));
+Vue.component('dashboard-cards', __webpack_require__(462));
+Vue.component('side-bar', __webpack_require__(465));
 
 /***/ }),
 /* 379 */
@@ -115525,15 +115525,18 @@ if (false) {
 }
 
 /***/ }),
-/* 444 */
+/* 444 */,
+/* 445 */,
+/* 446 */,
+/* 447 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(445)
+var __vue_script__ = __webpack_require__(448)
 /* template */
-var __vue_template__ = __webpack_require__(446)
+var __vue_template__ = __webpack_require__(449)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -115572,7 +115575,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 445 */
+/* 448 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -115601,7 +115604,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 446 */
+/* 449 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -115644,26 +115647,283 @@ if (false) {
 }
 
 /***/ }),
-/* 447 */
+/* 450 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 448 */,
-/* 449 */,
-/* 450 */,
 /* 451 */,
 /* 452 */,
-/* 453 */
+/* 453 */,
+/* 454 */,
+/* 455 */,
+/* 456 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(454)
+var __vue_script__ = __webpack_require__(459)
 /* template */
-var __vue_template__ = __webpack_require__(455)
+var __vue_template__ = __webpack_require__(461)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/books/edit.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e08a514c", Component.options)
+  } else {
+    hotAPI.reload("data-v-e08a514c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 457 */,
+/* 458 */,
+/* 459 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            book: {},
+            subjects: []
+        };
+    },
+    methods: {
+        resetForm: function resetForm(formName) {
+            this.$refs[formName].resetFields();
+        },
+
+        submitForm: function submitForm() {
+            var _this = this;
+
+            var id = this.$route.params.id;
+            this.$http.put('/api/book/' + id, this.book).then(function (response) {
+                _this.loading = false;
+                if (response.status == 200) {
+                    var data = response.body;
+                    _this.$router.push({ name: 'list.book' });
+                }
+            }, function (response) {});
+        },
+
+        getSubjectList: function getSubjectList() {
+            var _this2 = this;
+
+            this.$http.get('/api/subject').then(function (response) {
+                if (response.status == 200) {
+                    var data = response.data;
+                    if (data.fetched) {
+                        _this2.$set(_this2, 'subjects', response.data.data);
+                    } else {}
+                }
+            }, function (response) {});
+        },
+
+        getBookDetails: function getBookDetails() {
+            var _this3 = this;
+
+            var id = this.$route.params.id;
+            this.$http.get('/api/book/' + id).then(function (response) {
+                if (response.status == 200) {
+                    var data = response.data;
+                    if (data.fetched) {
+                        _this3.$set(_this3, 'book', response.data.data);
+                    } else {}
+                }
+            }, function (response) {});
+        }
+    },
+    mounted: function mounted() {
+        console.log('subjects', this.subjects);
+        this.getSubjectList();
+        this.getBookDetails();
+    }
+});
+
+/***/ }),
+/* 460 */,
+/* 461 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "library_page " }, [
+    _c(
+      "div",
+      { staticClass: "book__add" },
+      [
+        _c(
+          "el-form",
+          { attrs: { model: _vm.book } },
+          [
+            _c(
+              "el-select",
+              {
+                attrs: { clearable: "", placeholder: "Select" },
+                model: {
+                  value: _vm.book.subject_id,
+                  callback: function($$v) {
+                    _vm.$set(_vm.book, "subject_id", $$v)
+                  },
+                  expression: "book.subject_id"
+                }
+              },
+              _vm._l(_vm.subjects, function(item) {
+                return _c("el-option", {
+                  key: item.value,
+                  attrs: { label: item.label, value: item.value }
+                })
+              })
+            ),
+            _vm._v(" "),
+            _c(
+              "el-form-item",
+              { attrs: { label: "Book Title" } },
+              [
+                _c("el-input", {
+                  model: {
+                    value: _vm.book.title,
+                    callback: function($$v) {
+                      _vm.$set(_vm.book, "title", $$v)
+                    },
+                    expression: "book.title"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "el-form-item",
+              { attrs: { label: "Author" } },
+              [
+                _c("el-input", {
+                  model: {
+                    value: _vm.book.author,
+                    callback: function($$v) {
+                      _vm.$set(_vm.book, "author", $$v)
+                    },
+                    expression: "book.author"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "el-form-item",
+              { attrs: { label: "Confirm" } },
+              [
+                _c("el-input", {
+                  attrs: {
+                    type: "textarea",
+                    rows: 5,
+                    placeholder: "Add Book Summary"
+                  },
+                  model: {
+                    value: _vm.book.synopsis,
+                    callback: function($$v) {
+                      _vm.$set(_vm.book, "synopsis", $$v)
+                    },
+                    expression: "book.synopsis"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "el-form-item",
+              [
+                _c(
+                  "el-button",
+                  {
+                    attrs: { type: "primary" },
+                    on: {
+                      click: function($event) {
+                        _vm.submitForm("book")
+                      }
+                    }
+                  },
+                  [_vm._v("Submit")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "el-button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.resetForm("book")
+                      }
+                    }
+                  },
+                  [_vm._v("Reset")]
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-e08a514c", module.exports)
+  }
+}
+
+/***/ }),
+/* 462 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(463)
+/* template */
+var __vue_template__ = __webpack_require__(464)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -115702,7 +115962,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 454 */
+/* 463 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -115737,7 +115997,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 455 */
+/* 464 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -115930,273 +116190,19 @@ if (false) {
 }
 
 /***/ }),
-/* 456 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(457)
-/* template */
-var __vue_template__ = __webpack_require__(458)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/books/edit.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-e08a514c", Component.options)
-  } else {
-    hotAPI.reload("data-v-e08a514c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 457 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            book: {},
-            subjects: []
-        };
-    },
-    methods: {
-        resetForm: function resetForm(formName) {
-            this.$refs[formName].resetFields();
-        },
-
-        submitForm: function submitForm() {
-            var _this = this;
-
-            var id = this.$route.params.id;
-            this.$http.put('/api/book/' + id, this.book).then(function (response) {
-                _this.loading = false;
-                if (response.status == 200) {
-                    var data = response.body;
-                    _this.$router.push({ name: 'list.book' });
-                }
-            }, function (response) {});
-        },
-
-        getSubjectList: function getSubjectList() {
-            var _this2 = this;
-
-            this.$http.get('/api/subject').then(function (response) {
-                if (response.status == 200) {
-                    var data = response.data;
-                    if (data.fetched) {
-                        _this2.$set(_this2, 'subjects', response.data.data);
-                    } else {}
-                }
-            }, function (response) {});
-        },
-
-        getBookDetails: function getBookDetails() {
-            var _this3 = this;
-
-            var id = this.$route.params.id;
-            this.$http.get('/api/book/' + id).then(function (response) {
-                if (response.status == 200) {
-                    var data = response.data;
-                    if (data.fetched) {
-                        _this3.$set(_this3, 'book', response.data.data);
-                    } else {}
-                }
-            }, function (response) {});
-        }
-    },
-    mounted: function mounted() {
-        console.log('subjects', this.subjects);
-        this.getSubjectList();
-        this.getBookDetails();
-    }
-});
-
-/***/ }),
-/* 458 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "library_page " }, [
-    _c(
-      "div",
-      { staticClass: "book__add" },
-      [
-        _c(
-          "el-form",
-          { attrs: { model: _vm.book } },
-          [
-            _c(
-              "el-select",
-              {
-                attrs: { clearable: "", placeholder: "Select" },
-                model: {
-                  value: _vm.book.subject_id,
-                  callback: function($$v) {
-                    _vm.$set(_vm.book, "subject_id", $$v)
-                  },
-                  expression: "book.subject_id"
-                }
-              },
-              _vm._l(_vm.subjects, function(item) {
-                return _c("el-option", {
-                  key: item.value,
-                  attrs: { label: item.label, value: item.value }
-                })
-              })
-            ),
-            _vm._v(" "),
-            _c(
-              "el-form-item",
-              { attrs: { label: "Book Title" } },
-              [
-                _c("el-input", {
-                  model: {
-                    value: _vm.book.title,
-                    callback: function($$v) {
-                      _vm.$set(_vm.book, "title", $$v)
-                    },
-                    expression: "book.title"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "el-form-item",
-              { attrs: { label: "Author" } },
-              [
-                _c("el-input", {
-                  model: {
-                    value: _vm.book.author,
-                    callback: function($$v) {
-                      _vm.$set(_vm.book, "author", $$v)
-                    },
-                    expression: "book.author"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "el-form-item",
-              { attrs: { label: "Confirm" } },
-              [
-                _c("el-input", {
-                  attrs: {
-                    type: "textarea",
-                    rows: 5,
-                    placeholder: "Add Book Summary"
-                  },
-                  model: {
-                    value: _vm.book.synopsis,
-                    callback: function($$v) {
-                      _vm.$set(_vm.book, "synopsis", $$v)
-                    },
-                    expression: "book.synopsis"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "el-form-item",
-              [
-                _c(
-                  "el-button",
-                  {
-                    attrs: { type: "primary" },
-                    on: {
-                      click: function($event) {
-                        _vm.submitForm("book")
-                      }
-                    }
-                  },
-                  [_vm._v("Submit")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "el-button",
-                  {
-                    on: {
-                      click: function($event) {
-                        _vm.resetForm("book")
-                      }
-                    }
-                  },
-                  [_vm._v("Reset")]
-                )
-              ],
-              1
-            )
-          ],
-          1
-        )
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-e08a514c", module.exports)
-  }
-}
-
-/***/ }),
-/* 459 */
+/* 465 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(460)
+  __webpack_require__(466)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(462)
+var __vue_script__ = __webpack_require__(468)
 /* template */
-var __vue_template__ = __webpack_require__(463)
+var __vue_template__ = __webpack_require__(469)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -116235,13 +116241,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 460 */
+/* 466 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(461);
+var content = __webpack_require__(467);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -116261,7 +116267,7 @@ if(false) {
 }
 
 /***/ }),
-/* 461 */
+/* 467 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -116275,7 +116281,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 462 */
+/* 468 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -116354,7 +116360,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 463 */
+/* 469 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

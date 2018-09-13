@@ -25,7 +25,7 @@ class UserRepository
 
     public function save($input)
     {
-        $role = Role::where('name','Student')->first();
+        $role = Role::where('name','Basic User')->first();
 
         return User::create([
             'password' => Hash::make($input['password']),
