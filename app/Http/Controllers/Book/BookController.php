@@ -128,4 +128,14 @@ class BookController extends Controller
     {
         $this->bookRepository->getBookById($id)->update($request->all());
     }
+
+    public function count()
+    {
+        $count = $this->bookRepository->countItems();
+
+        return [
+            'fetched' => true,
+            'data' => $count
+        ];
+    }
 }

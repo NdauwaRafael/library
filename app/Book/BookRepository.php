@@ -11,6 +11,7 @@ namespace App\Book;
 
 use App\Book\Issue;
 use App\Http\Controllers\TablePaginate;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -124,6 +125,16 @@ class BookRepository
             'return_date' => $issue->return_date,
             'user' => $issue->user->present()->fullName,
             'id' => $issue->id
+        ];
+    }
+
+    public function countItems()
+    {
+        return  [
+          'users' => User::all()->count(),
+          'books' => Book::all()->count(),
+          'requests' => Issue::where('status','pending')->get()->count(),
+          'issued' => Issue::where('status','approved')->get()->count(),
         ];
     }
 }

@@ -164,6 +164,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/requests', [
             'uses' => 'BookController@allRequests'
         ]);
+
+        Route::get('api/count', [
+            'uses' => 'BookController@count'
+        ]);
 //
     });
 });

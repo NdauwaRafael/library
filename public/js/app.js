@@ -115833,18 +115833,12 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        books: {
-            required: true
-        },
-        requests: {
-            required: true
-        }
-    },
+    props: {},
     data: function data() {
         return {
             canManageUsers: false,
-            canViewBooks: false
+            canViewBooks: false,
+            count: {}
         };
     },
     methods: {
@@ -115857,10 +115851,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$http.get('/api/permission/canViewBooks').then(function (response) {
                 _this.canViewBooks = response.data;
             });
+        },
+        getCounts: function getCounts() {
+            var _this2 = this;
+
+            this.$http.get('/api/count').then(function (response) {
+                if (response.status == 200) {
+                    var data = response.data;
+                    if (data.fetched) {
+                        _this2.$set(_this2, 'count', response.data.data);
+                    } else {}
+                }
+            }, function (response) {});
         }
     },
     mounted: function mounted() {
         this.checkPermission();
+        this.getCounts();
     }
 });
 
@@ -115876,7 +115883,15 @@ var render = function() {
     _c("div", { staticClass: "d_cards__item" }, [
       _vm._m(0),
       _vm._v(" "),
-      _vm._m(1),
+      _c("div", { staticClass: "d_cards__item__body" }, [
+        _c("h3", [_vm._v(_vm._s(_vm.count.books))]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "There are 700 books in the library. Reading lists begin as a shelf full of hope until the year flies by, and you find yourself flooded with procrastination. "
+          )
+        ])
+      ]),
       _vm._v(" "),
       _vm.canViewBooks
         ? _c(
@@ -115899,9 +115914,17 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "d_cards__item" }, [
-      _vm._m(2),
+      _vm._m(1),
       _vm._v(" "),
-      _vm._m(3),
+      _c("div", { staticClass: "d_cards__item__body" }, [
+        _c("h3", [_vm._v(_vm._s(_vm.count.issued))]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "There are 700 issued books. Cheers to the books we’ve been meaning to read all these years and should probably start at some point."
+          )
+        ])
+      ]),
       _vm._v(" "),
       _vm.canViewBooks
         ? _c(
@@ -115922,9 +115945,17 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "d_cards__item" }, [
-      _vm._m(4),
+      _vm._m(2),
       _vm._v(" "),
-      _vm._m(5),
+      _c("div", { staticClass: "d_cards__item__body" }, [
+        _c("h3", [_vm._v(_vm._s(_vm.count.requests))]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "There are 50 active requests that have not been addressed. We may live in challenging times, and there's no better escape than through a good book. "
+          )
+        ])
+      ]),
       _vm._v(" "),
       _vm.canViewBooks
         ? _c(
@@ -115947,9 +115978,17 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "d_cards__item" }, [
-      _vm._m(6),
+      _vm._m(3),
       _vm._v(" "),
-      _vm._m(7),
+      _c("div", { staticClass: "d_cards__item__body" }, [
+        _c("h3", [_vm._v(_vm._s(_vm.count.users))]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "There are 500 students subscribed in the system. We’re all big readers here. So it’s no surprise that we not only read different kinds of books, but we also read in vastly different ways. "
+          )
+        ])
+      ]),
       _vm._v(" "),
       _vm.canManageUsers
         ? _c(
@@ -115983,36 +116022,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d_cards__item__body" }, [
-      _c("h3", [_vm._v("700")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "There are 700 books in the library. Reading lists begin as a shelf full of hope until the year flies by, and you find yourself flooded with procrastination. "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "d_cards__item__head issued" }, [
       _c("h3", [_vm._v("Issued books")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d_cards__item__body" }, [
-      _c("h3", [_vm._v("700")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "There are 700 issued books. Cheers to the books we’ve been meaning to read all these years and should probably start at some point."
-        )
-      ])
     ])
   },
   function() {
@@ -116027,36 +116038,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d_cards__item__body" }, [
-      _c("h3", [_vm._v("50")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "There are 50 active requests that have not been addressed. We may live in challenging times, and there's no better escape than through a good book. "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "d_cards__item__head users" }, [
       _c("h3", [_vm._v("All Students")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d_cards__item__body" }, [
-      _c("h3", [_vm._v("500")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "There are 500 students subscribed in the system. We’re all big readers here. So it’s no surprise that we not only read different kinds of books, but we also read in vastly different ways. "
-        )
-      ])
     ])
   }
 ]

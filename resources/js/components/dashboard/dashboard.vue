@@ -1,16 +1,11 @@
 <script>
     export default {
         props: {
-            books: {
-                required: true
-            },
-            requests: {
-                required: true
-            }
         },
         data: () => ({
             canManageUsers:false,
-            canViewBooks:false
+            canViewBooks:false,
+            count:{ },
         }),
         methods: {
             checkPermission: function () {
@@ -23,9 +18,24 @@
                         this.canViewBooks = response.data
                     });
             },
+            getCounts:function(){
+                this.$http.get('/api/count')
+                    .then((response) => {
+                        if (response.status == 200) {
+                            var data = response.data;
+                            if (data.fetched) {
+                                this.$set(this, 'count', response.data.data);
+                            }
+                            else {
+                            }
+                        }
+                    }, (response) => {
+                    });
+            }
         },
         mounted:function () {
             this.checkPermission();
+            this.getCounts();
         }
     }
 </script>
@@ -36,7 +46,7 @@
                     <h3>All books</h3>
                 </div>
                 <div class="d_cards__item__body">
-                    <h3>700</h3>
+                    <h3>{{count.books}}</h3>
                     <p>There are 700 books in the library. Reading lists begin as a shelf full of hope until the year flies by, and you find yourself flooded with procrastination. </p>
                 </div>
                 <div class="d_cards__item__foot" v-if="canViewBooks">
@@ -49,7 +59,7 @@
                     <h3>Issued books</h3>
                 </div>
                 <div class="d_cards__item__body">
-                    <h3>700</h3>
+                    <h3>{{count.issued}}</h3>
                     <p>There are 700 issued books. Cheers to the books we’ve been meaning to read all these years and should probably start at some point.</p>
                 </div>
                 <div class="d_cards__item__foot" v-if="canViewBooks">
@@ -62,7 +72,7 @@
                     <h3>Active Requests</h3>
                 </div>
                 <div class="d_cards__item__body">
-                    <h3>50</h3>
+                    <h3>{{count.requests}}</h3>
                     <p>There are 50 active requests that have not been addressed. We may live in challenging times, and there's no better escape than through a good book. </p>
                 </div>
                 <div class="d_cards__item__foot" v-if="canViewBooks">
@@ -75,7 +85,7 @@
                     <h3>All Students</h3>
                 </div>
                 <div class="d_cards__item__body">
-                    <h3>500</h3>
+                    <h3>{{count.users}}</h3>
                     <p>There are 500 students subscribed in the system. We’re all big readers here. So it’s no surprise that we not only read different kinds of books, but we also read in vastly different ways. </p>
                 </div>
                 <div class="d_cards__item__foot"  v-if="canManageUsers">
