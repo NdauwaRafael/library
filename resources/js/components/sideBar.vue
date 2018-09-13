@@ -53,7 +53,7 @@
 <script>
     export default {
         data: () => ({
-            canManageLibrary:false
+            canManageLibrary:true
         }),
         methods: {
             checkPermission: function () {
